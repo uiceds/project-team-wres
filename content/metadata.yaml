@@ -1,5 +1,5 @@
 ---
-title: "Manuscript Title"
+title: "WRES"
 date: null  # Defaults to date generated, but can specify like '2022-10-31'.
 keywords:
   - markdown
@@ -7,24 +7,46 @@ keywords:
   - manubot
 lang: en-US
 authors:
-  - github: johndoe
-    name: John Doe
+  - github: jiazecao
+    name: Jiaze Cao
     initials: JD
     orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: johndoe
-    mastodon: johndoe
+    twitter: jiazecao
+    mastodon: jiazecao
     mastodon-server: mastodon.social
     email: john.doe@something.com
     affiliations:
-      - Department of Something, University of Whatever
+      - Department of Civil and Environmental Engineering, University of Whatever
     funders:
       - Grant XXXXXXXX
-  - github: janeroe
-    name: Jane Roe
+  - github: yuyaohuang
+    name: Yuyao Huang
     initials: JR
     orcid: XXXX-XXXX-XXXX-XXXX
     email: jane.roe@whatever.edu
     affiliations:
       - Department of Something, University of Whatever
       - Department of Whatever, University of Something
+    funders:
+      - Grant XXXXXXXX
+  - github: yuewan
+    name: Yue Wan
+    initials: JR
+    orcid: XXXX-XXXX-XXXX-XXXX
+    email: jane.roe@whatever.edu
+    affiliations:
+      - Department of Something, University of Whatever
+      - Department of Whatever, University of Something
+    funders:
+      - Grant XXXXXXXX
+  - github: hsingyuhuang
+    name: Hsing-Yu Huang
+    initials: JR
+    orcid: XXXX-XXXX-XXXX-XXXX
+    email: jane.roe@whatever.edu
+    affiliations:
+      - Department of Something, University of Whatever
+      - Department of Whatever, University of Something
+    funders:
+      - Grant XXXXXXXX
     corresponding: true
