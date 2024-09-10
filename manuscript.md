@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-10" />
   <meta name="citation_publication_date" content="2024-09-10" />
   <meta property="article:published_time" content="2024-09-10" />
-  <meta name="dc.modified" content="2024-09-10T17:19:45+00:00" />
-  <meta property="article:modified_time" content="2024-09-10T17:19:45+00:00" />
+  <meta name="dc.modified" content="2024-09-10T17:19:50+00:00" />
+  <meta property="article:modified_time" content="2024-09-10T17:19:50+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/b9aaaca65f9598b73e02b35877d642a9cfdd4cce/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/b9aaaca65f9598b73e02b35877d642a9cfdd4cce/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/b9aaaca65f9598b73e02b35877d642a9cfdd4cce/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/e0626f066201a67e0b07c2943c93d74012b1196a/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/e0626f066201a67e0b07c2943c93d74012b1196a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/e0626f066201a67e0b07c2943c93d74012b1196a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/b9aaaca65f9598b73e02b35877d642a9cfdd4cce/))
+([permalink](https://uiceds.github.io/project-team-wres/v/e0626f066201a67e0b07c2943c93d74012b1196a/))
 was automatically generated
-from [uiceds/project-team-wres@b9aaaca](https://github.com/uiceds/project-team-wres/tree/b9aaaca65f9598b73e02b35877d642a9cfdd4cce)
+from [uiceds/project-team-wres@e0626f0](https://github.com/uiceds/project-team-wres/tree/e0626f066201a67e0b07c2943c93d74012b1196a)
 on September 10, 2024.
 </em></small>
 
