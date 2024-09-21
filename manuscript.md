@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-10'
+date-meta: '2024-09-21'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-10" />
-  <meta name="citation_publication_date" content="2024-09-10" />
-  <meta property="article:published_time" content="2024-09-10" />
-  <meta name="dc.modified" content="2024-09-10T18:02:51+00:00" />
-  <meta property="article:modified_time" content="2024-09-10T18:02:51+00:00" />
+  <meta name="dc.date" content="2024-09-21" />
+  <meta name="citation_publication_date" content="2024-09-21" />
+  <meta property="article:published_time" content="2024-09-21" />
+  <meta name="dc.modified" content="2024-09-21T16:46:45+00:00" />
+  <meta property="article:modified_time" content="2024-09-21T16:46:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -55,9 +55,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4e342785e6546696c2c38d29262f2b8a547ceb3e/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4e342785e6546696c2c38d29262f2b8a547ceb3e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4e342785e6546696c2c38d29262f2b8a547ceb3e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/5574a029f3be09f7039593f173f20e37782453c3/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5574a029f3be09f7039593f173f20e37782453c3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5574a029f3be09f7039593f173f20e37782453c3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -79,10 +79,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/4e342785e6546696c2c38d29262f2b8a547ceb3e/))
+([permalink](https://uiceds.github.io/project-team-wres/v/5574a029f3be09f7039593f173f20e37782453c3/))
 was automatically generated
-from [uiceds/project-team-wres@4e34278](https://github.com/uiceds/project-team-wres/tree/4e342785e6546696c2c38d29262f2b8a547ceb3e)
-on September 10, 2024.
+from [uiceds/project-team-wres@5574a02](https://github.com/uiceds/project-team-wres/tree/5574a029f3be09f7039593f173f20e37782453c3)
+on September 21, 2024.
 </em></small>
 
 
