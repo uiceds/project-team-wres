@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-21'
+date-meta: '2024-09-22'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-21" />
-  <meta name="citation_publication_date" content="2024-09-21" />
-  <meta property="article:published_time" content="2024-09-21" />
-  <meta name="dc.modified" content="2024-09-21T18:26:19+00:00" />
-  <meta property="article:modified_time" content="2024-09-21T18:26:19+00:00" />
+  <meta name="dc.date" content="2024-09-22" />
+  <meta name="citation_publication_date" content="2024-09-22" />
+  <meta property="article:published_time" content="2024-09-22" />
+  <meta name="dc.modified" content="2024-09-22T05:12:44+00:00" />
+  <meta property="article:modified_time" content="2024-09-22T05:12:44+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -55,9 +55,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/a971db81759b465f19459e6624988e42b51b15d9/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a971db81759b465f19459e6624988e42b51b15d9/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a971db81759b465f19459e6624988e42b51b15d9/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -79,10 +79,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/a971db81759b465f19459e6624988e42b51b15d9/))
+([permalink](https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/))
 was automatically generated
-from [uiceds/project-team-wres@a971db8](https://github.com/uiceds/project-team-wres/tree/a971db81759b465f19459e6624988e42b51b15d9)
-on September 21, 2024.
+from [uiceds/project-team-wres@96f2d5c](https://github.com/uiceds/project-team-wres/tree/96f2d5ca092f8b2ae940b621a9d0b4a18519b172)
+on September 22, 2024.
 </em></small>
 
 
@@ -153,10 +153,24 @@ Hsing-Yu Huang \<jane.roe@whatever.edu\>.
 :::
 
 
-## Abstract {.page_break_before}
-hsing-yu huang
+---
+title: "Identification and Prediction of Flux Tower Latent Heat Data and Their Source Variables (Time Series Imputation)"
+authors:
+  - Jiaze Cao
+  - Hsing-yu Huang
+  - Yuyao Huang
+  - Yue Wan
+---
 
-![An example figure](images/James.png)
+## Dataset Description
+
+The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023. The data elements include wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature.
+
+## Proposal
+
+Evapotranspiration (ET) is the process of water transferring from land to the atmosphere, accompanying the phase change of water from liquid to gas. This process plays a critical role in the ecohydrological system and profoundly affects the hydrological cycle. The processes of evapotranspiration and energy exchange are interdependent. Both latent heat (LE) and evapotranspiration (ET), from the perspective of energy and water flux, are key terms for anticipating weather conditions, simulating climate, and diagnosing climate change. However, the measurement of evapotranspiration is challenging because the process itself is invisible and complex.
+
+[Source](https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/)
 
 
 This manuscript is a template (aka "rootstock") for [Manubot](https://manubot.org/ "Manubot"), a tool for writing scholarly manuscripts.
