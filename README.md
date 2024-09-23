@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/uiceds/project-team-wres/tree/gh-pages) branch hosts the contents of this directory at <https://uiceds.github.io/project-team-wres/>.
-The permalink for this webpage version is <https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/>.
+The permalink for this webpage version is <https://uiceds.github.io/project-team-wres/v/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://uiceds.github.io/project-team-wres/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`96f2d5ca092f8b2ae940b621a9d0b4a18519b172`](https://github.com/uiceds/project-team-wres/commit/96f2d5ca092f8b2ae940b621a9d0b4a18519b172).
+[`259f5d72a036cad81d4fd64bf5eb0a73da9bedb2`](https://github.com/uiceds/project-team-wres/commit/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2).
