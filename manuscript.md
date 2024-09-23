@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-22'
+date-meta: '2024-09-23'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-22" />
-  <meta name="citation_publication_date" content="2024-09-22" />
-  <meta property="article:published_time" content="2024-09-22" />
-  <meta name="dc.modified" content="2024-09-22T05:12:44+00:00" />
-  <meta property="article:modified_time" content="2024-09-22T05:12:44+00:00" />
+  <meta name="dc.date" content="2024-09-23" />
+  <meta name="citation_publication_date" content="2024-09-23" />
+  <meta property="article:published_time" content="2024-09-23" />
+  <meta name="dc.modified" content="2024-09-23T04:08:26+00:00" />
+  <meta property="article:modified_time" content="2024-09-23T04:08:26+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -55,9 +55,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -79,10 +79,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/96f2d5ca092f8b2ae940b621a9d0b4a18519b172/))
+([permalink](https://uiceds.github.io/project-team-wres/v/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2/))
 was automatically generated
-from [uiceds/project-team-wres@96f2d5c](https://github.com/uiceds/project-team-wres/tree/96f2d5ca092f8b2ae940b621a9d0b4a18519b172)
-on September 22, 2024.
+from [uiceds/project-team-wres@259f5d7](https://github.com/uiceds/project-team-wres/tree/259f5d72a036cad81d4fd64bf5eb0a73da9bedb2)
+on September 23, 2024.
 </em></small>
 
 
@@ -162,13 +162,27 @@ authors:
   - Yue Wan
 ---
 
-## Dataset Description
+# Dataset Description
 
-The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023. The data elements include wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature.
+We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Fig 1 including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
+![Fig 1: Dataset Elements](./images/FluxTowerTable.png)
+![Fig 2: Variables in 2022](./images/Variables.png)
+# Proposal
 
-## Proposal
-
+## Background
 Evapotranspiration (ET) is the process of water transferring from land to the atmosphere, accompanying the phase change of water from liquid to gas. This process plays a critical role in the ecohydrological system and profoundly affects the hydrological cycle. The processes of evapotranspiration and energy exchange are interdependent. Both latent heat (LE) and evapotranspiration (ET), from the perspective of energy and water flux, are key terms for anticipating weather conditions, simulating climate, and diagnosing climate change. However, the measurement of evapotranspiration is challenging because the process itself is invisible and complex.
+
+Figure 3 shows the latent heat data gap in 2020 due to covid-19 and overhaul of equipment. Our project goal is to fill in these missing data. The ground truth data is collected from satelite sensors (<https://etdata.org/>). Despite the existence of numerous classical evapotranspiration simulation models, such as Bowen Ratio, Priestley-Taylor and Penman-Monteith models, the predictive accuracy of these models is inferior to that of deep learning models. Therefore, we plan to use RNN and LSTM deep learning models to predict latent heat and fill the gap.
+![Fig 3: Data Gap in 2020](./images/LatentHeatGap.png)
+
+
+## Step 1: PCA Analysis
+
+We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct PCA analysis to find out variables related to latent heat. These variables will be input variables in deep learning model.
+
+## Step 2: Deep Learning Time Series Forecast (Time Series Imputation)
+
+Once we confirm the input variables, we plan to use RNN or LSTM forecast models to predict latent heat in 2020.
 
 [Source](https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/)
 
