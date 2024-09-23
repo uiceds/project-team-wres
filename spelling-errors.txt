@@ -13,7 +13,7 @@ covid
 CSV
 culpa
 cupidatat
-Dataset
+dataset
 deserunt
 dolore
 Duis
@@ -22,7 +22,7 @@ eiusmod
 elit
 enim
 esse
-evapotranspiration
+Evapotranspiration
 Excepteur
 exercitation
 fugiat
