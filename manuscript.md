@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-23'
+date-meta: '2024-09-25'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-23" />
-  <meta name="citation_publication_date" content="2024-09-23" />
-  <meta property="article:published_time" content="2024-09-23" />
-  <meta name="dc.modified" content="2024-09-23T04:29:57+00:00" />
-  <meta property="article:modified_time" content="2024-09-23T04:29:57+00:00" />
+  <meta name="dc.date" content="2024-09-25" />
+  <meta name="citation_publication_date" content="2024-09-25" />
+  <meta property="article:published_time" content="2024-09-25" />
+  <meta name="dc.modified" content="2024-09-25T19:33:39+00:00" />
+  <meta property="article:modified_time" content="2024-09-25T19:33:39+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -34,30 +34,26 @@ header-includes: |
   <meta name="citation_journal_title" content="Manubot" />
   <meta name="citation_technical_report_institution" content="Manubot" />
   <meta name="citation_author" content="Jiaze Cao" />
-  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Whatever" />
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-  <meta name="twitter:creator" content="@jiazecao" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="WRES" />
   <meta name="citation_author" content="Yuyao Huang" />
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="EWES" />
   <meta name="citation_author" content="Yue Wan" />
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="EWES" />
   <meta name="citation_author" content="Hsing-Yu Huang" />
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="WRES" />
   <link rel="canonical" href="https://uiceds.github.io/project-team-wres/" />
   <meta property="og:url" content="https://uiceds.github.io/project-team-wres/" />
   <meta property="twitter:url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/41300030d4e7294f22953e3e4f85a108f57af4d5/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/41300030d4e7294f22953e3e4f85a108f57af4d5/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/41300030d4e7294f22953e3e4f85a108f57af4d5/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/7aba236a27daa6b956ac3374a08aba9f1c812c98/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/7aba236a27daa6b956ac3374a08aba9f1c812c98/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/7aba236a27daa6b956ac3374a08aba9f1c812c98/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -79,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/41300030d4e7294f22953e3e4f85a108f57af4d5/))
+([permalink](https://uiceds.github.io/project-team-wres/v/7aba236a27daa6b956ac3374a08aba9f1c812c98/))
 was automatically generated
-from [uiceds/project-team-wres@4130003](https://github.com/uiceds/project-team-wres/tree/41300030d4e7294f22953e3e4f85a108f57af4d5)
-on September 23, 2024.
+from [uiceds/project-team-wres@7aba236](https://github.com/uiceds/project-team-wres/tree/7aba236a27daa6b956ac3374a08aba9f1c812c98)
+on September 25, 2024.
 </em></small>
 
 
@@ -93,54 +89,39 @@ on September 23, 2024.
 
 + **Jiaze Cao**
   <br>
-    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [jiazecao](https://github.com/jiazecao)
-    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
-    [jiazecao](https://twitter.com/jiazecao)
-    · ![Mastodon icon](images/mastodon.svg){.inline_icon width=16 height=16}
-    [\@jiazecao@mastodon.social](https://mastodon.social/@jiazecao)
+    [JiazeCLeo](https://github.com/JiazeCLeo)
     <br>
   <small>
-     Department of Civil and Environmental Engineering, University of Whatever
-     · Funded by Grant XXXXXXXX
+     Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; WRES
   </small>
 
 + **Yuyao Huang**
   <br>
-    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [yuyaohuang](https://github.com/yuyaohuang)
+    [Yuyao-Huang](https://github.com/Yuyao-Huang)
     <br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
-     · Funded by Grant XXXXXXXX
+     Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
   </small>
 
 + **Yue Wan**
   <br>
-    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [yuewan](https://github.com/yuewan)
+    [clarawan](https://github.com/clarawan)
     <br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
+     Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
      · Funded by Grant XXXXXXXX
   </small>
 
 + **Hsing-Yu Huang**
   ^[✉](#correspondence)^<br>
-    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [hsingyuhuang](https://github.com/hsingyuhuang)
+    [Hsing-Yu](https://github.com/Hsing-Yu)
     <br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
-     · Funded by Grant XXXXXXXX
+     Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; WRES
   </small>
 
 
@@ -167,6 +148,7 @@ authors:
 We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Fig 1 including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
 ![Fig 1: Dataset Elements](./images/FluxTowerTable.png){width=80%}
 ![Fig 2: Variables in 2022](./images/Variables.png){width=80%}
+
 # Proposal
 
 ## Background
