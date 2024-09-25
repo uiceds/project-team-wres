@@ -7,46 +7,34 @@ keywords:
   - manubot
 lang: en-US
 authors:
-  - github: jiazecao
+  - github: JiazeCLeo
     name: Jiaze Cao
-    initials: JD
-    orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: jiazecao
-    mastodon: jiazecao
-    mastodon-server: mastodon.social
-    email: john.doe@something.com
+    initials: MR
+    email: jiazec2@illinois.edu
     affiliations:
-      - Department of Civil and Environmental Engineering, University of Whatever
-    funders:
-      - Grant XXXXXXXX
-  - github: yuyaohuang
+      - Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign
+      - WRES
+  - github: Yuyao-Huang
     name: Yuyao Huang
-    initials: JR
-    orcid: XXXX-XXXX-XXXX-XXXX
+    initials: MR
     email: jane.roe@whatever.edu
     affiliations:
-      - Department of Something, University of Whatever
-      - Department of Whatever, University of Something
-    funders:
-      - Grant XXXXXXXX
-  - github: yuewan
+      - Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign
+      - EWES
+  - github: clarawan
     name: Yue Wan
-    initials: JR
-    orcid: XXXX-XXXX-XXXX-XXXX
+    initials: MS
     email: jane.roe@whatever.edu
     affiliations:
-      - Department of Something, University of Whatever
-      - Department of Whatever, University of Something
+      - Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign
+      - EWES
     funders:
       - Grant XXXXXXXX
-  - github: hsingyuhuang
+  - github: Hsing-Yu
     name: Hsing-Yu Huang
-    initials: JR
-    orcid: XXXX-XXXX-XXXX-XXXX
+    initials: MR
     email: jane.roe@whatever.edu
     affiliations:
-      - Department of Something, University of Whatever
-      - Department of Whatever, University of Something
-    funders:
-      - Grant XXXXXXXX
+      - Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign
+      - WRES
     corresponding: true
