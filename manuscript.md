@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-25" />
   <meta name="citation_publication_date" content="2024-09-25" />
   <meta property="article:published_time" content="2024-09-25" />
-  <meta name="dc.modified" content="2024-09-25T21:19:08+00:00" />
-  <meta property="article:modified_time" content="2024-09-25T21:19:08+00:00" />
+  <meta name="dc.modified" content="2024-09-25T21:25:29+00:00" />
+  <meta property="article:modified_time" content="2024-09-25T21:25:29+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/5ff428e840905edfe45950ea28be3ad504a969ac/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5ff428e840905edfe45950ea28be3ad504a969ac/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5ff428e840905edfe45950ea28be3ad504a969ac/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/))
+([permalink](https://uiceds.github.io/project-team-wres/v/5ff428e840905edfe45950ea28be3ad504a969ac/))
 was automatically generated
-from [uiceds/project-team-wres@22b3010](https://github.com/uiceds/project-team-wres/tree/22b3010ae7a7505bace58a48a0397780d61f82bc)
+from [uiceds/project-team-wres@5ff428e](https://github.com/uiceds/project-team-wres/tree/5ff428e840905edfe45950ea28be3ad504a969ac)
 on September 25, 2024.
 </em></small>
 
@@ -152,23 +152,26 @@ We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]
 ![**Data** Dataset](./images/FluxTowerTable.png "Data"){#fig:Data width=100%}
 ![Fig 2: Variables in 2022](./images/Variables.png){width=80%}
 </div>
+
 # Proposal
 
 ## Background
+<div style="text-align: justify;">
 Evapotranspiration (ET) is the process of water transferring from land to the atmosphere, accompanying the phase change of water from liquid to gas. This process plays a critical role in the ecohydrological system and profoundly affects the hydrological cycle. The processes of evapotranspiration and energy exchange are interdependent. Both latent heat (LE) and evapotranspiration (ET), from the perspective of energy and water flux, are key terms for anticipating weather conditions, simulating climate, and diagnosing climate change. However, the measurement of evapotranspiration is challenging because the process itself is invisible and complex.
 
 Figure 3 shows the latent heat data gap in 2020 due to covid-19 and overhaul of equipment. Our project goal is to fill in these missing data. The ground truth data is collected from satelite sensors (<https://etdata.org/>). Despite the existence of numerous classical evapotranspiration simulation models, such as Bowen Ratio, Priestley-Taylor and Penman-Monteith models, the predictive accuracy of these models is inferior to that of deep learning models. Therefore, we plan to use RNN and LSTM deep learning models to predict latent heat and fill the gap.
 ![Fig 3: Data Gap in 2020](./images/LatentHeatGap.png){width=80%}
-
+</div>
 
 ## Step 1: Regression analysis
-
+<div style="text-align: justify;">
 We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct regression analysis to find out variables highly correlated to latent heat. These variables will be input variables in deep learning model.
+</div>
 
 ## Step 2: Deep Learning Time Series Forecast (Time Series Imputation)
-
+<div style="text-align: justify;">
 Once we confirm the input variables, we plan to use RNN or LSTM forecast models to predict latent heat in 2020. All the input are divided into training datasets and the validation datasets. After the RNN model is trained, the validation datasets are used to verify the model. At last, the missing data are generated by the model.  
-
+</div>
 [Source](https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/)
 
 
