@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-25" />
   <meta name="citation_publication_date" content="2024-09-25" />
   <meta property="article:published_time" content="2024-09-25" />
-  <meta name="dc.modified" content="2024-09-25T21:05:55+00:00" />
-  <meta property="article:modified_time" content="2024-09-25T21:05:55+00:00" />
+  <meta name="dc.modified" content="2024-09-25T21:19:08+00:00" />
+  <meta property="article:modified_time" content="2024-09-25T21:19:08+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/dfdc0abe565a194e880fab3dfd896db64ffc5241/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/dfdc0abe565a194e880fab3dfd896db64ffc5241/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/dfdc0abe565a194e880fab3dfd896db64ffc5241/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/dfdc0abe565a194e880fab3dfd896db64ffc5241/))
+([permalink](https://uiceds.github.io/project-team-wres/v/22b3010ae7a7505bace58a48a0397780d61f82bc/))
 was automatically generated
-from [uiceds/project-team-wres@dfdc0ab](https://github.com/uiceds/project-team-wres/tree/dfdc0abe565a194e880fab3dfd896db64ffc5241)
+from [uiceds/project-team-wres@22b3010](https://github.com/uiceds/project-team-wres/tree/22b3010ae7a7505bace58a48a0397780d61f82bc)
 on September 25, 2024.
 </em></small>
 
@@ -148,9 +148,8 @@ authors:
 <div style="text-align: justify;">
 We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Figure @fig: Data including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
 
-![Fig 1: Dataset Elements](./images/FluxTowerTable.png){width=80%}
-![
-  **Data** Dataset。。。](./images/FluxTowerTable.png "Data"){#fig:Data width=100%}
+![Fig 1: Dataset Elements](./images/FluxTowerTable.png "Fig1 Dataset Elements"){width=80%}
+![**Data** Dataset](./images/FluxTowerTable.png "Data"){#fig:Data width=100%}
 ![Fig 2: Variables in 2022](./images/Variables.png){width=80%}
 </div>
 # Proposal
