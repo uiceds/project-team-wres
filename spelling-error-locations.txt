@@ -25,10 +25,12 @@ content/01.Proposal.md:21:LSTM
 content/01.Proposal.md:21:Monteith
 content/01.Proposal.md:21:RNN
 content/01.Proposal.md:21:satelite
-content/01.Proposal.md:25:PCA
 content/01.Proposal.md:27:dataset
-content/01.Proposal.md:27:PCA
+content/01.Proposal.md:31:datasets
+content/01.Proposal.md:31:datasets
+content/01.Proposal.md:31:datasets
 content/01.Proposal.md:31:LSTM
+content/01.Proposal.md:31:RNN
 content/01.Proposal.md:31:RNN
 content/02.delete-me.md:44:adipiscing
 content/02.delete-me.md:44:aliqua

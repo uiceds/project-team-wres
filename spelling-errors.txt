@@ -15,7 +15,8 @@ covid
 CSV
 culpa
 cupidatat
-Dataset
+dataset
+datasets
 deserunt
 dolore
 Duis
@@ -24,7 +25,7 @@ eiusmod
 elit
 enim
 esse
-Evapotranspiration
+evapotranspiration
 Excepteur
 exercitation
 fugiat
@@ -49,7 +50,6 @@ occaecat
 officia
 Pandoc’s
 pariatur
-PCA
 Piatt
 proident
 qui
