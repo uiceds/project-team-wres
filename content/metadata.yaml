@@ -14,6 +14,7 @@ authors:
     affiliations:
       - Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign
       - WRES
+    corresponding: true
   - github: Yuyao-Huang
     name: Yuyao Huang
     initials: MR
