@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T22:46:52+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T22:46:52+00:00" />
+  <meta name="dc.modified" content="2024-09-26T22:51:46+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T22:51:46+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4b3e5ca04cf0960b09e7f83c782d9b6c9c8fc7f8/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4b3e5ca04cf0960b09e7f83c782d9b6c9c8fc7f8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4b3e5ca04cf0960b09e7f83c782d9b6c9c8fc7f8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/4b3e5ca04cf0960b09e7f83c782d9b6c9c8fc7f8/))
+([permalink](https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/))
 was automatically generated
-from [uiceds/project-team-wres@4b3e5ca](https://github.com/uiceds/project-team-wres/tree/4b3e5ca04cf0960b09e7f83c782d9b6c9c8fc7f8)
+from [uiceds/project-team-wres@be6bd8e](https://github.com/uiceds/project-team-wres/tree/be6bd8e4b55575264a3395ea0312d0555619cc3b)
 on September 26, 2024.
 </em></small>
 
@@ -269,9 +269,7 @@ We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]
 | shf_Avg(2)          | $W/m^2$        | Ground heat flux                                                                                |
 | slowsequence_3_Tot  | $samples$      | number of times scanned in 15 mins (once per min)                                               |
 
-<p style="text-align: justify;">
 Table: A table with a variables.
-</p>
 {#tbl:bowling-scores}
 
 

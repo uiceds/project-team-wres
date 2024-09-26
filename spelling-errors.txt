@@ -1,5 +1,5 @@
 adipiscing
-Albedo
+albedo
 aliqua
 aliquip
 amb
@@ -32,7 +32,7 @@ eiusmod
 elit
 enim
 esse
-Evapotranspiration
+evapotranspiration
 Excepteur
 exercitation
 Fc
@@ -103,7 +103,7 @@ sunt
 Targ
 TempC
 tempor
-tmpr
+Tmpr
 ullamco
 updward
 Urbana
