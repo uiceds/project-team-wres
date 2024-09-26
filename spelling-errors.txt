@@ -1,5 +1,5 @@
 adipiscing
-albedo
+Albedo
 aliqua
 aliquip
 amb
@@ -21,7 +21,6 @@ CSAT
 CSV
 culpa
 cupidatat
-cyles
 dataset
 datasets
 deserunt
@@ -34,7 +33,7 @@ eiusmod
 elit
 enim
 esse
-Evapotranspiration
+evapotranspiration
 Excepteur
 exercitation
 Fc
@@ -59,7 +58,6 @@ Lorem
 LSTM
 magna
 mins
-mol
 mollit
 Monteith
 mV
@@ -107,7 +105,7 @@ sunt
 Targ
 TempC
 tempor
-tmpr
+Tmpr
 ullamco
 updward
 Urbana

@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T21:00:07+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T21:00:07+00:00" />
+  <meta name="dc.modified" content="2024-09-26T21:13:28+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T21:13:28+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/fee56cdb73a2e2274813bd907efe1b42a2298c8c/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/fee56cdb73a2e2274813bd907efe1b42a2298c8c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/fee56cdb73a2e2274813bd907efe1b42a2298c8c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/))
+([permalink](https://uiceds.github.io/project-team-wres/v/fee56cdb73a2e2274813bd907efe1b42a2298c8c/))
 was automatically generated
-from [uiceds/project-team-wres@a003cde](https://github.com/uiceds/project-team-wres/tree/a003cdeed7002927b21fb03079aec86a1148e433)
+from [uiceds/project-team-wres@fee56cd](https://github.com/uiceds/project-team-wres/tree/fee56cdb73a2e2274813bd907efe1b42a2298c8c)
 on September 26, 2024.
 </em></small>
 
@@ -148,128 +148,127 @@ authors:
 
 We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Figure @fig: Data including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
 
-![Fig 1: Dataset Elements](./images/FluxTowerTable.png "Fig1 Dataset Elements"){width=80%}
-![**Data** Dataset](./images/FluxTowerTable.png "Data"){#fig:Data width=100%}
+
 ![Fig 2: Variables in 2022](./images/Variables.png){width=80%}
-![
-**A square image at actual size and with a bottom caption.**
-Loaded from the latest version of image on GitHub.
-](./images/FluxTowerTable.png "Square image"){#fig:square-image}
+
 
 | Variable Name       | Units        | Description                                                                                     |
 |---------------------|--------------|-------------------------------------------------------------------------------------------------|
 | TIMESTAMP           | TS           |                                                                                                 |
 | RECORD              | RN           |                                                                                                 |
-| Hs                  | W/m^2        | sensible heat flux                                                                              |
-| tau                 | kg/(m s^2)   | shear stress                                                                                    |
-| u_star              | m/s          | friction velocity                                                                               |
-| Ts_stdev            | C            | instantaneous stdev of   temperature                                                            |
-| Ts_Ux_cov           | C m/s        | inst. cov(temp, Ux)                                                                             |
-| Ts_Uy_cov           | C m/s        | inst. cov(temp, Uy)                                                                             |
-| Ts_Uz_cov           | C m/s        | inst. cov(temp, Uv)                                                                             |
-| Ux_stdev            | m/s          | instantaneous stdev of Ux                                                                       |
-| Ux_Uy_cov           | (m/s)^2      | instantaneous cov of (Ux,Uy)                                                                    |
-| Ux_Uz_cov           | (m/s)^2      | instantaneous cov of (Ux,Uz)                                                                    |
-| Uy_stdev            | m/s          | instantaneous stdev of Uy                                                                       |
-| Uy_Uz_cov           | (m/s)^2      | instantaneous cov of (Uy,Uz)                                                                    |
-| Uz_stdev            | m/s          | instantaneous stdev of Uz                                                                       |
-| wnd_spd             | m/s          | wind speed (horizontal) -   different from next?                                                |
-| rslt_wnd_spd        | m/s          | wind speed (horizontal)                                                                         |
-| wnd_dir_sonic       | degrees      | wind direction from CSAT3, deg   from N?                                                        |
+| Hs                  | $W/m^2$        | sensible heat flux                                                                              |
+| tau                 | $kg/(m \cdot s^2)$   | shear stress                                                                                    |
+| u_star              | $m/s$          | friction velocity                                                                               |
+| Ts_stdev            | $^\circ C$            | instantaneous stdev of temperature                                                             |
+| Ts_Ux_cov           | $^\circ C \cdot m/s$        | inst. cov(temp, Ux)                                                                             |
+| Ts_Uy_cov           | $^\circ C \cdot m/s$        | inst. cov(temp, Uy)                                                                             |
+| Ts_Uz_cov           | $^\circ C \cdot m/s$        | inst. cov(temp, Uv)                                                                             |
+| Ux_stdev            | $m/s$          | instantaneous stdev of Ux                                                                       |
+| Ux_Uy_cov           | $(m/s)^2$      | instantaneous cov of (Ux, Uy)                                                                    |
+| Ux_Uz_cov           | $(m/s)^2$      | instantaneous cov of (Ux, Uz)                                                                    |
+| Uy_stdev            | $m/s$          | instantaneous stdev of Uy                                                                       |
+| Uy_Uz_cov           | $(m/s)^2$      | instantaneous cov of (Uy, Uz)                                                                    |
+| Uz_stdev            | $m/s$          | instantaneous stdev of Uz                                                                       |
+| wnd_spd             | $m/s$          | wind speed (horizontal) - different from next?                                                  |
+| rslt_wnd_spd        | $m/s$          | wind speed (horizontal)                                                                         |
+| wnd_dir_sonic       | degrees      | wind direction from CSAT3, deg from N?                                                          |
 | std_wnd_dir         | degrees      | inst. stdev of wind direction                                                                   |
-| wnd_dir_compass     | degrees      | wind direction from compass   (from N?)                                                         |
-| Ux_Avg              | m/s          | average horiz windspeed x                                                                       |
-| Uy_Avg              | m/s          | average horiz windspeed y                                                                       |
-| Uz_Avg              | m/s          | average vertical windspeed z                                                                    |
-| Ts_Avg              | C            | air temperature at 25 m                                                                         |
-| sonic_azimuth       | degrees      | 180 is direction is pointing -   can change this value                                          |
-| sonic_samples_Tot   | samples      | 10 Hz sampling rate (cycles per   15 mins = 9000)                                               |
-| Fc_li_wpl           | mg/(m^2 s)   | carbon flux upward (+ = upward)   with Webb et al Term                                          |
-| LE_li_wpl           | W/m^2        | latent heat flux with Webb et al   term                                                         |
-| Hc_li               | W/m^2        | sensible heat flux                                                                              |
-| CO2_li_mean         | mg/m^3       | CO2 conc --> need to convert   to ppm units                                                     |
-| H2O_li_mean         | g/m^3        | water vapor conc at 25 m                                                                        |
+| wnd_dir_compass     | degrees      | wind direction from compass (from N?)                                                           |
+| Ux_Avg              | $m/s$          | average horiz windspeed x                                                                       |
+| Uy_Avg              | $m/s$          | average horiz windspeed y                                                                       |
+| Uz_Avg              | $m/s$          | average vertical windspeed z                                                                    |
+| Ts_Avg              | $^\circ C$            | air temperature at 25 m                                                                         |
+| sonic_azimuth       | degrees      | 180 is direction is pointing - can change this value                                            |
+| sonic_samples_Tot   | samples      | 10 Hz sampling rate (cycles per 15 mins = 9000)                                                 |
+| Fc_li_wpl           | $mg/(m^2 \cdot s)$   | carbon flux upward (+ = upward) with Webb et al Term                                            |
+| LE_li_wpl           | $W/m^2$        | latent heat flux with Webb et al term                                                           |
+| Hc_li               | $W/m^2$        | sensible heat flux                                                                              |
+| CO2_li_mean         | $mg/m^3$       | CO2 conc --> need to convert to ppm units                                                       |
+| H2O_li_mean         | $g/m^3$        | water vapor conc at 25 m                                                                        |
 | amb_press_li_mean   | kPa          | air pressure at 25 m                                                                            |
-| Tc_li_mean          | C            | CSAT air temperature at 25 m                                                                    |
-| rho_a_li_mean       | kg/m^3       | density of air with water vapor                                                                 |
-| Fc_li_irga          | mg/(m^2 s)   | carbon flux without Webb et al.   Term                                                          |
-| LE_li_irga          | W/m^2        | latent heat flux without Webb et   al. Term                                                     |
-| irga_li_samples_Tot | samples      | should be around 60 - quality   indicator of LiCor                                              |
+| Tc_li_mean          | $^\circ C$            | CSAT air temperature at 25 m                                                                    |
+| rho_a_li_mean       | $kg/m^3$       | density of air with water vapor                                                                 |
+| Fc_li_irga          | $mg/(m^2 \cdot s)$   | carbon flux without Webb et al. Term                                                            |
+| LE_li_irga          | $W/m^2$        | latent heat flux without Webb et al. Term                                                       |
+| irga_li_samples_Tot | samples      | should be around 60 - quality indicator of LiCor                                                |
 | Precip_Tot          | mm           | rainfall                                                                                        |
-| T_tmpr_rh_mean      | C            | air temperature at 25 m                                                                         |
+| T_tmpr_rh_mean      | $^\circ C$            | air temperature at 25 m                                                                         |
 | e_tmpr_rh_mean      | kPa          | vapor pressure at 25 m                                                                          |
 | e_sat_tmpr_rh_mean  | kPa          | saturated vapor pressure at 25 m                                                                |
-| H2O_tmpr_rh_mean    | g/m^3        | water vapor conc at 25 m                                                                        |
-| RH_tmpr_rh_mean     | %            | Relative Humidity at 25 m   (e/e_sat)                                                           |
-| rho_a_tmpr_rh_mean  | kg/m^3       | air density                                                                                     |
-| slowsequence_1_Tot  | samples      | cycles per 15 mins - scanning   every 10 secs                                                   |
-| CS655_Wcr_Avg       | m^3/m^3      | soil water content                                                                              |
+| H2O_tmpr_rh_mean    | $g/m^3$        | water vapor conc at 25 m                                                                        |
+| RH_tmpr_rh_mean     | %            | Relative Humidity at 25 m (e/e_sat)                                                             |
+| rho_a_tmpr_rh_mean  | $kg/m^3$       | air density                                                                                     |
+| slowsequence_1_Tot  | samples      | cycles per 15 mins - scanning every 10 secs                                                     |
+| CS655_Wcr_Avg       | $m^3/m^3$      | soil water content                                                                              |
 | CS655_Ec_Avg        | dS/m         | soil conductivity                                                                               |
-| CS655_Tmpr_Avg      | Deg C        | soil temperature                                                                                |
-| mean_wind_speed     | m/s          | wind speed at 10 m height…not   average?                                                        |
-| mean_wind_direction | Deg          | wind direction                                                                                  |
-| std_wind_dir        | Deg          | mean wind vector stdev of   direction                                                           |
-| NDVI_Avg            |              | Normalized Difference Vegetation   Index                                                        |
-| NDVIUpRed_Avg       | W/m^2 nm     |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
-| NDVIUpNIR_Avg       | W/m^2 nm     |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
-| NDVIIndUp           |              |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
-| NDVIDownRed_Avg     | W/m^2 nm     |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
-| NDVIDownNIR_Avg     | W/m^2 nm     |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
-| NDVIIndDown         |              |   NDVI is calculated from upward   and canopy facing sensors that measure IR and NIR radiation  |
+| CS655_Tmpr_Avg      | $^\circ C$            | soil temperature                                                                                |
+| mean_wind_speed     | $m/s$          | wind speed at 10 m height…not average?                                                          |
+| mean_wind_direction | degrees      | wind direction                                                                                  |
+| std_wind_dir        | degrees      | mean wind vector stdev of direction                                                             |
+| NDVI_Avg            |              | Normalized Difference Vegetation Index                                                          |
+| NDVIUpRed_Avg       | $W/m^2 \cdot nm$     | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation     |
+| NDVIUpNIR_Avg       | $W/m^2 \cdot nm$     | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation     |
+| NDVIIndUp           |              | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation      |
+| NDVIDownRed_Avg     | $W/m^2 \cdot nm$     | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation     |
+| NDVIDownNIR_Avg     | $W/m^2 \cdot nm$     | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation     |
+| NDVIIndDown         |              | NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation      |
 | PRI_Avg             |              | Photochemical Reflectance Index                                                                 |
-| PRIUp531_Avg        | W/m^2 nm     | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| PRIUp570_Avg        | W/m^2 nm     | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| PRIIndUp            |              | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| PRIDown531_Avg      | W/m^2 nm     | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| PRIDown570_Avg      | W/m^2 nm     | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| PRIIndDown          |              | PRI calculated from updward and   canopy facing sensors that measure 2 wavelengths of radiation |
-| D5TE_VWC_5cm_Avg    | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_5cm_Avg      |              |  bulk dielectric permittivity                                                                   |
+| PRIUp531_Avg        | $W/m^2 \cdot nm$     | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation  |
+| PRIUp570_Avg        | $W/m^2 \cdot nm$     | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation  |
+| PRIIndUp            |              | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation   |
+| PRIDown531_Avg      | $W/m^2 \cdot nm$     | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation  |
+| PRIDown570_Avg      | $W/m^2 \cdot nm$     | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation  |
+| PRIIndDown          |              | PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation   |
+| D5TE_VWC_5cm_Avg    | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_5cm_Avg      |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_5cm_Avg     | dS/m         | soil electrical conductivity                                                                    |
-| D5TE_T_5cm_Avg      | Deg C        | soil temperature                                                                                |
-| D5TE_VWC_15cm_Avg   | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_15cm_Avg     |              |  bulk dielectric permittivity                                                                   |
+| D5TE_T_5cm_Avg      | $^\circ C$            | soil temperature                                                                                |
+| D5TE_VWC_15cm_Avg   | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_15cm_Avg     |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_15cm_Avg    | dS/m         | soil conductivity                                                                               |
-| D5TE_T_15cm_Avg     | Deg C        | soil temperature                                                                                |
-| D5TE_VWC_30cm_Avg   | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_30cm_Avg     |              |  bulk dielectric permittivity                                                                   |
+| D5TE_T_15cm_Avg     | $^\circ C$            | soil temperature                                                                                |
+| D5TE_VWC_30cm_Avg   | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_30cm_Avg     |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_30cm_Avg    | dS/m         | soil conductivity                                                                               |
-| D5TE_T_30cm_Avg     | Deg C        | soil temperature                                                                                |
-| D5TE_VWC_50cm_Avg   | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_50cm_Avg     |              |  bulk dielectric permittivity                                                                   |
+| D5TE_T_30cm_Avg     | $^\circ C$            | soil temperature                                                                                |
+| D5TE_VWC_50cm_Avg   | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_50cm_Avg     |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_50cm_Avg    | dS/m         | soil conductivity                                                                               |
-| D5TE_T_50cm_Avg     | Deg C        | soil temperature                                                                                |
-| D5TE_VWC_100cm_Avg  | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_100cm_Avg    |              |  bulk dielectric permittivity                                                                   |
+| D5TE_T_50cm_Avg     | $^\circ C$            | soil temperature                                                                                |
+| D5TE_VWC_100cm_Avg  | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_100cm_Avg    |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_100cm_Avg   | dS/m         | soil conductivity                                                                               |
-| D5TE_T_100cm_Avg    | Deg C        | soil temperature                                                                                |
-| D5TE_VWC_200cm_Avg  | m^3/m^3      | volumetric water content                                                                        |
-| D5TE_P_200cm_Avg    |              |  bulk dielectric permittivity                                                                   |
+| D5TE_T_100cm_Avg    | $^\circ C$            | soil temperature                                                                                |
+| D5TE_VWC_200cm_Avg  | $m^3/m^3$      | volumetric water content                                                                        |
+| D5TE_P_200cm_Avg    |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_200cm_Avg   | dS/m         | soil conductivity                                                                               |
-| D5TE_T_200cm_Avg    | Deg C        | soil temperature                                                                                |
-| slowsequence_2_Tot  | samples      | cyles - 1 minute loops (number   times scanned)                                                 |
-| SB121TempC_Avg      | Deg C        | SB = sensor body, temp of body   of sensor                                                      |
-| Targ121TempC_Avg    | Deg C        | surface temperature                                                                             |
-| Targ121mV_Avg       | Deg C        |                                                                                                 |
-| SB1H1TempC_Avg      | Deg C        | SB = sensor body, temp of body   of sensor                                                      |
-| Targ1H1TempC_Avg    | Deg C        | surface temperature                                                                             |
-| Targ1H1mV_Avg       | Deg C        |                                                                                                 |
-| short_up_Avg        | W/m^2        | Incoming shortwave radiation   detected by the upward facing instrument                         |
-| short_dn_Avg        | W/m^2        | Outgoing shortwave radiation   detected by the downward facing instrument                       |
-| long_up_Avg         | W/m^2        | incoming longwave radiation   detected by upward facing instrument                              |
-| long_dn_Avg         | W/m^2        | outgoing longwave radiation   detected by downward facing instrument                            |
-| cnr4_T_C_Avg        | deg_C        | temperature of sensor                                                                           |
+| D5TE_T_200cm_Avg    | $^\circ C$            | soil temperature                                                                                |
+| slowsequence_2_Tot  | samples      | cycles - 1 minute loops (number of times scanned)                                               |
+| SB121TempC_Avg      | $^\circ C$            | SB = sensor body, temp of body of sensor                                                       |
+| Targ121TempC_Avg    | $^\circ C$            | surface temperature                                                                            |
+| Targ121mV_Avg       | $^\circ C$            |                                                                                                 |
+| SB1H1TempC_Avg      | $^\circ C$            | SB = sensor body, temp of body of sensor                                                       |
+| Targ1H1TempC_Avg    | $^\circ C$            | surface temperature                                                                            |
+| Targ1H1mV_Avg       | $^\circ C$            |                                                                                                 |
+| short_up_Avg        | $W/m^2$        | Incoming shortwave radiation detected by the upward facing instrument                           |
+| short_dn_Avg        | $W/m^2$        | Outgoing shortwave radiation detected by the downward facing instrument                         |
+| long_up_Avg         | $W/m^2$        | incoming longwave radiation detected by upward facing instrument                                |
+| long_dn_Avg         | $W/m^2$        | outgoing longwave radiation detected by downward facing instrument                              |
+| cnr4_T_C_Avg        | $^\circ C$            | temperature of sensor                                                                          |
 | cnr4_T_K_Avg        | K            | temperature of sensor in Kelvin                                                                 |
-| long_up_corr_Avg    | W/m^2        | Incoming longwave radiation   detected by the upward facing instrument, corrected               |
-| long_dn_corr_Avg    | W/m^2        | Outgoing longwave radiation   detected by the downward facing instrument , corrected            |
-| Rs_net_Avg          | W/m^2        | Shortwave net radiation   (Rshort_up - Rshort_down)                                             |
-| Rl_net_Avg          | W/m^2        | Longwave net radiation  (Rlong_up - Rlong_down)                                                 |
-| albedo_Avg          | W/m^2        | Albedo                                                                                          |
-| Rn_Avg              | W/m^2        | Net radiation (Rs_net + Rl_net)                                                                 |
-| SQ_110_Avg          | Œºmol m-2s-1 | PAR (photosynthetically active radiation)                                                       |
-| shf_Avg(1)          | W/m^2        | Ground heat flux                                                                                |
-| shf_Avg(2)          | W/m^2        | Ground heat flux                                                                                |
-| slowsequence_3_Tot  | samples      | number of times scanned in 15   mins (once per min)                                             |
+| long_up_corr_Avg    | $W/m^2$        | Incoming longwave radiation detected by the upward facing instrument, corrected                 |
+| long_dn_corr_Avg    | $W/m^2$        | Outgoing longwave radiation detected by the downward facing instrument, corrected               |
+| Rs_net_Avg          | $W/m^2$        | Shortwave net radiation (Rshort_up - Rshort_down)                                               |
+| Rl_net_Avg          | $W/m^2$        | Longwave net radiation (Rlong_up - Rlong_down)                                                 |
+| albedo_Avg          | $W/m^2$        | Albedo                                                                                          |
+| Rn_Avg              | $W/m^2$        | Net radiation (Rs_net + Rl_net)                                                                 |
+| SQ_110_Avg          | $\mu mol \, \text{photons} \, m^{-2} s^{-1}$
+ | PAR (photosynthetically active radiation)                                  |
+| shf_Avg(1)          | $W/m^2$        | Ground heat flux                                                                                |
+| shf_Avg(2)          | $W/m^2$        | Ground heat flux                                                                                |
+| slowsequence_3_Tot  | samples      | number of times scanned in 15 mins (once per min)                                               |
+
+
 
 Table: A table with a variables.
 {#tbl:bowling-scores}
