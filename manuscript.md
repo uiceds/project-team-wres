@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T22:23:10+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T22:23:10+00:00" />
+  <meta name="dc.modified" content="2024-09-26T22:27:32+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T22:27:32+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/984f72b3b201a0002feb61ecaed0b00760b9fef3/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/984f72b3b201a0002feb61ecaed0b00760b9fef3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/984f72b3b201a0002feb61ecaed0b00760b9fef3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/))
+([permalink](https://uiceds.github.io/project-team-wres/v/984f72b3b201a0002feb61ecaed0b00760b9fef3/))
 was automatically generated
-from [uiceds/project-team-wres@9531061](https://github.com/uiceds/project-team-wres/tree/95310618c3ee34eb5a07eb195cc30e770fba29a3)
+from [uiceds/project-team-wres@984f72b](https://github.com/uiceds/project-team-wres/tree/984f72b3b201a0002feb61ecaed0b00760b9fef3)
 on September 26, 2024.
 </em></small>
 
@@ -112,7 +112,7 @@ on September 26, 2024.
     <br>
   <small>
      Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
-     · Funded by Grant XXXXXXXX
+     · Funded by Grant
   </small>
 
 + **Hsing-Yu Huang**
