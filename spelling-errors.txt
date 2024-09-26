@@ -32,7 +32,7 @@ eiusmod
 elit
 enim
 esse
-evapotranspiration
+Evapotranspiration
 Excepteur
 exercitation
 Fc
@@ -47,11 +47,12 @@ irga
 irure
 Jiaze
 JiazeCLeo
+Kumar
 labore
 laboris
 laborum
 LiCor
-Longwave
+longwave
 Lorem
 LSTM
 magna
@@ -103,7 +104,7 @@ sunt
 Targ
 TempC
 tempor
-Tmpr
+tmpr
 ullamco
 updward
 Urbana

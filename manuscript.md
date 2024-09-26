@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T22:51:46+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T22:51:46+00:00" />
+  <meta name="dc.modified" content="2024-09-26T22:54:24+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T22:54:24+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/5cba605dbf540b23c6c79675e3f70eef3b146b30/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5cba605dbf540b23c6c79675e3f70eef3b146b30/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5cba605dbf540b23c6c79675e3f70eef3b146b30/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/be6bd8e4b55575264a3395ea0312d0555619cc3b/))
+([permalink](https://uiceds.github.io/project-team-wres/v/5cba605dbf540b23c6c79675e3f70eef3b146b30/))
 was automatically generated
-from [uiceds/project-team-wres@be6bd8e](https://github.com/uiceds/project-team-wres/tree/be6bd8e4b55575264a3395ea0312d0555619cc3b)
+from [uiceds/project-team-wres@5cba605](https://github.com/uiceds/project-team-wres/tree/5cba605dbf540b23c6c79675e3f70eef3b146b30)
 on September 26, 2024.
 </em></small>
 
@@ -147,7 +147,7 @@ authors:
 # Dataset Description{.page_break_before}
 
 <p style="text-align: justify;">
-We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Table 1 including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 1 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
+We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data(Kumar & Sargent, 2024). The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Table 1 including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 1 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
 </p>
 
 
