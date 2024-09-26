@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T21:52:24+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T21:52:24+00:00" />
+  <meta name="dc.modified" content="2024-09-26T22:23:10+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T22:23:10+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/8ed10d960e38143daec4bc956d215a1fa48613ab/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/8ed10d960e38143daec4bc956d215a1fa48613ab/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/8ed10d960e38143daec4bc956d215a1fa48613ab/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/8ed10d960e38143daec4bc956d215a1fa48613ab/))
+([permalink](https://uiceds.github.io/project-team-wres/v/95310618c3ee34eb5a07eb195cc30e770fba29a3/))
 was automatically generated
-from [uiceds/project-team-wres@8ed10d9](https://github.com/uiceds/project-team-wres/tree/8ed10d960e38143daec4bc956d215a1fa48613ab)
+from [uiceds/project-team-wres@9531061](https://github.com/uiceds/project-team-wres/tree/95310618c3ee34eb5a07eb195cc30e770fba29a3)
 on September 26, 2024.
 </em></small>
 
@@ -129,7 +129,7 @@ on September 26, 2024.
 ✉ — Correspondence possible via [GitHub Issues](https://github.com/uiceds/project-team-wres/issues)
 or email to
 Jiaze Cao \<jiazec2@illinois.edu\>, 
-Hsing-Yu Huang \<jane.roe@whatever.edu\>.
+Hsing-Yu Huang \<hsingyu3@illinois.edu\>.
 
 
 :::
