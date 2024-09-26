@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T18:11:09+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T18:11:09+00:00" />
+  <meta name="dc.modified" content="2024-09-26T18:16:49+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T18:16:49+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/5367916ecff4bb00b1060411e45ed0e7c7642deb/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5367916ecff4bb00b1060411e45ed0e7c7642deb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/5367916ecff4bb00b1060411e45ed0e7c7642deb/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/5367916ecff4bb00b1060411e45ed0e7c7642deb/))
+([permalink](https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/))
 was automatically generated
-from [uiceds/project-team-wres@5367916](https://github.com/uiceds/project-team-wres/tree/5367916ecff4bb00b1060411e45ed0e7c7642deb)
+from [uiceds/project-team-wres@1332f1f](https://github.com/uiceds/project-team-wres/tree/1332f1fe7ff0377e940a877c73a527cd19f87dfe)
 on September 26, 2024.
 </em></small>
 
@@ -149,8 +149,12 @@ authors:
 We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data[@kumar2024]. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Figure @fig: Data including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/>
 
 ![Fig 1: Dataset Elements](./images/FluxTowerTable.png "Fig1 Dataset Elements"){width=80%}
-![**Data** Dataset](/images/FluxTowerTable.png "Data"){#fig:Data width=100%}
+![**Data** Dataset](./images/FluxTowerTable.png "Data"){#fig:Data width=100%}
 ![Fig 2: Variables in 2022](./images/Variables.png){width=80%}
+![
+**A square image at actual size and with a bottom caption.**
+Loaded from the latest version of image on GitHub.
+](./images/FluxTowerTable.png "Square image"){#fig:square-image}
 </div>
 
 # Proposal
