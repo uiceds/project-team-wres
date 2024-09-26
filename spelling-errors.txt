@@ -103,7 +103,7 @@ sunt
 Targ
 TempC
 tempor
-Tmpr
+tmpr
 ullamco
 updward
 Urbana
