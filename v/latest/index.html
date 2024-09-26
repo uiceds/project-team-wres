@@ -119,8 +119,8 @@
   <meta name="dc.date" content="2024-09-26" />
   <meta name="citation_publication_date" content="2024-09-26" />
   <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T18:16:49+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T18:16:49+00:00" />
+  <meta name="dc.modified" content="2024-09-26T21:00:07+00:00" />
+  <meta property="article:modified_time" content="2024-09-26T21:00:07+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -145,9 +145,9 @@
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -171,9 +171,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://uiceds.github.io/project-team-wres/v/1332f1fe7ff0377e940a877c73a527cd19f87dfe/">permalink</a>)
+(<a href="https://uiceds.github.io/project-team-wres/v/a003cdeed7002927b21fb03079aec86a1148e433/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/uiceds/project-team-wres/tree/1332f1fe7ff0377e940a877c73a527cd19f87dfe">uiceds/project-team-wres@1332f1f</a>
+from <a href="https://github.com/uiceds/project-team-wres/tree/a003cdeed7002927b21fb03079aec86a1148e433">uiceds/project-team-wres@a003cde</a>
 on September 26, 2024.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -219,12 +219,590 @@ Jiaze Cao &lt;jiazec2@illinois.edu&gt;,
 Hsing-Yu Huang &lt;jane.roe@whatever.edu&gt;.</p>
 </div>
 <h1 class="page_break_before" id="dataset-description">Dataset Description</h1>
-<div style="text-align: justify;">
 <p>We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data<span class="citation" data-cites="kumar2024">[<a href="#ref-kumar2024" role="doc-biblioref"><strong>kumar2024?</strong></a>]</span>. The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Figure <span class="citation" data-cites="fig">[<a href="#ref-fig" role="doc-biblioref"><strong>fig?</strong></a>]</span>: Data including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 2 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <a href="https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/" class="uri">https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/</a></p>
 <p><img src="./images/FluxTowerTable.png" title="Fig1 Dataset Elements" style="width:80.0%" alt="Fig 1: Dataset Elements" />
 <img src="./images/FluxTowerTable.png" title="Data" id="fig:Data" style="width:100.0%" alt="Data Dataset" />
 <img src="./images/Variables.png" style="width:80.0%" alt="Fig 2: Variables in 2022" />
 <img src="./images/FluxTowerTable.png" title="Square image" id="fig:square-image" alt="A square image at actual size and with a bottom caption. Loaded from the latest version of image on GitHub." /></p>
+<div id="tbl:bowling-scores" class="tablenos">
+<table id="tbl:bowling-scores">
+<caption><span>Table 1:</span> A table with a variables.
+</caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Units</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TIMESTAMP</td>
+<td>TS</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>RECORD</td>
+<td>RN</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Hs</td>
+<td>W/m^2</td>
+<td>sensible heat flux</td>
+</tr>
+<tr class="even">
+<td>tau</td>
+<td>kg/(m s^2)</td>
+<td>shear stress</td>
+</tr>
+<tr class="odd">
+<td>u_star</td>
+<td>m/s</td>
+<td>friction velocity</td>
+</tr>
+<tr class="even">
+<td>Ts_stdev</td>
+<td>C</td>
+<td>instantaneous stdev of temperature</td>
+</tr>
+<tr class="odd">
+<td>Ts_Ux_cov</td>
+<td>C m/s</td>
+<td>inst. cov(temp, Ux)</td>
+</tr>
+<tr class="even">
+<td>Ts_Uy_cov</td>
+<td>C m/s</td>
+<td>inst. cov(temp, Uy)</td>
+</tr>
+<tr class="odd">
+<td>Ts_Uz_cov</td>
+<td>C m/s</td>
+<td>inst. cov(temp, Uv)</td>
+</tr>
+<tr class="even">
+<td>Ux_stdev</td>
+<td>m/s</td>
+<td>instantaneous stdev of Ux</td>
+</tr>
+<tr class="odd">
+<td>Ux_Uy_cov</td>
+<td>(m/s)^2</td>
+<td>instantaneous cov of (Ux,Uy)</td>
+</tr>
+<tr class="even">
+<td>Ux_Uz_cov</td>
+<td>(m/s)^2</td>
+<td>instantaneous cov of (Ux,Uz)</td>
+</tr>
+<tr class="odd">
+<td>Uy_stdev</td>
+<td>m/s</td>
+<td>instantaneous stdev of Uy</td>
+</tr>
+<tr class="even">
+<td>Uy_Uz_cov</td>
+<td>(m/s)^2</td>
+<td>instantaneous cov of (Uy,Uz)</td>
+</tr>
+<tr class="odd">
+<td>Uz_stdev</td>
+<td>m/s</td>
+<td>instantaneous stdev of Uz</td>
+</tr>
+<tr class="even">
+<td>wnd_spd</td>
+<td>m/s</td>
+<td>wind speed (horizontal) - different from next?</td>
+</tr>
+<tr class="odd">
+<td>rslt_wnd_spd</td>
+<td>m/s</td>
+<td>wind speed (horizontal)</td>
+</tr>
+<tr class="even">
+<td>wnd_dir_sonic</td>
+<td>degrees</td>
+<td>wind direction from CSAT3, deg from N?</td>
+</tr>
+<tr class="odd">
+<td>std_wnd_dir</td>
+<td>degrees</td>
+<td>inst. stdev of wind direction</td>
+</tr>
+<tr class="even">
+<td>wnd_dir_compass</td>
+<td>degrees</td>
+<td>wind direction from compass (from N?)</td>
+</tr>
+<tr class="odd">
+<td>Ux_Avg</td>
+<td>m/s</td>
+<td>average horiz windspeed x</td>
+</tr>
+<tr class="even">
+<td>Uy_Avg</td>
+<td>m/s</td>
+<td>average horiz windspeed y</td>
+</tr>
+<tr class="odd">
+<td>Uz_Avg</td>
+<td>m/s</td>
+<td>average vertical windspeed z</td>
+</tr>
+<tr class="even">
+<td>Ts_Avg</td>
+<td>C</td>
+<td>air temperature at 25 m</td>
+</tr>
+<tr class="odd">
+<td>sonic_azimuth</td>
+<td>degrees</td>
+<td>180 is direction is pointing - can change this value</td>
+</tr>
+<tr class="even">
+<td>sonic_samples_Tot</td>
+<td>samples</td>
+<td>10 Hz sampling rate (cycles per 15 mins = 9000)</td>
+</tr>
+<tr class="odd">
+<td>Fc_li_wpl</td>
+<td>mg/(m^2 s)</td>
+<td>carbon flux upward (+ = upward) with Webb et al Term</td>
+</tr>
+<tr class="even">
+<td>LE_li_wpl</td>
+<td>W/m^2</td>
+<td>latent heat flux with Webb et al term</td>
+</tr>
+<tr class="odd">
+<td>Hc_li</td>
+<td>W/m^2</td>
+<td>sensible heat flux</td>
+</tr>
+<tr class="even">
+<td>CO2_li_mean</td>
+<td>mg/m^3</td>
+<td>CO2 conc –&gt; need to convert to ppm units</td>
+</tr>
+<tr class="odd">
+<td>H2O_li_mean</td>
+<td>g/m^3</td>
+<td>water vapor conc at 25 m</td>
+</tr>
+<tr class="even">
+<td>amb_press_li_mean</td>
+<td>kPa</td>
+<td>air pressure at 25 m</td>
+</tr>
+<tr class="odd">
+<td>Tc_li_mean</td>
+<td>C</td>
+<td>CSAT air temperature at 25 m</td>
+</tr>
+<tr class="even">
+<td>rho_a_li_mean</td>
+<td>kg/m^3</td>
+<td>density of air with water vapor</td>
+</tr>
+<tr class="odd">
+<td>Fc_li_irga</td>
+<td>mg/(m^2 s)</td>
+<td>carbon flux without Webb et al. Term</td>
+</tr>
+<tr class="even">
+<td>LE_li_irga</td>
+<td>W/m^2</td>
+<td>latent heat flux without Webb et al. Term</td>
+</tr>
+<tr class="odd">
+<td>irga_li_samples_Tot</td>
+<td>samples</td>
+<td>should be around 60 - quality indicator of LiCor</td>
+</tr>
+<tr class="even">
+<td>Precip_Tot</td>
+<td>mm</td>
+<td>rainfall</td>
+</tr>
+<tr class="odd">
+<td>T_tmpr_rh_mean</td>
+<td>C</td>
+<td>air temperature at 25 m</td>
+</tr>
+<tr class="even">
+<td>e_tmpr_rh_mean</td>
+<td>kPa</td>
+<td>vapor pressure at 25 m</td>
+</tr>
+<tr class="odd">
+<td>e_sat_tmpr_rh_mean</td>
+<td>kPa</td>
+<td>saturated vapor pressure at 25 m</td>
+</tr>
+<tr class="even">
+<td>H2O_tmpr_rh_mean</td>
+<td>g/m^3</td>
+<td>water vapor conc at 25 m</td>
+</tr>
+<tr class="odd">
+<td>RH_tmpr_rh_mean</td>
+<td>%</td>
+<td>Relative Humidity at 25 m (e/e_sat)</td>
+</tr>
+<tr class="even">
+<td>rho_a_tmpr_rh_mean</td>
+<td>kg/m^3</td>
+<td>air density</td>
+</tr>
+<tr class="odd">
+<td>slowsequence_1_Tot</td>
+<td>samples</td>
+<td>cycles per 15 mins - scanning every 10 secs</td>
+</tr>
+<tr class="even">
+<td>CS655_Wcr_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>soil water content</td>
+</tr>
+<tr class="odd">
+<td>CS655_Ec_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="even">
+<td>CS655_Tmpr_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="odd">
+<td>mean_wind_speed</td>
+<td>m/s</td>
+<td>wind speed at 10 m height…not average?</td>
+</tr>
+<tr class="even">
+<td>mean_wind_direction</td>
+<td>Deg</td>
+<td>wind direction</td>
+</tr>
+<tr class="odd">
+<td>std_wind_dir</td>
+<td>Deg</td>
+<td>mean wind vector stdev of direction</td>
+</tr>
+<tr class="even">
+<td>NDVI_Avg</td>
+<td></td>
+<td>Normalized Difference Vegetation Index</td>
+</tr>
+<tr class="odd">
+<td>NDVIUpRed_Avg</td>
+<td>W/m^2 nm</td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td>NDVIUpNIR_Avg</td>
+<td>W/m^2 nm</td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td>NDVIIndUp</td>
+<td></td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td>NDVIDownRed_Avg</td>
+<td>W/m^2 nm</td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td>NDVIDownNIR_Avg</td>
+<td>W/m^2 nm</td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td>NDVIIndDown</td>
+<td></td>
+<td>NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td>PRI_Avg</td>
+<td></td>
+<td>Photochemical Reflectance Index</td>
+</tr>
+<tr class="even">
+<td>PRIUp531_Avg</td>
+<td>W/m^2 nm</td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td>PRIUp570_Avg</td>
+<td>W/m^2 nm</td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td>PRIIndUp</td>
+<td></td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td>PRIDown531_Avg</td>
+<td>W/m^2 nm</td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td>PRIDown570_Avg</td>
+<td>W/m^2 nm</td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td>PRIIndDown</td>
+<td></td>
+<td>PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_5cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_5cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_5cm_Avg</td>
+<td>dS/m</td>
+<td>soil electrical conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_5cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_15cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_15cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_15cm_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_15cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_30cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_30cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_30cm_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_30cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_50cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_50cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_50cm_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_50cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_100cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_100cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_100cm_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_100cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>D5TE_VWC_200cm_Avg</td>
+<td>m<sup>3/m</sup>3</td>
+<td>volumetric water content</td>
+</tr>
+<tr class="odd">
+<td>D5TE_P_200cm_Avg</td>
+<td></td>
+<td>bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td>D5TE_EC_200cm_Avg</td>
+<td>dS/m</td>
+<td>soil conductivity</td>
+</tr>
+<tr class="odd">
+<td>D5TE_T_200cm_Avg</td>
+<td>Deg C</td>
+<td>soil temperature</td>
+</tr>
+<tr class="even">
+<td>slowsequence_2_Tot</td>
+<td>samples</td>
+<td>cyles - 1 minute loops (number times scanned)</td>
+</tr>
+<tr class="odd">
+<td>SB121TempC_Avg</td>
+<td>Deg C</td>
+<td>SB = sensor body, temp of body of sensor</td>
+</tr>
+<tr class="even">
+<td>Targ121TempC_Avg</td>
+<td>Deg C</td>
+<td>surface temperature</td>
+</tr>
+<tr class="odd">
+<td>Targ121mV_Avg</td>
+<td>Deg C</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>SB1H1TempC_Avg</td>
+<td>Deg C</td>
+<td>SB = sensor body, temp of body of sensor</td>
+</tr>
+<tr class="odd">
+<td>Targ1H1TempC_Avg</td>
+<td>Deg C</td>
+<td>surface temperature</td>
+</tr>
+<tr class="even">
+<td>Targ1H1mV_Avg</td>
+<td>Deg C</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>short_up_Avg</td>
+<td>W/m^2</td>
+<td>Incoming shortwave radiation detected by the upward facing instrument</td>
+</tr>
+<tr class="even">
+<td>short_dn_Avg</td>
+<td>W/m^2</td>
+<td>Outgoing shortwave radiation detected by the downward facing instrument</td>
+</tr>
+<tr class="odd">
+<td>long_up_Avg</td>
+<td>W/m^2</td>
+<td>incoming longwave radiation detected by upward facing instrument</td>
+</tr>
+<tr class="even">
+<td>long_dn_Avg</td>
+<td>W/m^2</td>
+<td>outgoing longwave radiation detected by downward facing instrument</td>
+</tr>
+<tr class="odd">
+<td>cnr4_T_C_Avg</td>
+<td>deg_C</td>
+<td>temperature of sensor</td>
+</tr>
+<tr class="even">
+<td>cnr4_T_K_Avg</td>
+<td>K</td>
+<td>temperature of sensor in Kelvin</td>
+</tr>
+<tr class="odd">
+<td>long_up_corr_Avg</td>
+<td>W/m^2</td>
+<td>Incoming longwave radiation detected by the upward facing instrument, corrected</td>
+</tr>
+<tr class="even">
+<td>long_dn_corr_Avg</td>
+<td>W/m^2</td>
+<td>Outgoing longwave radiation detected by the downward facing instrument , corrected</td>
+</tr>
+<tr class="odd">
+<td>Rs_net_Avg</td>
+<td>W/m^2</td>
+<td>Shortwave net radiation (Rshort_up - Rshort_down)</td>
+</tr>
+<tr class="even">
+<td>Rl_net_Avg</td>
+<td>W/m^2</td>
+<td>Longwave net radiation (Rlong_up - Rlong_down)</td>
+</tr>
+<tr class="odd">
+<td>albedo_Avg</td>
+<td>W/m^2</td>
+<td>Albedo</td>
+</tr>
+<tr class="even">
+<td>Rn_Avg</td>
+<td>W/m^2</td>
+<td>Net radiation (Rs_net + Rl_net)</td>
+</tr>
+<tr class="odd">
+<td>SQ_110_Avg</td>
+<td>Œºmol m-2s-1</td>
+<td>PAR (photosynthetically active radiation)</td>
+</tr>
+<tr class="even">
+<td>shf_Avg(1)</td>
+<td>W/m^2</td>
+<td>Ground heat flux</td>
+</tr>
+<tr class="odd">
+<td>shf_Avg(2)</td>
+<td>W/m^2</td>
+<td>Ground heat flux</td>
+</tr>
+<tr class="even">
+<td>slowsequence_3_Tot</td>
+<td>samples</td>
+<td>number of times scanned in 15 mins (once per min)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="proposal">Proposal</h1>
 <h2 id="background">Background</h2>
@@ -323,7 +901,7 @@ Manubot plugins provide easier, more convenient visualization of and navigation 
 <p>Figure <a href="#fig:wide-image">2</a></p>
 <p>Figure <a href="#fig:tall-image">3</a></p>
 <p>Figure <a href="#fig:vector-image">4</a></p>
-<p>Table <a href="#tbl:bowling-scores">1</a></p>
+<p>Table <a href="#tbl:bowling-scores">2</a></p>
 <p>Equation <a href="#eq:regular-equation">1</a></p>
 <p>Equation <a href="#eq:long-equation">2</a></p>
 <h2 id="quotes-and-code">Quotes and code</h2>
@@ -382,7 +960,7 @@ Note that if you want to export to Word (<code>.docx</code>), you need to downlo
 <h2 id="tables">Tables</h2>
 <div id="tbl:bowling-scores" class="tablenos">
 <table id="tbl:bowling-scores">
-<caption><span>Table 1:</span> A table with a top caption and specified relative column widths.
+<caption><span>Table 2:</span> A table with a top caption and specified relative column widths.
 </caption>
 <colgroup>
 <col style="width: 23%" />
@@ -427,7 +1005,7 @@ Note that if you want to export to Word (<code>.docx</code>), you need to downlo
 </div>
 <div id="tbl:constant-digits" class="tablenos">
 <table id="tbl:constant-digits">
-<caption><span>Table 2:</span> A table too wide to fit within page.
+<caption><span>Table 3:</span> A table too wide to fit within page.
 </caption>
 <colgroup>
 <col style="width: 5%" />
@@ -463,9 +1041,9 @@ Note that if you want to export to Word (<code>.docx</code>), you need to downlo
 </tbody>
 </table>
 </div>
-<div id="tbl:cc523e4c-48a4-4a17-a3a6-02fb0d5b7c2f" class="tablenos">
+<div id="tbl:2eb4e1cc-9809-46fa-b832-09c81bef701a" class="tablenos">
 <table id="tbl:">
-<caption><span>Table 3:</span> A table with merged cells using the <code>attributes</code> plugin.
+<caption><span>Table 4:</span> A table with merged cells using the <code>attributes</code> plugin.
 </caption>
 <thead>
 <tr class="header">
