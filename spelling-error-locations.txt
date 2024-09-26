@@ -11,6 +11,7 @@ content/01.Proposal.md:13:dataset
 content/01.Proposal.md:13:dataset
 content/01.Proposal.md:13:Dataset
 content/01.Proposal.md:13:hydrological
+content/01.Proposal.md:13:hydroshare
 content/01.Proposal.md:13:Kumar
 content/01.Proposal.md:13:Piatt
 content/01.Proposal.md:27:stdev
@@ -105,6 +106,10 @@ content/01.Proposal.md:166:datasets
 content/01.Proposal.md:166:LSTM
 content/01.Proposal.md:166:RNN
 content/01.Proposal.md:166:RNN
+content/01.Proposal.md:169:hydroshare
+content/01.Proposal.md:171:hydroshare
+content/01.Proposal.md:171:HydroShare
+content/01.Proposal.md:171:Kumar
 content/02.delete-me.md:44:adipiscing
 content/02.delete-me.md:44:aliqua
 content/02.delete-me.md:44:amet

@@ -1,5 +1,5 @@
 adipiscing
-albedo
+Albedo
 aliqua
 aliquip
 amb
@@ -21,7 +21,7 @@ CSAT
 CSV
 culpa
 cupidatat
-dataset
+Dataset
 datasets
 deserunt
 dn
@@ -32,7 +32,7 @@ eiusmod
 elit
 enim
 esse
-Evapotranspiration
+evapotranspiration
 Excepteur
 exercitation
 Fc
@@ -41,6 +41,7 @@ Hc
 horiz
 Hsing
 hydrological
+HydroShare
 incididunt
 ipsum
 irga
