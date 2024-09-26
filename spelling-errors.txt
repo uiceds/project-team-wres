@@ -1,5 +1,5 @@
 adipiscing
-albedo
+Albedo
 aliqua
 aliquip
 amb
@@ -21,7 +21,7 @@ CSAT
 CSV
 culpa
 cupidatat
-dataset
+Dataset
 datasets
 deserunt
 dn
