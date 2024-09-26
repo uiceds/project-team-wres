@@ -26,7 +26,6 @@ datasets
 deserunt
 dn
 dolore
-dS
 Duis
 ecohydrological
 eiusmod
@@ -48,12 +47,11 @@ irga
 irure
 Jiaze
 JiazeCLeo
-kPa
 labore
 laboris
 laborum
 LiCor
-Longwave
+longwave
 Lorem
 LSTM
 magna
