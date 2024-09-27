@@ -106,10 +106,9 @@ content/01.Proposal.md:166:datasets
 content/01.Proposal.md:166:LSTM
 content/01.Proposal.md:166:RNN
 content/01.Proposal.md:166:RNN
-content/01.Proposal.md:169:hydroshare
-content/01.Proposal.md:173:hydroshare
-content/01.Proposal.md:173:HydroShare
-content/01.Proposal.md:173:Kumar
+content/01.Proposal.md:171:hydroshare
+content/01.Proposal.md:171:HydroShare
+content/01.Proposal.md:171:Kumar
 content/02.delete-me.md:44:adipiscing
 content/02.delete-me.md:44:aliqua
 content/02.delete-me.md:44:amet
