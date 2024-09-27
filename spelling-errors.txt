@@ -1,4 +1,4 @@
-albedo
+Albedo
 amb
 Cao
 Champaign
@@ -9,7 +9,7 @@ cov
 covid
 CSAT
 CSV
-dataset
+Dataset
 datasets
 dn
 ecohydrological
