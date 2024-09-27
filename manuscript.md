@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-09-27" />
   <meta name="citation_publication_date" content="2024-09-27" />
   <meta property="article:published_time" content="2024-09-27" />
-  <meta name="dc.modified" content="2024-09-27T03:45:50+00:00" />
-  <meta property="article:modified_time" content="2024-09-27T03:45:50+00:00" />
+  <meta name="dc.modified" content="2024-09-27T03:52:30+00:00" />
+  <meta property="article:modified_time" content="2024-09-27T03:52:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/ab64e12391a2716647bfc97424064059e10cfaa1/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ab64e12391a2716647bfc97424064059e10cfaa1/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ab64e12391a2716647bfc97424064059e10cfaa1/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/ab64e12391a2716647bfc97424064059e10cfaa1/))
+([permalink](https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/))
 was automatically generated
-from [uiceds/project-team-wres@ab64e12](https://github.com/uiceds/project-team-wres/tree/ab64e12391a2716647bfc97424064059e10cfaa1)
+from [uiceds/project-team-wres@6480885](https://github.com/uiceds/project-team-wres/tree/64808856989754d604733360b97d5be3436c7ec9)
 on September 27, 2024.
 </em></small>
 
@@ -112,7 +112,6 @@ on September 27, 2024.
     <br>
   <small>
      Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
-     · Funded by Grant
   </small>
 
 + **Hsing-Yu Huang**
@@ -245,7 +244,7 @@ We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data(Kumar & Sar
 | D5TE_P_200cm_Avg    |              | bulk dielectric permittivity                                                                    |
 | D5TE_EC_200cm_Avg   | $dS/m$         | soil conductivity                                                                               |
 | D5TE_T_200cm_Avg    | $^\circ C$            | soil temperature                                                                                |
-| slowsequence_2_Tot  | samples      | cycles - 1 minute loops (number of times scanned)                                               |
+| slowsequence_2_Tot  | $samples$      | cycles - 1 minute loops (number of times scanned)                                               |
 | SB121TempC_Avg      | $^\circ C$            | SB = sensor body, temp of body of sensor                                                       |
 | Targ121TempC_Avg    | $^\circ C$            | surface temperature                                                                            |
 | Targ121mV_Avg       | $^\circ C$            |                                                                                                 |
@@ -264,7 +263,7 @@ We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data(Kumar & Sar
 | Rl_net_Avg          | $W/m^2$        | Longwave net radiation (Rlong_up - Rlong_down)                                                 |
 | albedo_Avg          | $W/m^2$        | Albedo                                                                                          |
 | Rn_Avg              | $W/m^2$        | Net radiation (Rs_net + Rl_net)                                                                 |
-| SQ_110_Avg          | $\mu \mathrm{mol}$ photons $\mathrm{m}^{-2} \mathrm{~s}^{-1}$| PAR (photosynthetically active radiation)                                  |
+| SQ_110_Avg          | $\mu \mathrm{mol}$ photons $/(m^2 \cdot s)$| PAR (photosynthetically active radiation)                                  |
 | shf_Avg(1)          | $W/m^2$        | Ground heat flux                                                                                |
 | shf_Avg(2)          | $W/m^2$        | Ground heat flux                                                                                |
 | slowsequence_3_Tot  | $samples$      | number of times scanned in 15 mins (once per min)                                               |

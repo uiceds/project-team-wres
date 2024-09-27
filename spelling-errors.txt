@@ -1,4 +1,4 @@
-Albedo
+albedo
 amb
 Cao
 Champaign
@@ -25,7 +25,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-Longwave
+longwave
 LSTM
 mins
 Monteith
