@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-26'
+date-meta: '2024-09-27'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-26" />
-  <meta name="citation_publication_date" content="2024-09-26" />
-  <meta property="article:published_time" content="2024-09-26" />
-  <meta name="dc.modified" content="2024-09-26T22:57:34+00:00" />
-  <meta property="article:modified_time" content="2024-09-26T22:57:34+00:00" />
+  <meta name="dc.date" content="2024-09-27" />
+  <meta name="citation_publication_date" content="2024-09-27" />
+  <meta property="article:published_time" content="2024-09-27" />
+  <meta name="dc.modified" content="2024-09-27T03:29:15+00:00" />
+  <meta property="article:modified_time" content="2024-09-27T03:29:15+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/b627cc37e6059f4ff7b0a0cfd1eebb0c7fb2ede8/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/b627cc37e6059f4ff7b0a0cfd1eebb0c7fb2ede8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/b627cc37e6059f4ff7b0a0cfd1eebb0c7fb2ede8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/74d8c6dd58ce7ccd1f7a3815e4629634c377561e/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/74d8c6dd58ce7ccd1f7a3815e4629634c377561e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/74d8c6dd58ce7ccd1f7a3815e4629634c377561e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/b627cc37e6059f4ff7b0a0cfd1eebb0c7fb2ede8/))
+([permalink](https://uiceds.github.io/project-team-wres/v/74d8c6dd58ce7ccd1f7a3815e4629634c377561e/))
 was automatically generated
-from [uiceds/project-team-wres@b627cc3](https://github.com/uiceds/project-team-wres/tree/b627cc37e6059f4ff7b0a0cfd1eebb0c7fb2ede8)
-on September 26, 2024.
+from [uiceds/project-team-wres@74d8c6d](https://github.com/uiceds/project-team-wres/tree/74d8c6dd58ce7ccd1f7a3815e4629634c377561e)
+on September 27, 2024.
 </em></small>
 
 
@@ -304,6 +304,8 @@ Once we confirm the input variables, we plan to use RNN or LSTM forecast models 
 </p>
 
 [Source](https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/)
+
+## References
 
 Kumar, P., & Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668
 
@@ -602,10 +604,4 @@ useful for *important information* - [manubot.org](https://manubot.org/)
 <i class="fas fa-ban fa-lg"></i> **Light Red Banner**<br>
 useful for *warnings* - [manubot.org](https://manubot.org/)
 ]{.banner .lightred}
-
-
-## References {.page_break_before}
-
-<!-- Explicitly insert bibliography here -->
-<div id="refs"></div>
 

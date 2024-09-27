@@ -21,7 +21,7 @@ CSAT
 CSV
 culpa
 cupidatat
-Dataset
+dataset
 datasets
 deserunt
 dn
@@ -53,7 +53,7 @@ labore
 laboris
 laborum
 LiCor
-longwave
+Longwave
 Lorem
 LSTM
 magna
@@ -105,7 +105,7 @@ sunt
 Targ
 TempC
 tempor
-tmpr
+Tmpr
 ullamco
 updward
 Urbana
