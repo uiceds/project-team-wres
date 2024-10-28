@@ -1,4 +1,4 @@
-Albedo
+albedo
 amb
 Cao
 Champaign
@@ -9,7 +9,7 @@ cov
 covid
 CSAT
 CSV
-Dataset
+dataset
 datasets
 dn
 ecohydrological
@@ -20,6 +20,7 @@ horiz
 Hsing
 hydrological
 HydroShare
+hyperparameter
 irga
 Jiaze
 JiazeCLeo
@@ -29,6 +30,7 @@ longwave
 LSTM
 mins
 Monteith
+MSE
 mV
 NDVI
 NDVIDownNIR
