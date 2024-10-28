@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-09-27'
+date-meta: '2024-10-28'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-09-27" />
-  <meta name="citation_publication_date" content="2024-09-27" />
-  <meta property="article:published_time" content="2024-09-27" />
-  <meta name="dc.modified" content="2024-09-27T03:52:30+00:00" />
-  <meta property="article:modified_time" content="2024-09-27T03:52:30+00:00" />
+  <meta name="dc.date" content="2024-10-28" />
+  <meta name="citation_publication_date" content="2024-10-28" />
+  <meta property="article:published_time" content="2024-10-28" />
+  <meta name="dc.modified" content="2024-10-28T03:02:39+00:00" />
+  <meta property="article:modified_time" content="2024-10-28T03:02:39+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/8168e542d34c5036e741e7a372c75b89674d33d1/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/8168e542d34c5036e741e7a372c75b89674d33d1/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/8168e542d34c5036e741e7a372c75b89674d33d1/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/64808856989754d604733360b97d5be3436c7ec9/))
+([permalink](https://uiceds.github.io/project-team-wres/v/8168e542d34c5036e741e7a372c75b89674d33d1/))
 was automatically generated
-from [uiceds/project-team-wres@6480885](https://github.com/uiceds/project-team-wres/tree/64808856989754d604733360b97d5be3436c7ec9)
-on September 27, 2024.
+from [uiceds/project-team-wres@8168e54](https://github.com/uiceds/project-team-wres/tree/8168e542d34c5036e741e7a372c75b89674d33d1)
+on October 28, 2024.
 </em></small>
 
 
@@ -289,10 +289,10 @@ Figure 2 shows the latent heat data gap in 2020 due to covid-19 and overhaul of 
 ![Fig 2: Data Gap in 2020](./images/LatentHeatGap.png){width=80%}
 
 
-## Step 1: Regression analysis
+## Step 1: Exploratory Data Analysis
 
 <p style="text-align: justify;">
-We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct regression analysis to find out variables highly correlated to latent heat. These variables will be input variables in deep learning model.
+We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct regression analysis to find out variables highly correlated to latent heat. These variables will be input variables in deep learning model. To simplify the process of figuring out how these factors interact and vary across different times of the day and seasons, we focus on the first five data of main variables first. The main variables include Timestamp, Observed latent heat flux (LE_Obs), Net radiation (Rn), Temperature in degrees Celsius (T), Air_Pressure and etc. Table 2 shows the first 5 data of each variable as follows:
 </p>
 
 
@@ -301,6 +301,31 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <p style="text-align: justify;">
 Once we confirm the input variables, we plan to use RNN or LSTM forecast models to predict latent heat in 2020. All the input are divided into training datasets and the validation datasets. After the RNN model is trained, the validation datasets are used to verify the model. At last, the missing data are generated by the model.  
 </p>
+
+![Fig 3: LE_Obs over time for the year 2016](./images/Project 2.png){width=80%}
+
+|                        | LE_Obs   | Rn       | T        | Air_Pressure | G        | VWC_30cm | VWC30cm_diff | Sensible_H | Relative_Humidity | Vapor_pressure | Saturated_Vapor_Pressure |
+|------------------------|----------|----------|----------|--------------|----------|----------|--------------|------------|-------------------|----------------|--------------------------|
+| **LE_Obs**              | 1.000000 | 0.740001 | 0.369080 | -0.066791    | 0.419244 | -0.023582| -0.037540    | 0.390064   | -0.288203         | 0.278373       | 0.425352                  |
+| **Rn**                  | 0.740001 | 1.000000 | 0.354361 | 0.018251     | 0.412415 | -0.040560| -0.059480    | 0.642862   | -0.416080         | 0.198780       | 0.407578                  |
+| **T**                   | 0.369080 | 0.354361 | 1.000000 | -0.365036    | 0.642930 | -0.166246| -0.001006    | 0.171602   | -0.262734         | 0.866856       | 0.959008                  |
+| **Air_Pressure**        | -0.066791| 0.018251 | -0.365036| 1.000000     | -0.313725| -0.071028| -0.020830    | 0.103935   | -0.167686         | -0.348514      | -0.289969                 |
+| **G**                   | 0.419244 | 0.412415 | 0.642930 | -0.313725    | 1.000000 | -0.024829| 0.058169     | 0.247713   | -0.382420         | 0.473200       | 0.689871                  |
+| **VWC_30cm**            | -0.023582| -0.040560| -0.166246| -0.071028    | -0.024829| 1.000000 | -0.043053    | -0.074545  | 0.144828          | -0.110267      | -0.177017                 |
+| **VWC30cm_diff**        | -0.037540| -0.059480| -0.001006| -0.020830    | 0.058169 | -0.043053| 1.000000     | -0.049210  | -0.000121         | -0.009242      | -0.003133                 |
+| **Sensible_H**          | 0.390064 | 0.642862 | 0.171602 | 0.103935     | 0.247713 | -0.074545| -0.049210    | 1.000000   | -0.395557         | 0.011293       | 0.210560                  |
+| **Relative_Humidity**   | -0.288203| -0.416080| -0.262734| -0.167686    | -0.382420| 0.144828 | -0.000121    | -0.395557  | 1.000000          | 0.149367       | -0.311806                 |
+| **Vapor_pressure**      | 0.278373 | 0.198780 | 0.866856 | -0.348514    | 0.473200 | -0.110267| -0.009242    | 0.011293   | 0.149367          | 1.000000       | 0.863301                  |
+| **Saturated_Vapor_Pressure** | 0.425352 | 0.407578 | 0.959008 | -0.289969 | 0.689871 | -0.177017| -0.003133    | 0.210560   | -0.311806         | 0.863301       | 1.000000                  |
+Table: Correlation matrix
+{#tbl:bowling-scores}
+
+|                | LE_Obs      | Rn          | T           | Air_Pressure | G           | VWC_30cm   | VWC30cm_diff | Sensible_H | Relative_Humidity | Vapor_pressure | Saturated_Vapor_Pressure |
+|----------------|-------------|-------------|-------------|--------------|-------------|------------|--------------|------------|-------------------|----------------|--------------------------|
+| **mean**       | 53.976825   | 109.999297  | 12.524988   | 98.813399    | -0.159915   | 0.308942   | -0.000015    | 13.962563 | 71.872526         | 1.218452       | 1.783960                  |
+| **std**        | 94.877870   | 227.819402  | 11.105505   | 0.670804     | 16.345332   | 0.033217   | 0.000257     | 72.768378 | 17.570532         | 0.743564       | 1.113461                  |
+Table: Statistics of variables in the dataset
+{#tbl:bowling-scores}
 
 ## References
 
