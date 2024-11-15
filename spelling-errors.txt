@@ -13,7 +13,7 @@ dataset
 datasets
 dn
 ecohydrological
-evapotranspiration
+Evapotranspiration
 Fc
 Hc
 horiz
@@ -26,7 +26,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-longwave
+Longwave
 LSTM
 mins
 Monteith

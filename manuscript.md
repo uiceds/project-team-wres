@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-10-28'
+date-meta: '2024-11-15'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-10-28" />
-  <meta name="citation_publication_date" content="2024-10-28" />
-  <meta property="article:published_time" content="2024-10-28" />
-  <meta name="dc.modified" content="2024-10-28T03:13:26+00:00" />
-  <meta property="article:modified_time" content="2024-10-28T03:13:26+00:00" />
+  <meta name="dc.date" content="2024-11-15" />
+  <meta name="citation_publication_date" content="2024-11-15" />
+  <meta property="article:published_time" content="2024-11-15" />
+  <meta name="dc.modified" content="2024-11-15T17:59:48+00:00" />
+  <meta property="article:modified_time" content="2024-11-15T17:59:48+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/38bac408b8b9c60b95919dcdf6817eaa62bb0d00/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/38bac408b8b9c60b95919dcdf6817eaa62bb0d00/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/38bac408b8b9c60b95919dcdf6817eaa62bb0d00/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/38bac408b8b9c60b95919dcdf6817eaa62bb0d00/))
+([permalink](https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/))
 was automatically generated
-from [uiceds/project-team-wres@38bac40](https://github.com/uiceds/project-team-wres/tree/38bac408b8b9c60b95919dcdf6817eaa62bb0d00)
-on October 28, 2024.
+from [uiceds/project-team-wres@ee92e82](https://github.com/uiceds/project-team-wres/tree/ee92e8263f075736b6b191ce2f665f3aab78292a)
+on November 15, 2024.
 </em></small>
 
 
@@ -345,7 +345,19 @@ Table: Correlation matrix
 Table: Statistics of variables in the dataset
 {#tbl:bowling-scores}
 
+# Predictive Modeling
 
+In this section, we propose to use Machine Learning methods to simulate target variable latent heat. Source variables are shown in the above table. Specifically, our methods include regression, single layer neural network, multi layer neural network, CNN network and LSTM. Figures and results are shown in following content including the scatter, time series plot, $R^2$, $MSE$ value between observed and simulated latent heat.
+
+## Regression
+<p style="text-align: justify;">
+Based on gradient descent, we look for a vector $beta$ which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,
+$L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C$ diff $+\beta_7 H+\beta_8 R H+\beta_9 V P$
+
+At beginning, we didn't apply any processing on our data and we input the original data directly.
+![Fig 4: Data Gap in 2020](./images/Regression Time Plot.png){width=80%}
+![Fig 5: Data Gap in 2020](./images/Regression Scatter Plot.png){width=80%}
+</p>
 ## References
 
 Kumar, P., & Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668

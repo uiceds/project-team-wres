@@ -113,6 +113,8 @@ content/01.Proposal.md:172:dataset
 content/01.Proposal.md:172:hyperparameter
 content/01.Proposal.md:186:Dataset
 content/01.Proposal.md:209:dataset
-content/01.Proposal.md:215:hydroshare
-content/01.Proposal.md:215:HydroShare
-content/01.Proposal.md:215:Kumar
+content/01.Proposal.md:214:LSTM
+content/01.Proposal.md:214:MSE
+content/01.Proposal.md:227:hydroshare
+content/01.Proposal.md:227:HydroShare
+content/01.Proposal.md:227:Kumar
