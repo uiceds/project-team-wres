@@ -29,7 +29,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-Longwave
+longwave
 LSTM
 mins
 Monteith

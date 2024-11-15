@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-11-15" />
   <meta name="citation_publication_date" content="2024-11-15" />
   <meta property="article:published_time" content="2024-11-15" />
-  <meta name="dc.modified" content="2024-11-15T23:22:52+00:00" />
-  <meta property="article:modified_time" content="2024-11-15T23:22:52+00:00" />
+  <meta name="dc.modified" content="2024-11-15T23:30:31+00:00" />
+  <meta property="article:modified_time" content="2024-11-15T23:30:31+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/))
+([permalink](https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/))
 was automatically generated
-from [uiceds/project-team-wres@9a08c6a](https://github.com/uiceds/project-team-wres/tree/9a08c6a29ad6653d21adde0160f54ee432396423)
+from [uiceds/project-team-wres@646ae73](https://github.com/uiceds/project-team-wres/tree/646ae73339df27b606afac64e3bdb233d330d167)
 on November 15, 2024.
 </em></small>
 
@@ -351,7 +351,7 @@ In this section, we propose to use Machine Learning methods to simulate target v
 
 ## Regression
 ### Basic Regression without processing
-<p style="text-align: justify;">
+
 Based on gradient descent, we look for a vector $beta$ which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,
 $L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C$ diff $+\beta_7 H+\beta_8 R H+\beta_9 V P$
 
@@ -360,17 +360,21 @@ At beginning, we didn't apply any processing on our data and we input the origin
 ![Fig 5: Scatter plot based on basic regression](./images/Regression Scatter Plot.png){width=80%}
 
 Based on the regression result, we obtain the following regression equation to obtain latent heat.
-$\begin{aligned} L E=35.2 R n- & 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} \+11.07 \mathrm{VP} \mid\end{aligned}$
+
+$\begin{aligned} L E=35.2 R n- & 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}$
 
 Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.
+
 $L E=R_n-G-H$
+
 ### Normalized Regression
 In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.
 ![Fig 6: Time series plot based on normalized regression](./images/Normalized Regression Time Plot.png){width=80%}
 ![Fig 7: Scatter plot based on normalized regression](./images/Normalized Regression Scatter Plot.png){width=80%}
 
 Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 70% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is
-$L E=189.29 R n+4.91 T-15.69 \mathrm{~Pa}-37.38 \mathrm{G}+29.35 \mathrm{VWC}+40.51 \mathrm{VWC}$ diff $-122.88 \mathrm{H}+27.49 \mathrm{R} / \mathrm{H}+37.36 \mathrm{VP}$
+
+$L E=189.29 R n+4.91 T-15.69 \mathrm{~Pa}-37.38 \mathrm{G}+29.35 \mathrm{VWC}+40.51 \mathrm{VWC}\text { diff }-122.88 \mathrm{H}+27.49 \mathrm{RH} +37.36 \mathrm{VP}\mid\end{aligned}$
 
 ### PCA Regression
 The last PCA regression model aims to slove the generalization difficulty. We conduct PCA analysis first to obtain three dominant component. Then we apply the regression analysis based on these three components. The learning steps and learning rate is 10000 and 0.001. Figure 9 illustrate PCA regression can obtain similar trend as observed latent heat value. However, the simulated model lack the ability to capture the extreme large and small value. Thus, the predictive performance is lower than previous normalized regression model based on the error metrics. 
@@ -393,7 +397,7 @@ The quadra layer neural network has four layers of network with hidden size 20, 
 
 ## CNN
 ## LSTM
-</p>
+
 ## References
 
 Kumar, P., & Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668
