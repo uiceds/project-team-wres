@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-11-15" />
   <meta name="citation_publication_date" content="2024-11-15" />
   <meta property="article:published_time" content="2024-11-15" />
-  <meta name="dc.modified" content="2024-11-15T23:30:31+00:00" />
-  <meta property="article:modified_time" content="2024-11-15T23:30:31+00:00" />
+  <meta name="dc.modified" content="2024-11-15T23:36:30+00:00" />
+  <meta property="article:modified_time" content="2024-11-15T23:36:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/646ae73339df27b606afac64e3bdb233d330d167/))
+([permalink](https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/))
 was automatically generated
-from [uiceds/project-team-wres@646ae73](https://github.com/uiceds/project-team-wres/tree/646ae73339df27b606afac64e3bdb233d330d167)
+from [uiceds/project-team-wres@6c8ef32](https://github.com/uiceds/project-team-wres/tree/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7)
 on November 15, 2024.
 </em></small>
 
@@ -307,7 +307,7 @@ Once we confirm the input variables, we plan to use RNN or LSTM forecast models 
 4. **Evaluation Metric**: Use Mean Squared Error (MSE) to evaluate the model’s performance, as it penalizes larger errors and is commonly used in regression tasks.
 5. **Training Plan**: Divide the dataset into training, validation, and test sets, ensuring that the test set consists of the most recent data. Train the model on scaled data to improve performance and use the validation set for hyperparameter tuning.
   
-</p>
+
 
 
 ![Fig 3: LE_Obs over time for the year 2016](./images/Project 2.png){width=80%}
@@ -397,7 +397,7 @@ The quadra layer neural network has four layers of network with hidden size 20, 
 
 ## CNN
 ## LSTM
-
+</p>
 ## References
 
 Kumar, P., & Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668
