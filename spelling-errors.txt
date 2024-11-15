@@ -5,6 +5,8 @@ Champaign
 clarawan
 cnr
 conc
+contant
+conver
 cov
 covid
 CSAT
@@ -13,6 +15,7 @@ dataset
 datasets
 dn
 ecohydrological
+eqaution
 Evapotranspiration
 Fc
 Hc
@@ -40,6 +43,7 @@ NDVIIndUp
 NDVIUpNIR
 NDVIUpRed
 NIR
+PCA
 Photochemical
 photosynthetically
 Piatt
@@ -49,16 +53,21 @@ PRIDown
 PRIIndDown
 PRIIndUp
 PRIUp
+quadra
 Reflectance
 Rl
 Rlong
+RMSE
 RNN
 Rshort
 rslt
 satelite
+seansonal
 shf
+slove
 slowsequence
 spd
+squred
 stdev
 Targ
 TempC

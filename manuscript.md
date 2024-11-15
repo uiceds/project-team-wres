@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-11-15" />
   <meta name="citation_publication_date" content="2024-11-15" />
   <meta property="article:published_time" content="2024-11-15" />
-  <meta name="dc.modified" content="2024-11-15T17:59:48+00:00" />
-  <meta property="article:modified_time" content="2024-11-15T17:59:48+00:00" />
+  <meta name="dc.modified" content="2024-11-15T23:22:52+00:00" />
+  <meta property="article:modified_time" content="2024-11-15T23:22:52+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/ee92e8263f075736b6b191ce2f665f3aab78292a/))
+([permalink](https://uiceds.github.io/project-team-wres/v/9a08c6a29ad6653d21adde0160f54ee432396423/))
 was automatically generated
-from [uiceds/project-team-wres@ee92e82](https://github.com/uiceds/project-team-wres/tree/ee92e8263f075736b6b191ce2f665f3aab78292a)
+from [uiceds/project-team-wres@9a08c6a](https://github.com/uiceds/project-team-wres/tree/9a08c6a29ad6653d21adde0160f54ee432396423)
 on November 15, 2024.
 </em></small>
 
@@ -350,13 +350,49 @@ Table: Statistics of variables in the dataset
 In this section, we propose to use Machine Learning methods to simulate target variable latent heat. Source variables are shown in the above table. Specifically, our methods include regression, single layer neural network, multi layer neural network, CNN network and LSTM. Figures and results are shown in following content including the scatter, time series plot, $R^2$, $MSE$ value between observed and simulated latent heat.
 
 ## Regression
+### Basic Regression without processing
 <p style="text-align: justify;">
 Based on gradient descent, we look for a vector $beta$ which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,
 $L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C$ diff $+\beta_7 H+\beta_8 R H+\beta_9 V P$
 
-At beginning, we didn't apply any processing on our data and we input the original data directly.
-![Fig 4: Data Gap in 2020](./images/Regression Time Plot.png){width=80%}
-![Fig 5: Data Gap in 2020](./images/Regression Scatter Plot.png){width=80%}
+At beginning, we didn't apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.
+![Fig 4: Time series plot based on basic regression](./images/Regression Time Plot.png){width=80%}
+![Fig 5: Scatter plot based on basic regression](./images/Regression Scatter Plot.png){width=80%}
+
+Based on the regression result, we obtain the following regression equation to obtain latent heat.
+$\begin{aligned} L E=35.2 R n- & 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} \+11.07 \mathrm{VP} \mid\end{aligned}$
+
+Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.
+$L E=R_n-G-H$
+### Normalized Regression
+In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.
+![Fig 6: Time series plot based on normalized regression](./images/Normalized Regression Time Plot.png){width=80%}
+![Fig 7: Scatter plot based on normalized regression](./images/Normalized Regression Scatter Plot.png){width=80%}
+
+Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 70% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is
+$L E=189.29 R n+4.91 T-15.69 \mathrm{~Pa}-37.38 \mathrm{G}+29.35 \mathrm{VWC}+40.51 \mathrm{VWC}$ diff $-122.88 \mathrm{H}+27.49 \mathrm{R} / \mathrm{H}+37.36 \mathrm{VP}$
+
+### PCA Regression
+The last PCA regression model aims to slove the generalization difficulty. We conduct PCA analysis first to obtain three dominant component. Then we apply the regression analysis based on these three components. The learning steps and learning rate is 10000 and 0.001. Figure 9 illustrate PCA regression can obtain similar trend as observed latent heat value. However, the simulated model lack the ability to capture the extreme large and small value. Thus, the predictive performance is lower than previous normalized regression model based on the error metrics. 
+![Fig 8: Time series plot based on PCA regression](./images/PCA Regression Time Plot.png){width=80%}
+![Fig 9: Scatter plot based on PCA regression](./images/PCA Regression Scatter Plot.png){width=80%}
+
+## Neural Network
+### Single Layer Neural Network
+This section uses single layer neural network to predict latent heat. The learning steps and learning rate is 100000 and 0.01. Figures 10 and 11 demonstrate that involving contant value in model is better than previous regression models.
+![Fig 10: Time series plot based on single layer neural network](./images/Single NN Regression Time Plot.png){width=80%}
+![Fig 11: Scatter plot based on single layer neural network](./images/Single NN Regression Scatter Plot.png){width=80%}
+### Double Layer Neural Network
+We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.
+![Fig 12: Time series plot based on double layer neural network](./images/Double NN Regression Time Plot.png){width=80%}
+![Fig 13: Scatter plot based on double layer neural network](./images/Double NN Regression Scatter Plot.png){width=80%}
+### Quadra Layer Neural Network
+The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 14 and 15, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network.
+![Fig 14: Time series plot based on quadra layer neural network](./images/Quadra NN Regression Time Plot.png){width=80%}
+![Fig 15: Scatter plot based on quadra layer neural network](./images/Quadra NN Regression Scatter Plot.png){width=80%}
+
+## CNN
+## LSTM
 </p>
 ## References
 
