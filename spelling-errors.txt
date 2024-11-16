@@ -1,4 +1,4 @@
-albedo
+Albedo
 amb
 Cao
 Champaign
@@ -11,7 +11,7 @@ cov
 covid
 CSAT
 CSV
-dataset
+Dataset
 datasets
 dn
 ecohydrological
@@ -29,7 +29,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-longwave
+Longwave
 LSTM
 mins
 Monteith

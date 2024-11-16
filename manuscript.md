@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-11-16" />
   <meta name="citation_publication_date" content="2024-11-16" />
   <meta property="article:published_time" content="2024-11-16" />
-  <meta name="dc.modified" content="2024-11-16T20:37:49+00:00" />
-  <meta property="article:modified_time" content="2024-11-16T20:37:49+00:00" />
+  <meta name="dc.modified" content="2024-11-16T20:49:10+00:00" />
+  <meta property="article:modified_time" content="2024-11-16T20:49:10+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/))
+([permalink](https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/))
 was automatically generated
-from [uiceds/project-team-wres@4663532](https://github.com/uiceds/project-team-wres/tree/4663532bec8a8b54172a722358317f0fe002a3c3)
+from [uiceds/project-team-wres@22cdc09](https://github.com/uiceds/project-team-wres/tree/22cdc0952c82f50fccddb27c43ce6d01f7db637e)
 on November 16, 2024.
 </em></small>
 
@@ -354,7 +354,7 @@ In this section, we propose to use Machine Learning methods to simulate target v
 
 Based on gradient descent, we look for a vector $beta$ which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,
 
-$L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C$ diff $+\beta_7 H+\beta_8 R H+\beta_9 V P$
+$L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C diff +\beta_7 H+\beta_8 R H+\beta_9 V P$
 
 At beginning, we didn't apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.
 
@@ -368,9 +368,11 @@ At beginning, we didn't apply any processing on our data and we input the origin
 
 Based on the regression result, we obtain the following regression equation to obtain latent heat.
 
-$L E=35.2 R n- & 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}$
+$L E=35.2 R n- 0.22 T-3.95 Pa-6.96 G+4.03 \VWC+1.40 \VWC diff-14.39 H $
 
 Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.
+
+$\mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}
 
 $L E=R_n-G-H$
 
