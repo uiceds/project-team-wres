@@ -8,7 +8,7 @@
   <meta name="author" content="Yuyao Huang" />
   <meta name="author" content="Yue Wan" />
   <meta name="author" content="Hsing-Yu Huang" />
-  <meta name="dcterms.date" content="2024-11-15" />
+  <meta name="dcterms.date" content="2024-11-16" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Identification and Prediction of Flux Tower Latent Heat Data and Their Source Variables (Time Series Imputation)</title>
   <style>
@@ -34,11 +34,11 @@
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-11-15" />
-  <meta name="citation_publication_date" content="2024-11-15" />
-  <meta property="article:published_time" content="2024-11-15" />
-  <meta name="dc.modified" content="2024-11-15T23:36:30+00:00" />
-  <meta property="article:modified_time" content="2024-11-15T23:36:30+00:00" />
+  <meta name="dc.date" content="2024-11-16" />
+  <meta name="citation_publication_date" content="2024-11-16" />
+  <meta property="article:published_time" content="2024-11-16" />
+  <meta name="dc.modified" content="2024-11-16T20:37:49+00:00" />
+  <meta property="article:modified_time" content="2024-11-16T20:37:49+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -63,9 +63,9 @@
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -82,10 +82,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://uiceds.github.io/project-team-wres/v/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7/">permalink</a>)
+(<a href="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/uiceds/project-team-wres/tree/6c8ef3254f6b3f98a3c8ff5ec0a36d1deeb261e7">uiceds/project-team-wres@6c8ef32</a>
-on November 15, 2024.
+from <a href="https://github.com/uiceds/project-team-wres/tree/4663532bec8a8b54172a722358317f0fe002a3c3">uiceds/project-team-wres@4663532</a>
+on November 16, 2024.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -733,7 +733,6 @@ Figure 2 shows the latent heat data gap in 2020 due to covid-19 and overhaul of 
 We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct regression analysis to find out variables highly correlated to latent heat. These variables will be input variables in deep learning model. To simplify the process of figuring out how these factors interact and vary across different times of the day and seasons, we focus on the first five data of main variables first. The main variables include Timestamp, Observed latent heat flux (LE_Obs), Net radiation (Rn), Temperature in degrees Celsius (T), Air_Pressure and etc. Table 2 shows the first 5 data of each variable as follows:
 </p>
 <h2 id="step-2-predictive-modeling-deep-learning-time-series-forecast-time-series-imputation">Step 2: Predictive Modeling (Deep Learning Time Series Forecast, Time Series Imputation)</h2>
-<p style="text-align: justify;">
 <p>Once we confirm the input variables, we plan to use RNN or LSTM forecast models to predict latent heat in 2020. All the input are divided into training datasets and the validation datasets. After the RNN model is trained, the validation datasets are used to verify the model. At last, the missing data are generated by the model.For Deliverable 3, the goal is to create a predictive model to estimate missing values or forecast future measurements, specifically targeting <code>LE_Obs</code> (Latent Heat Flux), due to its environmental relevance. The model plan includes:</p>
 <ol type="1">
 <li><strong>Problem Definition</strong>: Use time-series forecasting to predict <code>LE_Obs</code> based on the past sequences of environmental variables. Predicting <code>LE_Obs</code> could help estimate latent heat flux in unmeasured periods, contributing to more complete energy balance data.</li>
@@ -1116,13 +1115,27 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <p>In this section, we propose to use Machine Learning methods to simulate target variable latent heat. Source variables are shown in the above table. Specifically, our methods include regression, single layer neural network, multi layer neural network, CNN network and LSTM. Figures and results are shown in following content including the scatter, time series plot, <span class="math inline">\(R^2\)</span>, <span class="math inline">\(MSE\)</span> value between observed and simulated latent heat.</p>
 <h2 id="regression">Regression</h2>
 <h3 id="basic-regression-without-processing">Basic Regression without processing</h3>
-<p>Based on gradient descent, we look for a vector <span class="math inline">\(beta\)</span> which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,
-<span class="math inline">\(L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C\)</span> diff <span class="math inline">\(+\beta_7 H+\beta_8 R H+\beta_9 V P\)</span></p>
-<p>At beginning, we didn’t apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.
-<img src="./images/Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 4: Time series plot based on basic regression" />
-<img src="./images/Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 5: Scatter plot based on basic regression" /></p>
+<p>Based on gradient descent, we look for a vector <span class="math inline">\(beta\)</span> which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,</p>
+<p><span class="math inline">\(L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C\)</span> diff <span class="math inline">\(+\beta_7 H+\beta_8 R H+\beta_9 V P\)</span></p>
+<p>At beginning, we didn’t apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.</p>
+<figure>
+<img src="./images/RegressionTimePlot.png" style="width:80.0%" alt="Fig 4: Time series plot based on basic regression" />
+<figcaption aria-hidden="true">Fig 4: Time series plot based on basic regression</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot.png" style="width:80.0%" alt="Fig 5: Scatter plot based on basic regression" />
+<figcaption aria-hidden="true">Fig 5: Scatter plot based on basic regression</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 6: Time series plot based on basic regression" />
+<figcaption aria-hidden="true">Fig 6: Time series plot based on basic regression</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 7: Scatter plot based on basic regression" />
+<figcaption aria-hidden="true">Fig 7: Scatter plot based on basic regression</figcaption>
+</figure>
 <p>Based on the regression result, we obtain the following regression equation to obtain latent heat.</p>
-<p><span class="math inline">\(\begin{aligned} L E=35.2 R n- &amp; 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}\)</span></p>
+<p><span class="math inline">\(L E=35.2 R n- &amp; 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}\)</span></p>
 <p>Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.</p>
 <p><span class="math inline">\(L E=R_n-G-H\)</span></p>
 <h3 id="normalized-regression">Normalized Regression</h3>
@@ -1139,18 +1152,18 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <h3 id="single-layer-neural-network">Single Layer Neural Network</h3>
 <p>This section uses single layer neural network to predict latent heat. The learning steps and learning rate is 100000 and 0.01. Figures 10 and 11 demonstrate that involving contant value in model is better than previous regression models.
 <img src="./images/Single%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 10: Time series plot based on single layer neural network" />
-<img src="./images/Single%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 11: Scatter plot based on single layer neural network" />
-### Double Layer Neural Network
-We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.
+<img src="./images/Single%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 11: Scatter plot based on single layer neural network" /></p>
+<h3 id="double-layer-neural-network">Double Layer Neural Network</h3>
+<p>We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.
 <img src="./images/Double%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 12: Time series plot based on double layer neural network" />
-<img src="./images/Double%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 13: Scatter plot based on double layer neural network" />
-### Quadra Layer Neural Network
-The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 14 and 15, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network.
+<img src="./images/DoubleNNScatter.png" style="width:80.0%" alt="Fig 13: Scatter plot based on double layer neural network" />
+<img src="./images/LatentHeatGap.png" style="width:80.0%" alt="Fig 2: Data Gap in 2020" /></p>
+<h3 id="quadra-layer-neural-network">Quadra Layer Neural Network</h3>
+<p>The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 14 and 15, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network.
 <img src="./images/Quadra%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 14: Time series plot based on quadra layer neural network" />
 <img src="./images/Quadra%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 15: Scatter plot based on quadra layer neural network" /></p>
 <h2 id="cnn">CNN</h2>
 <h2 id="lstm">LSTM</h2>
-</p>
 <h2 id="references">References</h2>
 <p>Kumar, P., &amp; Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668</p>
 <!-- default theme -->
