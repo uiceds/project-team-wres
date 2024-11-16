@@ -37,8 +37,8 @@
   <meta name="dc.date" content="2024-11-16" />
   <meta name="citation_publication_date" content="2024-11-16" />
   <meta property="article:published_time" content="2024-11-16" />
-  <meta name="dc.modified" content="2024-11-16T20:37:49+00:00" />
-  <meta property="article:modified_time" content="2024-11-16T20:37:49+00:00" />
+  <meta name="dc.modified" content="2024-11-16T20:49:10+00:00" />
+  <meta property="article:modified_time" content="2024-11-16T20:49:10+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -63,9 +63,9 @@
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -82,9 +82,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://uiceds.github.io/project-team-wres/v/4663532bec8a8b54172a722358317f0fe002a3c3/">permalink</a>)
+(<a href="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/uiceds/project-team-wres/tree/4663532bec8a8b54172a722358317f0fe002a3c3">uiceds/project-team-wres@4663532</a>
+from <a href="https://github.com/uiceds/project-team-wres/tree/22cdc0952c82f50fccddb27c43ce6d01f7db637e">uiceds/project-team-wres@22cdc09</a>
 on November 16, 2024.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -1116,7 +1116,7 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <h2 id="regression">Regression</h2>
 <h3 id="basic-regression-without-processing">Basic Regression without processing</h3>
 <p>Based on gradient descent, we look for a vector <span class="math inline">\(beta\)</span> which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,</p>
-<p><span class="math inline">\(L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C\)</span> diff <span class="math inline">\(+\beta_7 H+\beta_8 R H+\beta_9 V P\)</span></p>
+<p><span class="math inline">\(L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C diff +\beta_7 H+\beta_8 R H+\beta_9 V P\)</span></p>
 <p>At beginning, we didn’t apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.</p>
 <figure>
 <img src="./images/RegressionTimePlot.png" style="width:80.0%" alt="Fig 4: Time series plot based on basic regression" />
@@ -1135,8 +1135,9 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <figcaption aria-hidden="true">Fig 7: Scatter plot based on basic regression</figcaption>
 </figure>
 <p>Based on the regression result, we obtain the following regression equation to obtain latent heat.</p>
-<p><span class="math inline">\(L E=35.2 R n- &amp; 0.22 T-3.95 \mathrm{~Pa}-6.96 \mathrm{G}+4.03 \mathrm{VWC}+1.40 \mathrm{VWC} \text { diff }-14.39 \mathrm{H}+2.56 \mathrm{RH} +11.07 \mathrm{VP} \mid\end{aligned}\)</span></p>
+<p>$L E=35.2 R n- 0.22 T-3.95 Pa-6.96 G+4.03 +1.40 diff-14.39 H $</p>
 <p>Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.</p>
+<p>$+2.56 +11.07 \end{aligned}</p>
 <p><span class="math inline">\(L E=R_n-G-H\)</span></p>
 <h3 id="normalized-regression">Normalized Regression</h3>
 <p>In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.
