@@ -11,7 +11,7 @@ cov
 covid
 CSAT
 CSV
-Dataset
+dataset
 datasets
 dn
 ecohydrological
@@ -29,7 +29,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-Longwave
+longwave
 LSTM
 mins
 Monteith
