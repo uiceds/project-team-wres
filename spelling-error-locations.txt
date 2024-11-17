@@ -165,6 +165,8 @@ content/01.Proposal.md:318:Convolutional
 content/01.Proposal.md:318:dataset
 content/01.Proposal.md:318:ReLU
 content/01.Proposal.md:328:LSTM
-content/01.Proposal.md:333:hydroshare
-content/01.Proposal.md:333:HydroShare
-content/01.Proposal.md:333:Kumar
+content/01.Proposal.md:329:LSTM
+content/01.Proposal.md:330:LSTM
+content/01.Proposal.md:335:hydroshare
+content/01.Proposal.md:335:HydroShare
+content/01.Proposal.md:335:Kumar
