@@ -1,4 +1,4 @@
-albedo
+Albedo
 amb
 Cao
 Champaign
@@ -17,7 +17,7 @@ datasets
 dn
 ecohydrological
 eqaution
-Evapotranspiration
+evapotranspiration
 Fc
 Hc
 horiz
@@ -30,7 +30,7 @@ Jiaze
 JiazeCLeo
 Kumar
 LiCor
-longwave
+Longwave
 LSTM
 mins
 Monteith
@@ -55,7 +55,7 @@ PRIDown
 PRIIndDown
 PRIIndUp
 PRIUp
-quadra
+Quadra
 reanalysze
 Reflectance
 ReLU
@@ -77,7 +77,7 @@ squred
 stdev
 Targ
 TempC
-Tmpr
+tmpr
 updward
 Urbana
 Ux

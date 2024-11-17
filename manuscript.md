@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-11-17" />
   <meta name="citation_publication_date" content="2024-11-17" />
   <meta property="article:published_time" content="2024-11-17" />
-  <meta name="dc.modified" content="2024-11-17T07:52:12+00:00" />
-  <meta property="article:modified_time" content="2024-11-17T07:52:12+00:00" />
+  <meta name="dc.modified" content="2024-11-17T07:56:35+00:00" />
+  <meta property="article:modified_time" content="2024-11-17T07:56:35+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/f4115daf3eeb9086d47c47d16ec5ceb32aae2025/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/f4115daf3eeb9086d47c47d16ec5ceb32aae2025/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/f4115daf3eeb9086d47c47d16ec5ceb32aae2025/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/f4115daf3eeb9086d47c47d16ec5ceb32aae2025/))
+([permalink](https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/))
 was automatically generated
-from [uiceds/project-team-wres@f4115da](https://github.com/uiceds/project-team-wres/tree/f4115daf3eeb9086d47c47d16ec5ceb32aae2025)
+from [uiceds/project-team-wres@9885d24](https://github.com/uiceds/project-team-wres/tree/9885d24ad260247aafe657e2502d6aa21efabaad)
 on November 17, 2024.
 </em></small>
 
@@ -389,7 +389,6 @@ In order to solve the bias problem, we aim to conduct processing treatment on ou
 
 Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 71% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is
 
-$L E=189.29 R n+4.91 T-15.69 \mathrm{~Pa}-37.38 \mathrm{G}+29.35 \mathrm{VWC}+40.51 \mathrm{VWC}\text { diff }-122.88 \mathrm{H}+27.49 \mathrm{RH} +37.36 \mathrm{VP}\mid\end{aligned}$
 
 $$
 LE = 189.29 \, R_n + 4.91 \, T - 15.69 \, Pa - 37.38 \, G + 29.35 \, \text{VWC} + 40.51 \, \text{VWC diff} - 122.88 \, H + 27.49 \, RH + 37.36 \, VP
