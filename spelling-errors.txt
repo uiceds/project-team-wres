@@ -1,4 +1,4 @@
-Albedo
+albedo
 amb
 Cao
 Champaign
@@ -7,16 +7,17 @@ cnr
 conc
 contant
 conver
+Convolutional
 cov
 covid
 CSAT
 CSV
-Dataset
+dataset
 datasets
 dn
 ecohydrological
 eqaution
-evapotranspiration
+Evapotranspiration
 Fc
 Hc
 horiz
@@ -43,6 +44,7 @@ NDVIIndUp
 NDVIUpNIR
 NDVIUpRed
 NIR
+ovserved
 PCA
 Photochemical
 photosynthetically
@@ -54,7 +56,9 @@ PRIIndDown
 PRIIndUp
 PRIUp
 quadra
+reanalysze
 Reflectance
+ReLU
 Rl
 Rlong
 RMSE
@@ -63,6 +67,8 @@ Rshort
 rslt
 satelite
 seansonal
+seperated
+seperately
 shf
 slove
 slowsequence
@@ -71,7 +77,7 @@ squred
 stdev
 Targ
 TempC
-tmpr
+Tmpr
 updward
 Urbana
 Ux
