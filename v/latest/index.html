@@ -8,7 +8,7 @@
   <meta name="author" content="Yuyao Huang" />
   <meta name="author" content="Yue Wan" />
   <meta name="author" content="Hsing-Yu Huang" />
-  <meta name="dcterms.date" content="2024-11-16" />
+  <meta name="dcterms.date" content="2024-11-17" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Identification and Prediction of Flux Tower Latent Heat Data and Their Source Variables (Time Series Imputation)</title>
   <style>
@@ -34,11 +34,11 @@
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-11-16" />
-  <meta name="citation_publication_date" content="2024-11-16" />
-  <meta property="article:published_time" content="2024-11-16" />
-  <meta name="dc.modified" content="2024-11-16T20:49:10+00:00" />
-  <meta property="article:modified_time" content="2024-11-16T20:49:10+00:00" />
+  <meta name="dc.date" content="2024-11-17" />
+  <meta name="citation_publication_date" content="2024-11-17" />
+  <meta property="article:published_time" content="2024-11-17" />
+  <meta name="dc.modified" content="2024-11-17T04:23:20+00:00" />
+  <meta property="article:modified_time" content="2024-11-17T04:23:20+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -63,9 +63,9 @@
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/534fe1ff95776e18f38ccc221c8aa213f0144e78/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/534fe1ff95776e18f38ccc221c8aa213f0144e78/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/534fe1ff95776e18f38ccc221c8aa213f0144e78/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -82,10 +82,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://uiceds.github.io/project-team-wres/v/22cdc0952c82f50fccddb27c43ce6d01f7db637e/">permalink</a>)
+(<a href="https://uiceds.github.io/project-team-wres/v/534fe1ff95776e18f38ccc221c8aa213f0144e78/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/uiceds/project-team-wres/tree/22cdc0952c82f50fccddb27c43ce6d01f7db637e">uiceds/project-team-wres@22cdc09</a>
-on November 16, 2024.
+from <a href="https://github.com/uiceds/project-team-wres/tree/534fe1ff95776e18f38ccc221c8aa213f0144e78">uiceds/project-team-wres@534fe1f</a>
+on November 17, 2024.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -1135,35 +1135,142 @@ We have 167 variables in the dataset. Although we can filter some ET related var
 <figcaption aria-hidden="true">Fig 7: Scatter plot based on basic regression</figcaption>
 </figure>
 <p>Based on the regression result, we obtain the following regression equation to obtain latent heat.</p>
-<p>$L E=35.2 R n- 0.22 T-3.95 Pa-6.96 G+4.03 +1.40 diff-14.39 H $</p>
+<p><span class="math display">\[
+LE = 35.2 R_n - 0.22 T - 3.95 P_a - 6.96 G + 4.03 VWC + 1.40 VWC diff - 14.39 H + 2.56 RH + 11.07 VP
+\]</span></p>
 <p>Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.</p>
-<p>$+2.56 +11.07 \end{aligned}</p>
 <p><span class="math inline">\(L E=R_n-G-H\)</span></p>
 <h3 id="normalized-regression">Normalized Regression</h3>
-<p>In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.
-<img src="./images/Normalized%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 6: Time series plot based on normalized regression" />
-<img src="./images/Normalized%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 7: Scatter plot based on normalized regression" /></p>
-<p>Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 70% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is</p>
+<p>In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.</p>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot.png" style="width:80.0%" alt="Fig 8: Time series plot based on normalized regression" />
+<figcaption aria-hidden="true">Fig 8: Time series plot based on normalized regression</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot.png" style="width:80.0%" alt="Fig 9: Scatter plot based on normalized regression" />
+<figcaption aria-hidden="true">Fig 9: Scatter plot based on normalized regression</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 10: Time series plot based on normalized regression" />
+<figcaption aria-hidden="true">Fig 10: Time series plot based on normalized regression</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 11: Scatter plot based on normalized regression" />
+<figcaption aria-hidden="true">Fig 11: Scatter plot based on normalized regression</figcaption>
+</figure>
+<p>Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 71% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is</p>
 <p><span class="math inline">\(L E=189.29 R n+4.91 T-15.69 \mathrm{~Pa}-37.38 \mathrm{G}+29.35 \mathrm{VWC}+40.51 \mathrm{VWC}\text { diff }-122.88 \mathrm{H}+27.49 \mathrm{RH} +37.36 \mathrm{VP}\mid\end{aligned}\)</span></p>
+<p><span class="math display">\[
+LE = 189.29 \, R_n + 4.91 \, T - 15.69 \, Pa - 37.38 \, G + 29.35 \, \text{VWC} + 40.51 \, \text{VWC diff} - 122.88 \, H + 27.49 \, RH + 37.36 \, VP
+\]</span></p>
 <h3 id="pca-regression">PCA Regression</h3>
-<p>The last PCA regression model aims to slove the generalization difficulty. We conduct PCA analysis first to obtain three dominant component. Then we apply the regression analysis based on these three components. The learning steps and learning rate is 10000 and 0.001. Figure 9 illustrate PCA regression can obtain similar trend as observed latent heat value. However, the simulated model lack the ability to capture the extreme large and small value. Thus, the predictive performance is lower than previous normalized regression model based on the error metrics.
-<img src="./images/PCA%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 8: Time series plot based on PCA regression" />
-<img src="./images/PCA%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 9: Scatter plot based on PCA regression" /></p>
+<p>The last PCA regression model aims to slove the generalization difficulty. We conduct PCA analysis first to obtain three dominant component. Then we apply the regression analysis based on these three components. The learning steps and learning rate is 10000 and 0.001. Figure 9 illustrate PCA regression can obtain similar trend as observed latent heat value. However, the simulated model lack the ability to capture the extreme large and small value. Thus, the predictive performance is lower than previous normalized regression model based on the error metrics. In addition, we can find the accuracy in test set is very poor since we conduct PCA analysis seperately for test and training set. Thus, the principal components of the training and test sets are inconsistent which results in the poor predictive performance.</p>
+<figure>
+<img src="./images/PCARegressionTimePlot.png" style="width:80.0%" alt="Fig 12: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 12: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot.png" style="width:80.0%" alt="Fig 13: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 13: Scatter plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlot2021.png" style="width:80.0%" alt="Fig 14: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 14: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 15: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 15: Scatter plot based on PCA regression</figcaption>
+</figure>
+<p>Therefore, we reanalysze the system by checking the PCA for training and testing set together. Figures 18 and 19 illustrate combined PCA regression has better performance than the seperated PCA regression.</p>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine.png" style="width:80.0%" alt="Fig 16: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 16: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine.png" style="width:80.0%" alt="Fig 17: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 17: Scatter plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine2021.png" style="width:80.0%" alt="Fig 18: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 18: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine2021.png" style="width:80.0%" alt="Fig 19: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 19: Scatter plot based on PCA regression</figcaption>
+</figure>
 <h2 id="neural-network">Neural Network</h2>
 <h3 id="single-layer-neural-network">Single Layer Neural Network</h3>
-<p>This section uses single layer neural network to predict latent heat. The learning steps and learning rate is 100000 and 0.01. Figures 10 and 11 demonstrate that involving contant value in model is better than previous regression models.
-<img src="./images/Single%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 10: Time series plot based on single layer neural network" />
-<img src="./images/Single%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 11: Scatter plot based on single layer neural network" /></p>
+<p>This section uses single layer neural network to predict latent heat. The learning steps and learning rate is 100000 and 0.01. Figures 20 and 21 demonstrate that involving contant value in model is better than previous regression models.</p>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 20: Time series plot based on single layer neural network" />
+<figcaption aria-hidden="true">Fig 20: Time series plot based on single layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 21: Scatter plot based on single layer neural network" />
+<figcaption aria-hidden="true">Fig 21: Scatter plot based on single layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 22: Time series plot based on single layer neural network" />
+<figcaption aria-hidden="true">Fig 22: Time series plot based on single layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 23: Scatter plot based on single layer neural network" />
+<figcaption aria-hidden="true">Fig 23: Scatter plot based on single layer neural network</figcaption>
+</figure>
 <h3 id="double-layer-neural-network">Double Layer Neural Network</h3>
-<p>We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.
-<img src="./images/Double%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 12: Time series plot based on double layer neural network" />
-<img src="./images/DoubleNNScatter.png" style="width:80.0%" alt="Fig 13: Scatter plot based on double layer neural network" />
-<img src="./images/LatentHeatGap.png" style="width:80.0%" alt="Fig 2: Data Gap in 2020" /></p>
+<p>We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.</p>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network</figcaption>
+</figure>
 <h3 id="quadra-layer-neural-network">Quadra Layer Neural Network</h3>
-<p>The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 14 and 15, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network.
-<img src="./images/Quadra%20NN%20Regression%20Time%20Plot.png" style="width:80.0%" alt="Fig 14: Time series plot based on quadra layer neural network" />
-<img src="./images/Quadra%20NN%20Regression%20Scatter%20Plot.png" style="width:80.0%" alt="Fig 15: Scatter plot based on quadra layer neural network" /></p>
+<p>The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 26 and 27, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network. However, we also ovserved the generalization problem of this quadra layer neural network. It has very poor performance on test set with R-squared 48%.</p>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on quadra layer neural network" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on quadra layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on quadra layer neural network" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on quadra layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 28: Time series plot based on quadra layer neural network" />
+<figcaption aria-hidden="true">Fig 28: Time series plot based on quadra layer neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 29: Scatter plot based on quadra layer neural network" />
+<figcaption aria-hidden="true">Fig 29: Scatter plot based on quadra layer neural network</figcaption>
+</figure>
 <h2 id="cnn">CNN</h2>
+<p>In this section, we plan to use CNN network to predict latent heat although CNN has better performance with image tasks. The CNN network involves Input Layer, 1D Convolutional Layer, ReLU Activation Function, Max Pooling Layer and Fully Connected Layer. Although it doesn’t has better performance than previous neural network, it has better generalization ability since the predictive performance of test dataset is improved (Figures 27 and 29).</p>
+<figure>
+<img src="./images/CNN_RegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on CNN neural network" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on CNN neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on CNN neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/CNN_RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 26: Time series plot based on CNN neural network" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on CNN neural network</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on CNN neural network</figcaption>
+</figure>
 <h2 id="lstm">LSTM</h2>
 <h2 id="references">References</h2>
 <p>Kumar, P., &amp; Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668</p>
