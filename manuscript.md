@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-11-17'
+date-meta: '2024-12-02'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-11-17" />
-  <meta name="citation_publication_date" content="2024-11-17" />
-  <meta property="article:published_time" content="2024-11-17" />
-  <meta name="dc.modified" content="2024-11-17T07:56:35+00:00" />
-  <meta property="article:modified_time" content="2024-11-17T07:56:35+00:00" />
+  <meta name="dc.date" content="2024-12-02" />
+  <meta name="citation_publication_date" content="2024-12-02" />
+  <meta property="article:published_time" content="2024-12-02" />
+  <meta name="dc.modified" content="2024-12-02T03:05:12+00:00" />
+  <meta property="article:modified_time" content="2024-12-02T03:05:12+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/9885d24ad260247aafe657e2502d6aa21efabaad/))
+([permalink](https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/))
 was automatically generated
-from [uiceds/project-team-wres@9885d24](https://github.com/uiceds/project-team-wres/tree/9885d24ad260247aafe657e2502d6aa21efabaad)
-on November 17, 2024.
+from [uiceds/project-team-wres@cfae867](https://github.com/uiceds/project-team-wres/tree/cfae867b4339174dfb5d01e17a4cc35a191773ea)
+on December 2, 2024.
 </em></small>
 
 
@@ -142,6 +142,27 @@ authors:
   - Yuyao Huang
   - Yue Wan
 ---
+# Introduction
+The greenhouse effect is becoming more severe due to climate change, leading to increased water scarcity as rising temperatures speed up evapotranspiration. This process transfers water from the land to the atmosphere, putting more pressure on water resources.[1],[2] Evapotranspiration (ET) is not only a key part of moving water but also plays an important role in energy exchange and climate regulation.[3] At the center of this process is latent heat flux (LE), which represents the energy used during evapotranspiration. LE serves as a bridge between the water and energy cycles, affecting precipitation, soil moisture, and plant health.[4] It also provides important data for climate models and helps us better understand ecosystems, making it essential in environmental research.[5]
+Despite its importance, accurately measuring latent heat flux is challenging due to frequent data gaps caused by sensor failures, maintenance issues, or external disruptions, such as those experienced during the COVID-19 pandemic in 2020.[6] To address these gaps, researchers have traditionally used physical models such as the Bowen Ratio method, the Priestley-Taylor model, and the Penman-Monteith equation. These models rely on established physical principles and have advanced our understanding of ET. However, they face notable limitations, including difficulty capturing non-linear relationships between variables and reliance on extensive parameter calibration. As a result, their predictive performance is often limited when applied to complex, real-world datasets.
+Recent advancements in machine learning offer a promising alternative for addressing these challenges. Deep learning models, particularly Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, are highly effective in analyzing time-series data.[7],[8] These models excel at capturing temporal dependencies and non-linear interactions, making them ideal for predicting latent heat flux. Additionally, they can fill data gaps caused by equipment downtime while leveraging environmental variables such as air temperature, net radiation, soil moisture, and wind speed to provide robust and accurate predictions.[9]
+This study aims to harness the capabilities of deep learning to improve the prediction of latent heat flux and address data gaps in a high-resolution dataset collected from the Goose Creek Eddy Covariance Flux Tower (2016–2023). By focusing on missing data from 2020 caused by equipment maintenance and the COVID-19 pandemic, the research seeks to restore data continuity and enhance our understanding of the underlying dynamics of the ecosystem.
+The contributions of this study are threefold. First, it will improve the accuracy and completeness of latent heat flux data, supporting better predictions of regional water and energy balances. Second, the findings will inform the calibration of global climate models, enabling more reliable simulations of climate variability and change. Finally, by demonstrating the application of deep learning in hydrology and environmental science, this work highlights its potential to address complex, data-intensive challenges.
+
+# References
+
+[1]   UN-Water. Water and Climate Change. https://www.unwater.org/water-facts/water-and-climate-change (accessed Nov 19, 2024).
+[2]   Earth Institute, Columbia University. How Climate Change Impacts Our Water. Columbia Climate School, September 23, 2019. https://news.climate.columbia.edu/2019/09/23/climate-change-impacts-water/ (accessed Nov 19, 2024).
+[3]   Katul, G. G.; Oren, R.; Manzoni, S.; Higgins, C.; Parlange, M. B. Evapotranspiration: A Process Driving Mass Transport and Energy Exchange in the Soil-Plant-Atmosphere-Climate System. Rev. Geophys. 2012, 50 (3), RG3002. 
+[4]   Novák, V. Evapotranspiration: A Component of the Water Cycle. In Evapotranspiration in the Soil-Plant-Atmosphere System; Progress in Soil Science; Springer: Dordrecht, 2012; pp 1–13.
+[5]   Wild, M. The Global Energy Balance as Represented in CMIP6 Climate Models. Clim. Dyn. 2020, 55 (3), 553–577.
+[6]   ET Data Portal. Evapotranspiration Data from Satellite Sensors. ETdata.org. https://etdata.org/ (accessed Nov 20, 2024).
+[7]   Guo, X.; Yao, Y.; Tang, Q.; Liang, S.; Shao, C.; Fisher, J. B.; Chen, J.; Jia, K.; Zhang, X.; Shang, K.; Yang, J.; Yu, R.; Xie, Z.; Liu, L.; Ning, J.; Zhang, L. Multimodel Ensemble Estimation of Landsat-like Global Terrestrial Latent Heat Flux Using a Generalized Deep CNN-LSTM Integration Algorithm. Agric. For. Meteorol. 2024, 349, 109962.
+[8]   Mienye, I. D.; Swart, T. G.; Obaido, G. Recurrent Neural Networks: A Comprehensive Review of Architectures, Variants, and Applications. Information 2024, 15 (9), 517.
+[9]   Khan, M. S.; Jeon, S. B.; Jeong, M.-H. Gap-Filling Eddy Covariance Latent Heat Flux: Inter-Comparison of Four Machine Learning Model Predictions and Uncertainties in Forest Ecosystem. Remote Sens. 2021, 13 (24), 4976. DOI: 10.3390/rs13244976.
+
+
+# Appendix (Previous PRJ)
 
 # Dataset Description{.page_break_before}
 
