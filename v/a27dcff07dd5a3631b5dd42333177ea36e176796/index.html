@@ -1,0 +1,4675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Jiaze Cao" />
+  <meta name="author" content="Yuyao Huang" />
+  <meta name="author" content="Yue Wan" />
+  <meta name="author" content="Hsing-Yu Huang" />
+  <meta name="dcterms.date" content="2024-12-02" />
+  <meta name="keywords" content="markdown, publishing, manubot" />
+  <title>Identification and Prediction of Flux Tower Latent Heat Data and Their Source Variables (Time Series Imputation)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <!--
+  Manubot generated metadata rendered from header-includes-template.html.
+  Suggest improvements at https://github.com/manubot/manubot/blob/main/manubot/process/header-includes-template.html
+  -->
+  <meta name="dc.format" content="text/html" />
+  <meta property="og:type" content="article" />
+  <meta name="dc.title" content="WRES" />
+  <meta name="citation_title" content="WRES" />
+  <meta property="og:title" content="WRES" />
+  <meta property="twitter:title" content="WRES" />
+  <meta name="dc.date" content="2024-12-02" />
+  <meta name="citation_publication_date" content="2024-12-02" />
+  <meta property="article:published_time" content="2024-12-02" />
+  <meta name="dc.modified" content="2024-12-02T04:21:43+00:00" />
+  <meta property="article:modified_time" content="2024-12-02T04:21:43+00:00" />
+  <meta name="dc.language" content="en-US" />
+  <meta name="citation_language" content="en-US" />
+  <meta name="dc.relation.ispartof" content="Manubot" />
+  <meta name="dc.publisher" content="Manubot" />
+  <meta name="citation_journal_title" content="Manubot" />
+  <meta name="citation_technical_report_institution" content="Manubot" />
+  <meta name="citation_author" content="Jiaze Cao" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="WRES" />
+  <meta name="citation_author" content="Yuyao Huang" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="EWES" />
+  <meta name="citation_author" content="Yue Wan" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="EWES" />
+  <meta name="citation_author" content="Hsing-Yu Huang" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign" />
+  <meta name="citation_author_institution" content="WRES" />
+  <link rel="canonical" href="https://uiceds.github.io/project-team-wres/" />
+  <meta property="og:url" content="https://uiceds.github.io/project-team-wres/" />
+  <meta property="twitter:url" content="https://uiceds.github.io/project-team-wres/" />
+  <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
+  <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
+  <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/manuscript.pdf" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
+  <link rel="mask-icon" href="https://manubot.org/safari-pinned-tab.svg" color="#ad1457" />
+  <meta name="theme-color" content="#ad1457" />
+  <!-- end Manubot generated metadata -->
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Identification and Prediction of Flux Tower Latent Heat Data and Their Source Variables (Time Series Imputation)</h1>
+</header>
+<p><small><em>
+This manuscript
+(<a href="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/">permalink</a>)
+was automatically generated
+from <a href="https://github.com/uiceds/project-team-wres/tree/a27dcff07dd5a3631b5dd42333177ea36e176796">uiceds/project-team-wres@a27dcff</a>
+on December 2, 2024.
+</em></small></p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li><p><strong>Jiaze Cao</strong>
+<sup><a href="#correspondence">✉</a></sup><br>
+· <img src="images/github.svg" class="inline_icon" width="16" height="16" alt="GitHub icon" />
+<a href="https://github.com/JiazeCLeo">JiazeCLeo</a>
+<br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; WRES
+</small></p></li>
+<li><p><strong>Yuyao Huang</strong>
+<br>
+· <img src="images/github.svg" class="inline_icon" width="16" height="16" alt="GitHub icon" />
+<a href="https://github.com/Yuyao-Huang">Yuyao-Huang</a>
+<br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
+</small></p></li>
+<li><p><strong>Yue Wan</strong>
+<br>
+· <img src="images/github.svg" class="inline_icon" width="16" height="16" alt="GitHub icon" />
+<a href="https://github.com/clarawan">clarawan</a>
+<br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; EWES
+</small></p></li>
+<li><p><strong>Hsing-Yu Huang</strong>
+<sup><a href="#correspondence">✉</a></sup><br>
+· <img src="images/github.svg" class="inline_icon" width="16" height="16" alt="GitHub icon" />
+<a href="https://github.com/Hsing-Yu">Hsing-Yu</a>
+<br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois Urbana-Champaign; WRES
+</small></p></li>
+</ul>
+<div id="correspondence">
+<p>✉ — Correspondence possible via <a href="https://github.com/uiceds/project-team-wres/issues">GitHub Issues</a>
+or email to
+Jiaze Cao &lt;jiazec2@illinois.edu&gt;,
+Hsing-Yu Huang &lt;hsingyu3@illinois.edu&gt;.</p>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>The greenhouse effect is becoming more severe due to climate change, leading to increased water scarcity as rising temperatures speed up evapotranspiration. This process transfers water from the land to the atmosphere, putting more pressure on water resources.[1],[2] Evapotranspiration (ET) is not only a key part of moving water but also plays an important role in energy exchange and climate regulation.[3] At the center of this process is latent heat flux (LE), which represents the energy used during evapotranspiration. LE serves as a bridge between the water and energy cycles, affecting precipitation, soil moisture, and plant health.[4] It also provides important data for climate models and helps us better understand ecosystems, making it essential in environmental research.[5]</p>
+<p>Despite its importance, accurately measuring latent heat flux is challenging due to frequent data gaps caused by sensor failures, maintenance issues, or external disruptions, such as those experienced during the COVID-19 pandemic in 2020.[6] To address these gaps, researchers have traditionally used physical models such as the Bowen Ratio method, the Priestley-Taylor model, and the Penman-Monteith equation. These models rely on established physical principles and have advanced our understanding of ET. However, they face notable limitations, including difficulty capturing non-linear relationships between variables and reliance on extensive parameter calibration. As a result, their predictive performance is often limited when applied to complex, real-world datasets.</p>
+<p>Recent advancements in machine learning offer a promising alternative for addressing these challenges. Deep learning models, particularly Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, are highly effective in analyzing time-series data.[7],[8] These models excel at capturing temporal dependencies and non-linear interactions, making them ideal for predicting latent heat flux. Additionally, they can fill data gaps caused by equipment downtime while leveraging environmental variables such as air temperature, net radiation, soil moisture, and wind speed to provide robust and accurate predictions.[9]</p>
+<p>This study aims to harness the capabilities of deep learning to improve the prediction of latent heat flux and address data gaps in a high-resolution dataset collected from the Goose Creek Eddy Covariance Flux Tower (2016–2023). By focusing on missing data from 2020 caused by equipment maintenance and the COVID-19 pandemic, the research seeks to restore data continuity and enhance our understanding of the underlying dynamics of the ecosystem.</p>
+<p>The contributions of this study are threefold. First, it will improve the accuracy and completeness of latent heat flux data, supporting better predictions of regional water and energy balances. Second, the findings will inform the calibration of global climate models, enabling more reliable simulations of climate variability and change. Finally, by demonstrating the application of deep learning in hydrology and environmental science, this work highlights its potential to address complex, data-intensive challenges.</p>
+<h1 id="exploratory-analysis">Exploratory analysis</h1>
+<p>For this study, we utilized a rich dataset derived from the Goose Creek Eddy Covariance Flux Tower, covering the period from Spring 2016 to Spring 2023. This dataset, consisting of 167 variables recorded at 15-minute intervals, provides comprehensive insights into various environmental parameters such as latent heat flux (LE_Obs), net radiation (Rn), air temperature (T), relative humidity, and air pressure. These variables are pivotal for understanding the energy and water exchanges within the ecohydrological system, making the dataset particularly relevant for studying latent heat flux and evapotranspiration processes.</p>
+<figure>
+<img src="./images/Variables.png" style="width:80.0%" alt="Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022" />
+<figcaption aria-hidden="true">Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022</figcaption>
+</figure>
+<figure>
+<img src="./images/LatentHeatGap.png" style="width:80.0%" alt="Fig 2: Data Gap in 2020" />
+<figcaption aria-hidden="true">Fig 2: Data Gap in 2020</figcaption>
+</figure>
+<figure>
+<img src="./images/Project2.png" style="width:80.0%" alt="Fig 3: LE_Obs over time for the year 2016" />
+<figcaption aria-hidden="true">Fig 3: LE_Obs over time for the year 2016</figcaption>
+</figure>
+<p>The dataset not only captures key energy balance components but also reflects the temporal dynamics of environmental variables. For example, latent heat flux demonstrates pronounced seasonal trends and is influenced by factors such as net radiation and temperature. However, the dataset contains data gaps, such as those in 2020 due to equipment overhauls and the COVID-19 pandemic. These gaps underscore the importance of robust imputation techniques to ensure the dataset’s continuity and reliability for downstream analyses.</p>
+<p>Our exploratory analysis involved identifying the variables most correlated with latent heat flux to narrow down the dataset to the most influential predictors. Variables such as net radiation (Rn), temperature (T), sensible heat flux, and relative humidity were selected based on their theoretical and empirical relationships with latent heat. Summary statistics and visualizations revealed key patterns, such as the strong positive correlation between latent heat flux and net radiation. These findings guided the selection of features for our predictive modeling.</p>
+<p>By understanding the characteristics and interactions of the dataset, we aimed to address the central research question: how to accurately predict latent heat flux during periods with missing data. This step laid the groundwork for designing machine learning models capable of capturing complex temporal dependencies and improving the overall accuracy of predictions.</p>
+<h1 id="predictive-modeling">Predictive modeling</h1>
+<p>Predictive modeling for this study employed a range of techniques to estimate latent heat flux (LE_Obs) from the Goose Creek dataset. The methods included regression (basic and normalized), PCA regression, single and multi-layer neural networks, convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. Each method was evaluated using metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared to assess their performance.</p>
+<h2 id="regression-analysis">Regression analysis</h2>
+<p>• Basic Regression: A linear regression model was trained without preprocessing the input data. The model captured the general seasonal variation of latent heat flux, but significant biases persisted between the observed and simulated values. While the R-squared value exceeded 70%, the MSE and RMSE values remained high, highlighting the model’s limitations in accuracy (Figures 4–7).</p>
+<figure>
+<img src="./images/RegressionTimePlot.png" style="width:80.0%" alt="Fig 4: Time series plot based on basic regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 4: Time series plot based on basic regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot.png" style="width:80.0%" alt="Fig 5: Scatter plot based on basic regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 5: Scatter plot based on basic regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 6: Time series plot based on basic regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 6: Time series plot based on basic regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 7: Scatter plot based on basic regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 7: Scatter plot based on basic regression (Test Set)</figcaption>
+</figure>
+<p>• Normalized Regression: To mitigate biases, the input data was normalized to a 0–1 range before regression. This adjustment improved error metrics significantly, reducing the MSE from 3524 to 530 and the RMSE to 23. This model effectively preserved the observed trends and provided better predictions, as seen in Figures 8–11.</p>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot.png" style="width:80.0%" alt="Fig 8: Time series plot based on normalized regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 8: Time series plot based on normalized regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot.png" style="width:80.0%" alt="Fig 9: Scatter plot based on normalized regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 9: Scatter plot based on normalized regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 10: Time series plot based on normalized regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 10: Time series plot based on normalized regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 11: Scatter plot based on normalized regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 11: Scatter plot based on normalized regression (Test Set)</figcaption>
+</figure>
+<p>• PCA Regression: To enhance generalization, principal component analysis (PCA) was used to derive three dominant components for regression. While this approach captured broad trends, it struggled to predict extreme values, and performance on the test set was poor due to inconsistencies in PCA across training and test datasets (Figures 12–15). A combined PCA regression improved results marginally but retained significant limitations (Figures 16–19).</p>
+<figure>
+<img src="./images/PCARegressionTimePlot.png" style="width:80.0%" alt="Fig 12: Time series plot based on PCA regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 12: Time series plot based on PCA regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot.png" style="width:80.0%" alt="Fig 13: Scatter plot based on PCA regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 13: Scatter plot based on PCA regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlot2021.png" style="width:80.0%" alt="Fig 14: Time series plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 14: Time series plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 15: Scatter plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 15: Scatter plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine.png" style="width:80.0%" alt="Fig 16: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 16: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine.png" style="width:80.0%" alt="Fig 17: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 17: Scatter plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine2021.png" style="width:80.0%" alt="Fig 18: Time series plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 18: Time series plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine2021.png" style="width:80.0%" alt="Fig 19: Scatter plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 19: Scatter plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<h2 id="neural-network-models">Neural network models</h2>
+<p>• Single-Layer Neural Network: This network, with a single hidden layer, demonstrated improved predictive performance over regression models. It captured more complex patterns in the data, achieving an R-squared value of 67% and reduced error metrics (Figures 20–23).</p>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 20: Time series plot based on single layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 20: Time series plot based on single layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 21: Scatter plot based on single layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 21: Scatter plot based on single layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 22: Time series plot based on single layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 22: Time series plot based on single layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 23: Scatter plot based on single layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 23: Scatter plot based on single layer neural network (Test Set)</figcaption>
+</figure>
+<p>• Multi-Layer Neural Networks: Networks with multiple layers (e.g., double and quadra layers) exhibited better accuracy in the training set, with R-squared values exceeding 80%. However, these models faced overfitting issues, leading to poor performance on the test set, especially for the quadra-layer network.</p>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on quadra layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on quadra layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on quadra layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on quadra layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 28: Time series plot based on quadra layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 28: Time series plot based on quadra layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 29: Scatter plot based on quadra layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 29: Scatter plot based on quadra layer neural network (Test Set)</figcaption>
+</figure>
+<h2 id="advanced-models">Advanced models</h2>
+<p>• Convolutional Neural Networks (CNNs): Although CNNs are primarily used for image data, they were adapted for time-series prediction. While they did not outperform the neural networks in accuracy, they exhibited superior generalization on the test set (Figures 26–29).</p>
+<figure>
+<img src="./images/CNN_RegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on CNN neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on CNN neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on CNN neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNN_RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 28: Time series plot based on CNN neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 28: Time series plot based on CNN neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 29: Scatter plot based on CNN neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 29: Scatter plot based on CNN neural network (Test Set)</figcaption>
+</figure>
+<p>• LSTM Networks: LSTM networks were the most effective for capturing sequential dependencies in the data. These models outperformed other methods in both training and test sets, demonstrating their suitability for time-series forecasting. Figures and metrics related to LSTM models (not included here) showed substantial improvements in MSE and R-squared.</p>
+<figure>
+<img src="./images/LSTM.png" style="width:80.0%" alt="Fig 30: Scatter plot based on CNN neural network" />
+<figcaption aria-hidden="true">Fig 30: Scatter plot based on CNN neural network</figcaption>
+</figure>
+<p>The analysis revealed that data preprocessing, including normalization, significantly enhanced model performance. While neural networks and LSTM models provided the most accurate predictions, overfitting remained a challenge for deeper networks. Future work should focus on hyperparameter tuning and integrating additional environmental data to improve model generalization and robustness.</p>
+<h1 id="discussion">Discussion</h1>
+<p>This study aimed to address the research question: Can machine learning models effectively predict latent heat flux (LE_Obs) during periods with missing data using environmental variables as inputs? The analysis demonstrated that it is indeed possible to fill data gaps and predict latent heat flux with reasonable accuracy, supporting the hypothesis that advanced machine learning models, particularly LSTM networks, outperform traditional regression methods in capturing the complexities of time-series data.</p>
+<h2 id="were-the-research-question-and-hypothesis-addressed">Were the Research Question and Hypothesis Addressed?</h2>
+<p>The findings confirmed that LSTM models were the most effective, leveraging their ability to capture temporal dependencies in the data. Neural networks and normalized regression also provided reasonable predictions, but the LSTM achieved the best overall performance. Regression methods, especially when unprocessed, struggled with bias and larger error metrics. Preprocessing through normalization significantly improved these models, though they still fell short of deep learning approaches. Challenges and limitations were also observed: certain models, like PCA regression and quadra-layer neural networks, faced generalization issues or overfitting, which hindered their performance on the test set. While the models captured seasonal variations and trends in latent heat flux, difficulties in predicting extreme values persisted, particularly with regression and PCA-based methods. These findings support the hypothesis while highlighting areas for improvement.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Future research should focus on refining the models and enhancing the input data to address the current limitations. For instance, LSTM architectures could be further optimized by fine-tuning hyperparameters, such as the number of layers, hidden units, and dropout rates, to reduce overfitting. Hybrid models combining CNNs and LSTMs could also be explored to better capture spatial and temporal dependencies. Expanding the dataset with additional environmental variables, such as soil moisture or vegetation indices, could provide more comprehensive input features. Furthermore, using domain knowledge to engineer features that capture interactions among variables, such as combined energy flux metrics, may improve predictive accuracy.</p>
+<p>To increase robustness, the dataset could be augmented by incorporating data from other flux towers, enabling the model to generalize better across different environmental conditions. Data augmentation techniques could also be employed to synthetically generate missing values, particularly for critical periods like 2020. Additionally, conducting uncertainty analyses would help quantify the reliability of the models’ predictions, making them more suitable for environmental decision-making and policy applications. Finally, the predictive framework developed in this study could be applied to broader contexts, such as forecasting evapotranspiration or diagnosing energy balance anomalies in other regions. By pursuing these directions, future work can build on the strong foundation established in this study to create more robust, accurate, and interpretable models for ecohydrological and climate science applications.</p>
+<h1 id="references">References</h1>
+<p>[1] UN-Water. Water and Climate Change. https://www.unwater.org/water-facts/water-and-climate-change (accessed Nov 19, 2024).</p>
+<p>[2] Earth Institute, Columbia University. How Climate Change Impacts Our Water. Columbia Climate School, September 23, 2019. https://news.climate.columbia.edu/2019/09/23/climate-change-impacts-water/ (accessed Nov 19, 2024).</p>
+<p>[3] Katul, G. G.; Oren, R.; Manzoni, S.; Higgins, C.; Parlange, M. B. Evapotranspiration: A Process Driving Mass Transport and Energy Exchange in the Soil-Plant-Atmosphere-Climate System. Rev. Geophys. 2012, 50 (3), RG3002.</p>
+<p>[4] Novák, V. Evapotranspiration: A Component of the Water Cycle. In Evapotranspiration in the Soil-Plant-Atmosphere System; Progress in Soil Science; Springer: Dordrecht, 2012; pp 1–13.</p>
+<p>[5] Wild, M. The Global Energy Balance as Represented in CMIP6 Climate Models. Clim. Dyn. 2020, 55 (3), 553–577.</p>
+<p>[6] ET Data Portal. Evapotranspiration Data from Satellite Sensors. ETdata.org. https://etdata.org/ (accessed Nov 20, 2024).</p>
+<p>[7] Guo, X.; Yao, Y.; Tang, Q.; Liang, S.; Shao, C.; Fisher, J. B.; Chen, J.; Jia, K.; Zhang, X.; Shang, K.; Yang, J.; Yu, R.; Xie, Z.; Liu, L.; Ning, J.; Zhang, L. Multimodel Ensemble Estimation of Landsat-like Global Terrestrial Latent Heat Flux Using a Generalized Deep CNN-LSTM Integration Algorithm. Agric. For. Meteorol. 2024, 349, 109962.</p>
+<p>[8] Mienye, I. D.; Swart, T. G.; Obaido, G. Recurrent Neural Networks: A Comprehensive Review of Architectures, Variants, and Applications. Information 2024, 15 (9), 517.</p>
+<p>[9] Khan, M. S.; Jeon, S. B.; Jeong, M.-H. Gap-Filling Eddy Covariance Latent Heat Flux: Inter-Comparison of Four Machine Learning Model Predictions and Uncertainties in Forest Ecosystem. Remote Sens. 2021, 13 (24), 4976. DOI: 10.3390/rs13244976.</p>
+<h1 id="appendix-previous-prj">Appendix (Previous PRJ)</h1>
+<h1 class="page_break_before" id="dataset-description">Dataset Description</h1>
+<p style="text-align: justify;">
+We propose to use Goose Creek Eddy Covariance Flux Tower Sensor Data(Kumar &amp; Sargent, 2024). The data is collected from the Eddy Covariance Flux Tower in Goose Creek, Piatt County. The dataset consists of time series data spanning from Spring 2016 to Spring 2023 with 15 minutes time interval. Dataset involves 167 variables shown in Table 1 including latent heat, sensible heat, wind speed, temperature, and changes in the ecosystem with respect to water, carbon, and temperature. Figure 1 illustrates part of variables in 2022. The data collected by flux tower provides a foundation for further investigation into hydrological, meteorological, and environmental phenomena. The format of dataset is CSV file (generated from raw PICKLE file). The dataset can be found through link: <a href="https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/" class="uri">https://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668/</a>
+</p>
+<figure>
+<img src="./images/Variables.png" style="width:80.0%" alt="Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022" />
+<figcaption aria-hidden="true">Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022</figcaption>
+</figure>
+<div id="tbl:bowling-scores" class="tablenos">
+<table id="tbl:bowling-scores">
+<caption><span>Table 1:</span> A table with a variables.
+</caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 20%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable Name</th>
+<th style="text-align: center;">Units</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">TIMESTAMP</td>
+<td style="text-align: center;"><span class="math inline">\(TS\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">RECORD</td>
+<td style="text-align: center;"><span class="math inline">\(RN\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hs</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">sensible heat flux</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">tau</td>
+<td style="text-align: center;"><span class="math inline">\(kg/(m \cdot s^2)\)</span></td>
+<td style="text-align: center;">shear stress</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">u_star</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">friction velocity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ts_stdev</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">instantaneous stdev of temperature</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ts_Ux_cov</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C \cdot m/s\)</span></td>
+<td style="text-align: center;">inst. cov(temp, Ux)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ts_Uy_cov</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C \cdot m/s\)</span></td>
+<td style="text-align: center;">inst. cov(temp, Uy)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ts_Uz_cov</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C \cdot m/s\)</span></td>
+<td style="text-align: center;">inst. cov(temp, Uv)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ux_stdev</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">instantaneous stdev of Ux</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ux_Uy_cov</td>
+<td style="text-align: center;"><span class="math inline">\((m/s)^2\)</span></td>
+<td style="text-align: center;">instantaneous cov of (Ux, Uy)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ux_Uz_cov</td>
+<td style="text-align: center;"><span class="math inline">\((m/s)^2\)</span></td>
+<td style="text-align: center;">instantaneous cov of (Ux, Uz)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uy_stdev</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">instantaneous stdev of Uy</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Uy_Uz_cov</td>
+<td style="text-align: center;"><span class="math inline">\((m/s)^2\)</span></td>
+<td style="text-align: center;">instantaneous cov of (Uy, Uz)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uz_stdev</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">instantaneous stdev of Uz</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">wnd_spd</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">wind speed (horizontal) - different from next?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">rslt_wnd_spd</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">wind speed (horizontal)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">wnd_dir_sonic</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">wind direction from CSAT3, deg from N?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">std_wnd_dir</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">inst. stdev of wind direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">wnd_dir_compass</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">wind direction from compass (from N?)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ux_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">average horiz windspeed x</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Uy_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">average horiz windspeed y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uz_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">average vertical windspeed z</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ts_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">air temperature at 25 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">sonic_azimuth</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">180 is direction is pointing - can change this value</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">sonic_samples_Tot</td>
+<td style="text-align: center;">samples</td>
+<td style="text-align: center;">10 Hz sampling rate (cycles per 15 mins = 9000)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fc_li_wpl</td>
+<td style="text-align: center;"><span class="math inline">\(mg/(m^2 \cdot s)\)</span></td>
+<td style="text-align: center;">carbon flux upward (+ = upward) with Webb et al Term</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">LE_li_wpl</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">latent heat flux with Webb et al term</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hc_li</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">sensible heat flux</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO2_li_mean</td>
+<td style="text-align: center;"><span class="math inline">\(mg/m^3\)</span></td>
+<td style="text-align: center;">CO2 conc –&gt; need to convert to ppm units</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H2O_li_mean</td>
+<td style="text-align: center;"><span class="math inline">\(g/m^3\)</span></td>
+<td style="text-align: center;">water vapor conc at 25 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">amb_press_li_mean</td>
+<td style="text-align: center;"><span class="math inline">\(kPa\)</span></td>
+<td style="text-align: center;">air pressure at 25 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Tc_li_mean</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">CSAT air temperature at 25 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">rho_a_li_mean</td>
+<td style="text-align: center;"><span class="math inline">\(kg/m^3\)</span></td>
+<td style="text-align: center;">density of air with water vapor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fc_li_irga</td>
+<td style="text-align: center;"><span class="math inline">\(mg/(m^2 \cdot s)\)</span></td>
+<td style="text-align: center;">carbon flux without Webb et al. Term</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">LE_li_irga</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">latent heat flux without Webb et al. Term</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">irga_li_samples_Tot</td>
+<td style="text-align: center;"><span class="math inline">\(samples\)</span></td>
+<td style="text-align: center;">should be around 60 - quality indicator of LiCor</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Precip_Tot</td>
+<td style="text-align: center;"><span class="math inline">\(mm\)</span></td>
+<td style="text-align: center;">rainfall</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">air temperature at 25 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">e_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(kPa\)</span></td>
+<td style="text-align: center;">vapor pressure at 25 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">e_sat_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(kPa\)</span></td>
+<td style="text-align: center;">saturated vapor pressure at 25 m</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H2O_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(g/m^3\)</span></td>
+<td style="text-align: center;">water vapor conc at 25 m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">RH_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(%\)</span></td>
+<td style="text-align: center;">Relative Humidity at 25 m (e/e_sat)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">rho_a_tmpr_rh_mean</td>
+<td style="text-align: center;"><span class="math inline">\(kg/m^3\)</span></td>
+<td style="text-align: center;">air density</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">slowsequence_1_Tot</td>
+<td style="text-align: center;"><span class="math inline">\(samples\)</span></td>
+<td style="text-align: center;">cycles per 15 mins - scanning every 10 secs</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CS655_Wcr_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">soil water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CS655_Ec_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CS655_Tmpr_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">mean_wind_speed</td>
+<td style="text-align: center;"><span class="math inline">\(m/s\)</span></td>
+<td style="text-align: center;">wind speed at 10 m height…not average?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">mean_wind_direction</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">wind direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">std_wind_dir</td>
+<td style="text-align: center;"><span class="math inline">\(degrees\)</span></td>
+<td style="text-align: center;">mean wind vector stdev of direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NDVI_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Normalized Difference Vegetation Index</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NDVIUpRed_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NDVIUpNIR_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NDVIIndUp</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NDVIDownRed_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NDVIDownNIR_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NDVIIndDown</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">NDVI is calculated from upward and canopy facing sensors that measure IR and NIR radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PRI_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Photochemical Reflectance Index</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PRIUp531_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PRIUp570_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PRIIndUp</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PRIDown531_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PRIDown570_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2 \cdot nm\)</span></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PRIIndDown</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">PRI calculated from updward and canopy facing sensors that measure 2 wavelengths of radiation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_5cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_5cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_5cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil electrical conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_5cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_15cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_15cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_15cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_15cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_30cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_30cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_30cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_30cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_50cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_50cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_50cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_50cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_100cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_100cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_100cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_100cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_VWC_200cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(m^3/m^3\)</span></td>
+<td style="text-align: center;">volumetric water content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_P_200cm_Avg</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bulk dielectric permittivity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D5TE_EC_200cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(dS/m\)</span></td>
+<td style="text-align: center;">soil conductivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D5TE_T_200cm_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">soil temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">slowsequence_2_Tot</td>
+<td style="text-align: center;"><span class="math inline">\(samples\)</span></td>
+<td style="text-align: center;">cycles - 1 minute loops (number of times scanned)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SB121TempC_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">SB = sensor body, temp of body of sensor</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Targ121TempC_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">surface temperature</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Targ121mV_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SB1H1TempC_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">SB = sensor body, temp of body of sensor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Targ1H1TempC_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">surface temperature</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Targ1H1mV_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">short_up_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Incoming shortwave radiation detected by the upward facing instrument</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">short_dn_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Outgoing shortwave radiation detected by the downward facing instrument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">long_up_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">incoming longwave radiation detected by upward facing instrument</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">long_dn_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">outgoing longwave radiation detected by downward facing instrument</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">cnr4_T_C_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(^\circ C\)</span></td>
+<td style="text-align: center;">temperature of sensor</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">cnr4_T_K_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(K\)</span></td>
+<td style="text-align: center;">temperature of sensor in Kelvin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">long_up_corr_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Incoming longwave radiation detected by the upward facing instrument, corrected</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">long_dn_corr_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Outgoing longwave radiation detected by the downward facing instrument, corrected</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rs_net_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Shortwave net radiation (Rshort_up - Rshort_down)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rl_net_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Longwave net radiation (Rlong_up - Rlong_down)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">albedo_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Albedo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rn_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Net radiation (Rs_net + Rl_net)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SQ_110_Avg</td>
+<td style="text-align: center;"><span class="math inline">\(\mu \mathrm{mol}\)</span> photons <span class="math inline">\(/(m^2 \cdot s)\)</span></td>
+<td style="text-align: center;">PAR (photosynthetically active radiation)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">shf_Avg(1)</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Ground heat flux</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">shf_Avg(2)</td>
+<td style="text-align: center;"><span class="math inline">\(W/m^2\)</span></td>
+<td style="text-align: center;">Ground heat flux</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">slowsequence_3_Tot</td>
+<td style="text-align: center;"><span class="math inline">\(samples\)</span></td>
+<td style="text-align: center;">number of times scanned in 15 mins (once per min)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="proposal">Proposal</h1>
+<h2 id="background">Background</h2>
+<p style="text-align: justify;">
+Evapotranspiration (ET) is the process of water transferring from land to the atmosphere, accompanying the phase change of water from liquid to gas. This process plays a critical role in the ecohydrological system and profoundly affects the hydrological cycle. The processes of evapotranspiration and energy exchange are interdependent. Both latent heat (LE) and evapotranspiration (ET), from the perspective of energy and water flux, are key terms for anticipating weather conditions, simulating climate, and diagnosing climate change. However, the measurement of evapotranspiration is challenging because the process itself is invisible and complex.
+</p>
+<p style="text-align: justify;">
+Figure 2 shows the latent heat data gap in 2020 due to covid-19 and overhaul of equipment. Our project goal is to fill in these missing data. The ground truth data is collected from satelite sensors (<a href="https://etdata.org/" class="uri">https://etdata.org/</a>). Despite the existence of numerous classical evapotranspiration simulation models, such as Bowen Ratio, Priestley-Taylor and Penman-Monteith models, the predictive accuracy of these models is inferior to that of deep learning models. Therefore, we plan to use RNN and LSTM deep learning models to predict latent heat and fill the gap.
+</p>
+<figure>
+<img src="./images/LatentHeatGap.png" style="width:80.0%" alt="Fig 2: Data Gap in 2020" />
+<figcaption aria-hidden="true">Fig 2: Data Gap in 2020</figcaption>
+</figure>
+<h2 id="step-1-exploratory-data-analysis">Step 1: Exploratory Data Analysis</h2>
+<p style="text-align: justify;">
+We have 167 variables in the dataset. Although we can filter some ET related variables based on empirical models, these variables may not accurate and AI models tend to obtain adequate information. Therefore, we propose to conduct regression analysis to find out variables highly correlated to latent heat. These variables will be input variables in deep learning model. To simplify the process of figuring out how these factors interact and vary across different times of the day and seasons, we focus on the first five data of main variables first. The main variables include Timestamp, Observed latent heat flux (LE_Obs), Net radiation (Rn), Temperature in degrees Celsius (T), Air_Pressure and etc. Table 2 shows the first 5 data of each variable as follows:
+</p>
+<h2 id="step-2-predictive-modeling-deep-learning-time-series-forecast-time-series-imputation">Step 2: Predictive Modeling (Deep Learning Time Series Forecast, Time Series Imputation)</h2>
+<p>Once we confirm the input variables, we plan to use RNN or LSTM forecast models to predict latent heat in 2020. All the input are divided into training datasets and the validation datasets. After the RNN model is trained, the validation datasets are used to verify the model. At last, the missing data are generated by the model.For Deliverable 3, the goal is to create a predictive model to estimate missing values or forecast future measurements, specifically targeting <code>LE_Obs</code> (Latent Heat Flux), due to its environmental relevance. The model plan includes:</p>
+<ol type="1">
+<li><strong>Problem Definition</strong>: Use time-series forecasting to predict <code>LE_Obs</code> based on the past sequences of environmental variables. Predicting <code>LE_Obs</code> could help estimate latent heat flux in unmeasured periods, contributing to more complete energy balance data.</li>
+<li><strong>Feature Selection</strong>: Include variables closely related to <code>LE_Obs</code>, such as <code>Rn</code>, <code>T</code>, <code>Relative Humidity</code>, and <code>Sensible_H</code>. These will serve as predictive features as they capture the interactions of surface energy components.</li>
+<li><strong>Model Choice</strong>: Implement an LSTM (Long Short-Term Memory) model due to its suitability for time-series data, capturing sequential dependencies and trends. Using an LSTM allows the model to learn from past data sequences, making it appropriate for forecasting latent heat flux.</li>
+<li><strong>Evaluation Metric</strong>: Use Mean Squared Error (MSE) to evaluate the model’s performance, as it penalizes larger errors and is commonly used in regression tasks.</li>
+<li><strong>Training Plan</strong>: Divide the dataset into training, validation, and test sets, ensuring that the test set consists of the most recent data. Train the model on scaled data to improve performance and use the validation set for hyperparameter tuning.</li>
+</ol>
+<figure>
+<img src="./images/Project2.png" style="width:80.0%" alt="Fig 3: LE_Obs over time for the year 2016" />
+<figcaption aria-hidden="true">Fig 3: LE_Obs over time for the year 2016</figcaption>
+</figure>
+<div id="tbl:bowling-scores" class="tablenos">
+<table id="tbl:bowling-scores">
+<caption><span>Table 2:</span> Dataset
+</caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 11%" />
+<col style="width: 9%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Timestamp</th>
+<th>LE_Obs</th>
+<th>Rn</th>
+<th>T</th>
+<th>Air_Pressure</th>
+<th>G</th>
+<th>VWC_30cm</th>
+<th>VWC30cm_diff</th>
+<th>Sensible_H</th>
+<th>Relative_Humidity</th>
+<th>Vapor_pressure</th>
+<th>Saturated_Vapor_Pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2016/4/22 10:15</td>
+<td>111.1646</td>
+<td>550.7244</td>
+<td>15.39692</td>
+<td>98.65031</td>
+<td>-3.305334</td>
+<td>0.307</td>
+<td>NaN</td>
+<td>66.62987</td>
+<td>75.43023</td>
+<td>1.318720</td>
+<td>1.748264</td>
+</tr>
+<tr class="even">
+<td>2016/4/22 10:30</td>
+<td>233.7630</td>
+<td>566.5699</td>
+<td>15.75987</td>
+<td>98.67207</td>
+<td>-1.070949</td>
+<td>0.307</td>
+<td>0.0</td>
+<td>97.43565</td>
+<td>74.24434</td>
+<td>1.328549</td>
+<td>1.789427</td>
+</tr>
+<tr class="odd">
+<td>2016/4/22 10:45</td>
+<td>150.6655</td>
+<td>568.7559</td>
+<td>15.84722</td>
+<td>98.69296</td>
+<td>1.211160</td>
+<td>0.307</td>
+<td>0.0</td>
+<td>74.73856</td>
+<td>74.90156</td>
+<td>1.347835</td>
+<td>1.799476</td>
+</tr>
+<tr class="even">
+<td>2016/4/22 11:00</td>
+<td>222.2112</td>
+<td>631.6904</td>
+<td>16.14020</td>
+<td>98.71219</td>
+<td>3.689381</td>
+<td>0.307</td>
+<td>0.0</td>
+<td>89.94750</td>
+<td>77.31715</td>
+<td>1.417601</td>
+<td>1.833488</td>
+</tr>
+<tr class="odd">
+<td>2016/4/22 11:15</td>
+<td>261.9899</td>
+<td>704.8135</td>
+<td>16.37151</td>
+<td>98.72832</td>
+<td>6.272957</td>
+<td>0.307</td>
+<td>0.0</td>
+<td>99.07247</td>
+<td>78.72035</td>
+<td>1.464757</td>
+<td>1.860709</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl:bowling-scores" class="tablenos">
+<table id="tbl:bowling-scores">
+<caption><span>Table 3:</span> Correlation matrix
+</caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>LE_Obs</th>
+<th>Rn</th>
+<th>T</th>
+<th>Air_Pressure</th>
+<th>G</th>
+<th>VWC_30cm</th>
+<th>VWC30cm_diff</th>
+<th>Sensible_H</th>
+<th>Relative_Humidity</th>
+<th>Vapor_pressure</th>
+<th>Saturated_Vapor_Pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LE_Obs</strong></td>
+<td>1.000000</td>
+<td>0.740001</td>
+<td>0.369080</td>
+<td>-0.066791</td>
+<td>0.419244</td>
+<td>-0.023582</td>
+<td>-0.037540</td>
+<td>0.390064</td>
+<td>-0.288203</td>
+<td>0.278373</td>
+<td>0.425352</td>
+</tr>
+<tr class="even">
+<td><strong>Rn</strong></td>
+<td>0.740001</td>
+<td>1.000000</td>
+<td>0.354361</td>
+<td>0.018251</td>
+<td>0.412415</td>
+<td>-0.040560</td>
+<td>-0.059480</td>
+<td>0.642862</td>
+<td>-0.416080</td>
+<td>0.198780</td>
+<td>0.407578</td>
+</tr>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td>0.369080</td>
+<td>0.354361</td>
+<td>1.000000</td>
+<td>-0.365036</td>
+<td>0.642930</td>
+<td>-0.166246</td>
+<td>-0.001006</td>
+<td>0.171602</td>
+<td>-0.262734</td>
+<td>0.866856</td>
+<td>0.959008</td>
+</tr>
+<tr class="even">
+<td><strong>Air_Pressure</strong></td>
+<td>-0.066791</td>
+<td>0.018251</td>
+<td>-0.365036</td>
+<td>1.000000</td>
+<td>-0.313725</td>
+<td>-0.071028</td>
+<td>-0.020830</td>
+<td>0.103935</td>
+<td>-0.167686</td>
+<td>-0.348514</td>
+<td>-0.289969</td>
+</tr>
+<tr class="odd">
+<td><strong>G</strong></td>
+<td>0.419244</td>
+<td>0.412415</td>
+<td>0.642930</td>
+<td>-0.313725</td>
+<td>1.000000</td>
+<td>-0.024829</td>
+<td>0.058169</td>
+<td>0.247713</td>
+<td>-0.382420</td>
+<td>0.473200</td>
+<td>0.689871</td>
+</tr>
+<tr class="even">
+<td><strong>VWC_30cm</strong></td>
+<td>-0.023582</td>
+<td>-0.040560</td>
+<td>-0.166246</td>
+<td>-0.071028</td>
+<td>-0.024829</td>
+<td>1.000000</td>
+<td>-0.043053</td>
+<td>-0.074545</td>
+<td>0.144828</td>
+<td>-0.110267</td>
+<td>-0.177017</td>
+</tr>
+<tr class="odd">
+<td><strong>VWC30cm_diff</strong></td>
+<td>-0.037540</td>
+<td>-0.059480</td>
+<td>-0.001006</td>
+<td>-0.020830</td>
+<td>0.058169</td>
+<td>-0.043053</td>
+<td>1.000000</td>
+<td>-0.049210</td>
+<td>-0.000121</td>
+<td>-0.009242</td>
+<td>-0.003133</td>
+</tr>
+<tr class="even">
+<td><strong>Sensible_H</strong></td>
+<td>0.390064</td>
+<td>0.642862</td>
+<td>0.171602</td>
+<td>0.103935</td>
+<td>0.247713</td>
+<td>-0.074545</td>
+<td>-0.049210</td>
+<td>1.000000</td>
+<td>-0.395557</td>
+<td>0.011293</td>
+<td>0.210560</td>
+</tr>
+<tr class="odd">
+<td><strong>Relative_Humidity</strong></td>
+<td>-0.288203</td>
+<td>-0.416080</td>
+<td>-0.262734</td>
+<td>-0.167686</td>
+<td>-0.382420</td>
+<td>0.144828</td>
+<td>-0.000121</td>
+<td>-0.395557</td>
+<td>1.000000</td>
+<td>0.149367</td>
+<td>-0.311806</td>
+</tr>
+<tr class="even">
+<td><strong>Vapor_pressure</strong></td>
+<td>0.278373</td>
+<td>0.198780</td>
+<td>0.866856</td>
+<td>-0.348514</td>
+<td>0.473200</td>
+<td>-0.110267</td>
+<td>-0.009242</td>
+<td>0.011293</td>
+<td>0.149367</td>
+<td>1.000000</td>
+<td>0.863301</td>
+</tr>
+<tr class="odd">
+<td><strong>Saturated_Vapor_Pressure</strong></td>
+<td>0.425352</td>
+<td>0.407578</td>
+<td>0.959008</td>
+<td>-0.289969</td>
+<td>0.689871</td>
+<td>-0.177017</td>
+<td>-0.003133</td>
+<td>0.210560</td>
+<td>-0.311806</td>
+<td>0.863301</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl:bowling-scores" class="tablenos">
+<table id="tbl:bowling-scores" style="width:100%;">
+<caption><span>Table 4:</span> Statistics of variables in the dataset
+</caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>LE_Obs</th>
+<th>Rn</th>
+<th>T</th>
+<th>Air_Pressure</th>
+<th>G</th>
+<th>VWC_30cm</th>
+<th>VWC30cm_diff</th>
+<th>Sensible_H</th>
+<th>Relative_Humidity</th>
+<th>Vapor_pressure</th>
+<th>Saturated_Vapor_Pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>mean</strong></td>
+<td>53.976825</td>
+<td>109.999297</td>
+<td>12.524988</td>
+<td>98.813399</td>
+<td>-0.159915</td>
+<td>0.308942</td>
+<td>-0.000015</td>
+<td>13.962563</td>
+<td>71.872526</td>
+<td>1.218452</td>
+<td>1.783960</td>
+</tr>
+<tr class="even">
+<td><strong>std</strong></td>
+<td>94.877870</td>
+<td>227.819402</td>
+<td>11.105505</td>
+<td>0.670804</td>
+<td>16.345332</td>
+<td>0.033217</td>
+<td>0.000257</td>
+<td>72.768378</td>
+<td>17.570532</td>
+<td>0.743564</td>
+<td>1.113461</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="predictive-modeling-1">Predictive Modeling</h1>
+<p>In this section, we propose to use Machine Learning methods to simulate target variable latent heat. Source variables are shown in the above table. Specifically, our methods include regression, single layer neural network, multi layer neural network, CNN network and LSTM. Figures and results are shown in following content including the scatter, time series plot, <span class="math inline">\(R^2\)</span>, <span class="math inline">\(MSE\)</span> value between observed and simulated latent heat.</p>
+<h2 id="regression">Regression</h2>
+<h3 id="basic-regression-without-processing">Basic Regression without processing</h3>
+<p>Based on gradient descent, we look for a vector <span class="math inline">\(beta\)</span> which can minimize the difference between simulated and observed value. Since our system has 9 source variables, we want to obtain a vector with 9 values which are the coefficient for each source variable. The equation is,</p>
+<p><span class="math inline">\(L E=\beta_1 R n+\beta_2 T+\beta_3 P a+\beta_4 G+\beta_5 V W C+\beta_6 V W C diff +\beta_7 H+\beta_8 R H+\beta_9 V P\)</span></p>
+<p>At beginning, we didn’t apply any processing on our data and we input the original data directly. Our learning rate is 0.001 and learning step is 10000 Figures 4 and 5 illustrate the scatter and time series plot for both observed and simulated latent heat. From these two figures, we can observe the regression method capture the correct seansonal variation of latent heat. However, the bias between two groups of data is obvious. The error metrics also reflect this phenomenon since R-squared value is over 70 percent which is great, but MSE and RMSE values are too large for the latent heat.</p>
+<figure>
+<img src="./images/RegressionTimePlot.png" style="width:80.0%" alt="Fig 4: Time series plot based on basic regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 4: Time series plot based on basic regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot.png" style="width:80.0%" alt="Fig 5: Scatter plot based on basic regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 5: Scatter plot based on basic regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 6: Time series plot based on basic regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 6: Time series plot based on basic regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/RegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 7: Scatter plot based on basic regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 7: Scatter plot based on basic regression (Test Set)</figcaption>
+</figure>
+<p>Based on the regression result, we obtain the following regression equation to obtain latent heat.</p>
+<p><span class="math display">\[
+LE = 35.2 R_n - 0.22 T - 3.95 P_a - 6.96 G + 4.03 VWC + 1.40 VWC diff - 14.39 H + 2.56 RH + 11.07 VP
+\]</span></p>
+<p>Overall, the regression equation is meaningful since LE has positive relationship with Rn and negative relationship with G and H based on the theoretical energy balance eqaution. In the regression equation, we can observe the positive coefficient for Rn and negative coefficient for G and H.</p>
+<p><span class="math inline">\(L E=R_n-G-H\)</span></p>
+<h3 id="normalized-regression">Normalized Regression</h3>
+<p>In order to solve the bias problem, we aim to conduct processing treatment on our original dataset. Thus, we normalize the data to conver the value from 0 to 1. Then we conduct same regression process as the basic regression section. The learning rate and steps are 0.05 and 10000 respectively. The predict result is shown in figures 6 and 7.</p>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot.png" style="width:80.0%" alt="Fig 8: Time series plot based on normalized regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 8: Time series plot based on normalized regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot.png" style="width:80.0%" alt="Fig 9: Scatter plot based on normalized regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 9: Scatter plot based on normalized regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 10: Time series plot based on normalized regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 10: Time series plot based on normalized regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/NormalizedRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 11: Scatter plot based on normalized regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 11: Scatter plot based on normalized regression (Test Set)</figcaption>
+</figure>
+<p>Based on these figures, we can see the prediction result is accurate. Simulated LE has the same variation and range as observed LE. According to error metrics, although R-squared value decreases from 71% to 69%, MSE and RMSE decreases significantly revealing a better result than basic regression. For the normalized regression model, we get the regression equation is</p>
+<p><span class="math display">\[
+LE = 189.29 \, R_n + 4.91 \, T - 15.69 \, Pa - 37.38 \, G + 29.35 \, \text{VWC} + 40.51 \, \text{VWC diff} - 122.88 \, H + 27.49 \, RH + 37.36 \, VP
+\]</span></p>
+<h3 id="pca-regression">PCA Regression</h3>
+<p>The last PCA regression model aims to slove the generalization difficulty. We conduct PCA analysis first to obtain three dominant component. Then we apply the regression analysis based on these three components. The learning steps and learning rate is 10000 and 0.001. Figure 9 illustrate PCA regression can obtain similar trend as observed latent heat value. However, the simulated model lack the ability to capture the extreme large and small value. Thus, the predictive performance is lower than previous normalized regression model based on the error metrics. In addition, we can find the accuracy in test set is very poor since we conduct PCA analysis seperately for test and training set. Thus, the principal components of the training and test sets are inconsistent which results in the poor predictive performance.</p>
+<figure>
+<img src="./images/PCARegressionTimePlot.png" style="width:80.0%" alt="Fig 12: Time series plot based on PCA regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 12: Time series plot based on PCA regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot.png" style="width:80.0%" alt="Fig 13: Scatter plot based on PCA regression (Training Set)" />
+<figcaption aria-hidden="true">Fig 13: Scatter plot based on PCA regression (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlot2021.png" style="width:80.0%" alt="Fig 14: Time series plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 14: Time series plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 15: Scatter plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 15: Scatter plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<p>Therefore, we reanalysze the system by checking the PCA for training and testing set together. Figures 18 and 19 illustrate combined PCA regression has better performance than the seperated PCA regression.</p>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine.png" style="width:80.0%" alt="Fig 16: Time series plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 16: Time series plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine.png" style="width:80.0%" alt="Fig 17: Scatter plot based on PCA regression" />
+<figcaption aria-hidden="true">Fig 17: Scatter plot based on PCA regression</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionTimePlotCombine2021.png" style="width:80.0%" alt="Fig 18: Time series plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 18: Time series plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/PCARegressionScatterPlotCombine2021.png" style="width:80.0%" alt="Fig 19: Scatter plot based on PCA regression (Test Set)" />
+<figcaption aria-hidden="true">Fig 19: Scatter plot based on PCA regression (Test Set)</figcaption>
+</figure>
+<h2 id="neural-network">Neural Network</h2>
+<h3 id="single-layer-neural-network">Single Layer Neural Network</h3>
+<p>This section uses single layer neural network to predict latent heat. The learning steps and learning rate is 100000 and 0.01. Figures 20 and 21 demonstrate that involving contant value in model is better than previous regression models.</p>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 20: Time series plot based on single layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 20: Time series plot based on single layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 21: Scatter plot based on single layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 21: Scatter plot based on single layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 22: Time series plot based on single layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 22: Time series plot based on single layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/SingleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 23: Scatter plot based on single layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 23: Scatter plot based on single layer neural network (Test Set)</figcaption>
+</figure>
+<h3 id="double-layer-neural-network">Double Layer Neural Network</h3>
+<p>We continue to use deep layer neural network with double layer to predict latent heat. The learning steps and learning rate is 100000 and 0.01 same as previous network. The hidden size is 20 and the output size is 1. Figures 12 and 13 show double layer neural network has better predictive performance with R-squred value over 80% and RMSE value smaller than 20.</p>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 24: Time series plot based on double layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 24: Time series plot based on double layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/DoubleNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 25: Scatter plot based on double layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 25: Scatter plot based on double layer neural network (Test Set)</figcaption>
+</figure>
+<h3 id="quadra-layer-neural-network">Quadra Layer Neural Network</h3>
+<p>The quadra layer neural network has four layers of network with hidden size 20, 15, 10 and output size 1. The learning steps and rate is 100000 and 0.01 as well. Based on figures 26 and 27, we can see this network continue to improve the predictive performance. It has higher R-squared and lower RMSE value than double layer network. However, we also ovserved the generalization problem of this quadra layer neural network. It has very poor performance on test set with R-squared 48%.</p>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on quadra layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on quadra layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on quadra layer neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on quadra layer neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionTimePlot2021.png" style="width:80.0%" alt="Fig 28: Time series plot based on quadra layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 28: Time series plot based on quadra layer neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/QuadraNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 29: Scatter plot based on quadra layer neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 29: Scatter plot based on quadra layer neural network (Test Set)</figcaption>
+</figure>
+<h3 id="cnn">CNN</h3>
+<p>In this section, we plan to use CNN network to predict latent heat although CNN has better performance with image tasks. The CNN network involves Input Layer, 1D Convolutional Layer, ReLU Activation Function, Max Pooling Layer and Fully Connected Layer. Although it doesn’t has better performance than previous neural network, it has better generalization ability since the predictive performance of test dataset is improved (Figures 27 and 29).</p>
+<figure>
+<img src="./images/CNN_RegressionTimePlot.png" style="width:80.0%" alt="Fig 26: Time series plot based on CNN neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on CNN neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network (Training Set)" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on CNN neural network (Training Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNN_RegressionTimePlot2021.png" style="width:80.0%" alt="Fig 26: Time series plot based on CNN neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 26: Time series plot based on CNN neural network (Test Set)</figcaption>
+</figure>
+<figure>
+<img src="./images/CNNRegressionScatterPlot2021.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network (Test Set)" />
+<figcaption aria-hidden="true">Fig 27: Scatter plot based on CNN neural network (Test Set)</figcaption>
+</figure>
+<h3 id="lstm">LSTM</h3>
+<p>Finally, we are trying to use LSTM to predict latent heat.
+<img src="./images/LSTM.png" style="width:80.0%" alt="Fig 27: Scatter plot based on CNN neural network" /></p>
+<h2 id="references-1">References</h2>
+<p>Kumar, P., &amp; Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668</p>
+<!-- default theme -->
+
+<style>
+  /* import google fonts */
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+  @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+  /* -------------------------------------------------- */
+  /* global */
+  /* -------------------------------------------------- */
+
+  /* all elements */
+  * {
+    /* force sans-serif font unless specified otherwise */
+    font-family: "Open Sans", "Helvetica", sans-serif;
+
+    /* prevent text inflation on some mobile browsers */
+    -webkit-text-size-adjust: none !important;
+    -moz-text-size-adjust: none !important;
+    -o-text-size-adjust: none !important;
+    text-size-adjust: none !important;
+  }
+
+  @media only screen {
+    /* "page" element */
+    body {
+      position: relative;
+      box-sizing: border-box;
+      font-size: 12pt;
+      line-height: 1.5;
+      max-width: 8.5in;
+      margin: 20px auto;
+      padding: 40px;
+      border-radius: 5px;
+      border: solid 1px #bdbdbd;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+    }
+  }
+
+  /* when on screen < 8.5in wide */
+  @media only screen and (max-width: 8.5in) {
+    /* "page" element */
+    body {
+      padding: 20px;
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05) inset;
+      background: none;
+    }
+  }
+
+  /* -------------------------------------------------- */
+  /* headings */
+  /* -------------------------------------------------- */
+
+  /* all headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 20px 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  /* biggest heading */
+  h1 {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  /* second biggest heading */
+  h2 {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #bdbdbd;
+  }
+
+  /* heading font sizes */
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.35em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1.15em;
+  }
+  h6 {
+    font-size: 1em;
+  }
+
+  /* -------------------------------------------------- */
+  /* manuscript header */
+  /* -------------------------------------------------- */
+
+  /* manuscript title */
+  header > h1 {
+    margin: 0;
+  }
+
+  /* manuscript title caption text (ie "automatically generated on") */
+  header + p {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* -------------------------------------------------- */
+  /* text elements */
+  /* -------------------------------------------------- */
+
+  /* links */
+  a {
+    color: #2196f3;
+    overflow-wrap: break-word;
+  }
+
+  /* superscripts and subscripts */
+  sub,
+  sup {
+    /* prevent from affecting line height */
+    line-height: 0;
+  }
+
+  /* unordered and ordered lists*/
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  /* class for styling text semibold */
+  .semibold {
+    font-weight: 600;
+  }
+
+  /* class for styling elements horizontally left aligned */
+  .left {
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: 0;
+    justify-content: left;
+  }
+
+  /* class for styling elements horizontally centered */
+  .center {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  /* class for styling elements horizontally right aligned */
+  .right {
+    display: block;
+    text-align: right;
+    margin-left: 0;
+    margin-right: auto;
+    justify-content: right;
+  }
+
+  /* -------------------------------------------------- */
+  /* section elements */
+  /* -------------------------------------------------- */
+
+  /* horizontal divider line */
+  hr {
+    border: none;
+    height: 1px;
+    background: #bdbdbd;
+  }
+
+  /* paragraphs, horizontal dividers, figures, tables, code */
+  p,
+  hr,
+  figure,
+  table,
+  pre {
+    /* treat all as "paragraphs", with consistent vertical margins */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* -------------------------------------------------- */
+  /* figures */
+  /* -------------------------------------------------- */
+
+  /* figure */
+  figure {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* figure caption */
+  figcaption {
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  /* figure image element */
+  figure > img,
+  figure > svg {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* figure auto-number */
+  img + figcaption > span:first-of-type,
+  svg + figcaption > span:first-of-type {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  /* -------------------------------------------------- */
+  /* tables */
+  /* -------------------------------------------------- */
+
+  /* table */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* table cells */
+  th,
+  td {
+    border: solid 1px #bdbdbd;
+    padding: 10px;
+    /* squash table if too wide for page by forcing line breaks */
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* header row and even rows */
+  th,
+  tr:nth-child(2n) {
+    background-color: #fafafa;
+  }
+
+  /* odd rows */
+  tr:nth-child(2n + 1) {
+    background-color: #ffffff;
+  }
+
+  /* table caption */
+  caption {
+    text-align: left;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  /* table auto-number */
+  table > caption > span:first-of-type {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  /* -------------------------------------------------- */
+  /* code */
+  /* -------------------------------------------------- */
+
+  /* multi-line code block */
+  pre {
+    padding: 10px;
+    background-color: #eeeeee;
+    color: #000000;
+    border-radius: 5px;
+    break-inside: avoid;
+    text-align: left;
+  }
+
+  /* inline code, ie code within normal text */
+  :not(pre) > code {
+    padding: 0 4px;
+    background-color: #eeeeee;
+    color: #000000;
+    border-radius: 5px;
+  }
+
+  /* code text */
+  /* apply all children, to reach syntax highlighting sub-elements */
+  code,
+  code * {
+    /* force monospace font */
+    font-family: "Source Code Pro", "Courier New", monospace;
+  }
+
+  /* -------------------------------------------------- */
+  /* quotes */
+  /* -------------------------------------------------- */
+
+  /* quoted text */
+  blockquote {
+    margin: 0;
+    padding: 0;
+    border-left: 4px solid #bdbdbd;
+    padding-left: 16px;
+    break-inside: avoid;
+  }
+
+  /* -------------------------------------------------- */
+  /* banners */
+  /* -------------------------------------------------- */
+
+  /* info banners */
+  .banner {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* paragraph in banner */
+  .banner > p {
+    margin: 0;
+  }
+
+  /* -------------------------------------------------- */
+  /* highlight colors */
+  /* -------------------------------------------------- */
+
+  .white {
+    background: #ffffff;
+  }
+  .lightgrey {
+    background: #eeeeee;
+  }
+  .grey {
+    background: #757575;
+  }
+  .darkgrey {
+    background: #424242;
+  }
+  .black {
+    background: #000000;
+  }
+  .lightred {
+    background: #ffcdd2;
+  }
+  .lightyellow {
+    background: #ffecb3;
+  }
+  .lightgreen {
+    background: #dcedc8;
+  }
+  .lightblue {
+    background: #e3f2fd;
+  }
+  .lightpurple {
+    background: #f3e5f5;
+  }
+  .red {
+    background: #f44336;
+  }
+  .orange {
+    background: #ff9800;
+  }
+  .yellow {
+    background: #ffeb3b;
+  }
+  .green {
+    background: #4caf50;
+  }
+  .blue {
+    background: #2196f3;
+  }
+  .purple {
+    background: #9c27b0;
+  }
+  .white,
+  .lightgrey,
+  .lightred,
+  .lightyellow,
+  .lightgreen,
+  .lightblue,
+  .lightpurple,
+  .orange,
+  .yellow,
+  .white a,
+  .lightgrey a,
+  .lightred a,
+  .lightyellow a,
+  .lightgreen a,
+  .lightblue a,
+  .lightpurple a,
+  .orange a,
+  .yellow a {
+    color: #000000;
+  }
+  .grey,
+  .darkgrey,
+  .black,
+  .red,
+  .green,
+  .blue,
+  .purple,
+  .grey a,
+  .darkgrey a,
+  .black a,
+  .red a,
+  .green a,
+  .blue a,
+  .purple a {
+    color: #ffffff;
+  }
+
+  /* -------------------------------------------------- */
+  /* buttons */
+  /* -------------------------------------------------- */
+
+  /* class for styling links like buttons */
+  .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: none;
+    color: #2196f3;
+    border: solid 1px #bdbdbd;
+    border-radius: 5px;
+  }
+
+  /* buttons when hovered */
+  .button:hover:not([disabled]),
+  .icon_button:hover:not([disabled]) {
+    cursor: pointer;
+    background: #f5f5f5;
+  }
+
+  /* buttons when disabled */
+  .button[disabled],
+  .icon_button[disabled] {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  /* class for styling buttons containg only single icon */
+  .icon_button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border-radius: 5px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  /* icon button inner svg image */
+  .icon_button > svg {
+    height: 16px;
+  }
+
+  /* -------------------------------------------------- */
+  /* icons */
+  /* -------------------------------------------------- */
+
+  /* class for styling icons inline with text */
+  .inline_icon {
+    height: 1em;
+    position: relative;
+    top: 0.125em;
+  }
+
+  /* -------------------------------------------------- */
+  /* references */
+  /* -------------------------------------------------- */
+
+  .csl-entry {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* -------------------------------------------------- */
+  /* print control */
+  /* -------------------------------------------------- */
+
+  @media print {
+    @page {
+      /* suggested printing margin */
+      margin: 0.5in;
+    }
+
+    /* document and "page" elements */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* "page" element */
+    body {
+      font-size: 11pt !important;
+      line-height: 1.35;
+    }
+
+    /* all headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 15px 0;
+    }
+
+    /* figures and tables */
+    figure,
+    table {
+      font-size: 0.85em;
+    }
+
+    /* table cells */
+    th,
+    td {
+      padding: 5px;
+    }
+
+    /* shrink font awesome icons */
+    i.fas,
+    i.fab,
+    i.far,
+    i.fal {
+      transform: scale(0.85);
+    }
+
+    /* decrease banner margins */
+    .banner {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    /* class for centering an element vertically on its own page */
+    .page_center {
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+      break-before: page;
+      break-after: page;
+    }
+
+    /* always insert a page break before the element */
+    .page_break_before {
+      break-before: page;
+    }
+
+    /* always insert a page break after the element */
+    .page_break_after {
+      break-after: page;
+    }
+
+    /* avoid page break before the element */
+    .page_break_before_avoid {
+      break-before: avoid;
+    }
+
+    /* avoid page break after the element */
+    .page_break_after_avoid {
+      break-after: avoid;
+    }
+
+    /* avoid page break inside the element */
+    .page_break_inside_avoid {
+      break-inside: avoid;
+    }
+  }
+
+  /* -------------------------------------------------- */
+  /* override pandoc css quirks */
+  /* -------------------------------------------------- */
+
+  .sourceCode {
+    /* prevent unsightly overflow in wide code blocks */
+    overflow: auto !important;
+  }
+
+  div.sourceCode {
+    /* prevent background fill on top-most code block  container */
+    background: none !important;
+  }
+
+  .sourceCode * {
+    /* force consistent line spacing */
+    line-height: 1.5 !important;
+  }
+
+  div.sourceCode {
+    /* style code block margins same as <pre> element */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* -------------------------------------------------- */
+  /* tablenos */
+  /* -------------------------------------------------- */
+
+  /* tablenos wrapper */
+  .tablenos {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .tablenos > table {
+    /* move margins from table to table_wrapper to allow margin collapsing */
+    margin: 0;
+  }
+
+  @media only screen {
+    /* tablenos wrapper */
+    .tablenos {
+      /* show scrollbar on tables if necessary to prevent overflow */
+      overflow-x: auto !important;
+    }
+
+    .tablenos th,
+    .tablenos td {
+      overflow-wrap: unset !important;
+      word-break: unset !important;
+    }
+
+    /* table in wrapper */
+    .tablenos table,
+    .tablenos table * {
+      /* don't break table words */
+      overflow-wrap: normal !important;
+    }
+  }
+</style>
+<!-- 
+    Plugin Core
+
+    Functions needed for and shared across all first-party plugins.
+-->
+
+<script>
+  // get element that is target of hash (from link element or url)
+  function getHashTarget(link) {
+    const hash = link ? link.hash : window.location.hash;
+    const id = hash.slice(1);
+    let target = document.querySelector(`[id="${id}"]`);
+    if (!target) return;
+
+    // if figure or table, modify target to get expected element
+    if (id.indexOf("fig:") === 0) target = target.querySelector("figure");
+    if (id.indexOf("tbl:") === 0) target = target.querySelector("table");
+
+    return target;
+  }
+
+  // get position/dimensions of element or viewport
+  function getRectInView(element) {
+    let rect = {};
+    rect.left = 0;
+    rect.top = 0;
+    rect.right = document.documentElement.clientWidth;
+    rect.bottom = document.documentElement.clientHeight;
+    let style = {};
+
+    if (element instanceof HTMLElement) {
+      rect = element.getBoundingClientRect();
+      style = window.getComputedStyle(element);
+    }
+
+    const margin = {};
+    margin.left = parseFloat(style.marginLeftWidth) || 0;
+    margin.top = parseFloat(style.marginTopWidth) || 0;
+    margin.right = parseFloat(style.marginRightWidth) || 0;
+    margin.bottom = parseFloat(style.marginBottomWidth) || 0;
+
+    const border = {};
+    border.left = parseFloat(style.borderLeftWidth) || 0;
+    border.top = parseFloat(style.borderTopWidth) || 0;
+    border.right = parseFloat(style.borderRightWidth) || 0;
+    border.bottom = parseFloat(style.borderBottomWidth) || 0;
+
+    const newRect = {};
+    newRect.left = rect.left + margin.left + border.left;
+    newRect.top = rect.top + margin.top + border.top;
+    newRect.right = rect.right + margin.right + border.right;
+    newRect.bottom = rect.bottom + margin.bottom + border.bottom;
+    newRect.width = newRect.right - newRect.left;
+    newRect.height = newRect.bottom - newRect.top;
+
+    return newRect;
+  }
+
+  // get position of element relative to page
+  function getRectInPage(element) {
+    const rect = getRectInView(element);
+    const body = getRectInView(document.body);
+
+    const newRect = {};
+    newRect.left = rect.left - body.left;
+    newRect.top = rect.top - body.top;
+    newRect.right = rect.right - body.left;
+    newRect.bottom = rect.bottom - body.top;
+    newRect.width = rect.width;
+    newRect.height = rect.height;
+
+    return newRect;
+  }
+
+  // get closest element before specified element that matches query
+  function firstBefore(element, query) {
+    while (element && element !== document.body && !element.matches(query))
+      element = element.previousElementSibling || element.parentNode;
+
+    return element;
+  }
+
+  // check if element is part of collapsed heading
+  function isCollapsed(element) {
+    while (element && element !== document.body) {
+      if (element.dataset.collapsed === "true") return true;
+      element = element.parentNode;
+    }
+    return false;
+  }
+
+  // expand any collapsed parent containers of element if necessary
+  function expandElement(element) {
+    if (isCollapsed(element)) {
+      // accordion plugin
+      const heading = firstBefore(element, "h2");
+      if (heading) heading.click();
+      // details/summary HTML element
+      const summary = firstBefore(element, "summary");
+      if (summary) summary.click();
+    }
+  }
+
+  // scroll to and focus element
+  function goToElement(element, offset) {
+    // expand accordion section if collapsed
+    expandElement(element);
+    const y =
+      getRectInView(element).top -
+      getRectInView(document.documentElement).top -
+      (offset || 0);
+
+    // trigger any function listening for "onscroll" event
+    window.dispatchEvent(new Event("scroll"));
+    window.scrollTo(0, y);
+    document.activeElement.blur();
+    element.focus();
+  }
+
+  // get list of elements after a start element up to element matching query
+  function nextUntil(element, query, exclude) {
+    const elements = [];
+    while (((element = element.nextElementSibling), element)) {
+      if (element.matches(query)) break;
+      if (!element.matches(exclude)) elements.push(element);
+    }
+    return elements;
+  }
+</script>
+<!--
+  Accordion Plugin
+
+  Allows sections of content under h2 headings to be collapsible.
+-->
+
+<script type="module">
+  // whether to always start expanded ('false'), always start collapsed
+  // ('true'), or start collapsed when screen small ('auto')
+  const startCollapsed = "auto";
+
+  // start script
+  function start() {
+    // run through each <h2> heading
+    const headings = document.querySelectorAll("h2");
+    for (const heading of headings) {
+      addArrow(heading);
+
+      // start expanded/collapsed based on option
+      if (
+        startCollapsed === "true" ||
+        (startCollapsed === "auto" && isSmallScreen()) ||
+        heading.dataset.collapsed === "true"
+      )
+        collapseHeading(heading);
+      else expandElement(heading);
+    }
+
+    // attach hash change listener to window
+    window.addEventListener("hashchange", onHashChange);
+  }
+
+  // when hash (eg manuscript.html#introduction) changes
+  function onHashChange() {
+    const target = getHashTarget();
+    if (target) goToElement(target);
+  }
+
+  // add arrow to heading
+  function addArrow(heading) {
+    // add arrow button
+    const arrow = document.createElement("button");
+    arrow.innerHTML = document.querySelector(".icon_angle_down").innerHTML;
+    arrow.classList.add("icon_button", "accordion_arrow");
+    heading.insertBefore(arrow, heading.firstChild);
+
+    // attach click listener to heading and button
+    heading.addEventListener("click", onHeadingClick);
+    arrow.addEventListener("click", onArrowClick);
+  }
+
+  // determine if on mobile-like device with small screen
+  function isSmallScreen() {
+    return Math.min(window.innerWidth, window.innerHeight) < 480;
+  }
+
+  // when <h2> heading is clicked
+  function onHeadingClick(event) {
+    // only collapse if <h2> itself is target of click (eg, user did
+    // not click on anchor within <h2>)
+    if (event.target === this) toggleCollapse(this);
+  }
+
+  // when arrow button is clicked
+  function onArrowClick() {
+    toggleCollapse(this.parentNode);
+  }
+
+  // collapse section if expanded, expand if collapsed
+  function toggleCollapse(heading) {
+    if (heading.dataset.collapsed === "false") collapseHeading(heading);
+    else expandElement(heading);
+  }
+
+  // elements to exclude from collapse, such as table of contents panel,
+  // hypothesis panel, etc
+  const exclude = "#toc_panel, div.annotator-frame, #lightbox_overlay";
+
+  // collapse section
+  function collapseHeading(heading) {
+    heading.setAttribute("data-collapsed", "true");
+    const children = getChildren(heading);
+    for (const child of children) child.setAttribute("data-collapsed", "true");
+  }
+
+  // expand section
+  function expandElement(heading) {
+    heading.setAttribute("data-collapsed", "false");
+    const children = getChildren(heading);
+    for (const child of children) child.setAttribute("data-collapsed", "false");
+  }
+
+  // get list of elements between this <h2> and next <h2> or <h1>
+  // ("children" of the <h2> section)
+  function getChildren(heading) {
+    return nextUntil(heading, "h2, h1", exclude);
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- angle down icon -->
+
+<template class="icon_angle_down">
+  <!-- modified from: https://fontawesome.com/icons/angle-down -->
+  <svg width="16" height="16" viewBox="0 0 448 512">
+    <path
+      fill="currentColor"
+      d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* accordion arrow button */
+    .accordion_arrow {
+      margin-right: 10px;
+    }
+
+    /* arrow icon when <h2> data-collapsed attribute true */
+    h2[data-collapsed="true"] > .accordion_arrow > svg {
+      transform: rotate(-90deg);
+    }
+
+    /* all elements (except <h2>'s) when data-collapsed attribute true */
+    *:not(h2)[data-collapsed="true"] {
+      display: none;
+    }
+
+    /* accordion arrow button when hovered and <h2>'s when hovered */
+    .accordion_arrow:hover,
+    h2[data-collapsed="true"]:hover,
+    h2[data-collapsed="false"]:hover {
+      cursor: pointer;
+    }
+  }
+
+  /* always hide accordion arrow button on print */
+  @media only print {
+    .accordion_arrow {
+      display: none;
+    }
+  }
+</style>
+<!--
+  Anchors Plugin
+
+  Adds an anchor next to each of a certain type of element that provides a
+  human-readable url to that specific item/position in the document (e.g.
+  "manuscript.html#abstract"). It also makes it such that scrolling out of view
+  of a target removes its identifier from the url.
+-->
+
+<script type="module">
+  // which types of elements to add anchors next to, in "document.querySelector"
+  // format
+  const typesQuery =
+    'h1, h2, h3, div[id^="fig:"], div[id^="tbl:"], span[id^="eq:"]';
+
+  // start script
+  function start() {
+    // add anchor to each element of specified types
+    const elements = document.querySelectorAll(typesQuery);
+    for (const element of elements) addAnchor(element);
+
+    // attach scroll listener to window
+    window.addEventListener("scroll", onScroll);
+  }
+
+  // when window is scrolled
+  function onScroll() {
+    // if url has hash and user has scrolled out of view of hash
+    // target, remove hash from url
+    const tolerance = 100;
+    const target = getHashTarget();
+    if (target) {
+      if (
+        target.getBoundingClientRect().top > window.innerHeight + tolerance ||
+        target.getBoundingClientRect().bottom < 0 - tolerance
+      )
+        history.pushState(null, null, " ");
+    }
+  }
+
+  // add anchor to element
+  function addAnchor(element) {
+    let addTo; // element to add anchor button to
+
+    // if figure or table, modify withId and addTo to get expected
+    // elements
+    if (element.id.indexOf("fig:") === 0) {
+      addTo = element.querySelector("figcaption");
+    } else if (element.id.indexOf("tbl:") === 0) {
+      addTo = element.querySelector("caption");
+    } else if (element.id.indexOf("eq:") === 0) {
+      addTo = element.querySelector(".eqnos-number");
+    }
+
+    addTo = addTo || element;
+    const id = element.id || null;
+
+    // do not add anchor if element doesn't have assigned id.
+    // id is generated by pandoc and is assumed to be unique and
+    // human-readable
+    if (!id) return;
+
+    // create anchor button
+    const anchor = document.createElement("a");
+    anchor.innerHTML = document.querySelector(".icon_link").innerHTML;
+    anchor.title = "Link to this part of the document";
+    anchor.classList.add("icon_button", "anchor");
+    anchor.dataset.ignore = "true";
+    anchor.href = "#" + id;
+    addTo.appendChild(anchor);
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- link icon -->
+
+<template class="icon_link">
+  <!-- modified from: https://fontawesome.com/icons/link -->
+  <svg width="16" height="16" viewBox="0 0 512 512">
+    <path
+      fill="currentColor"
+      d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* anchor button */
+    .anchor {
+      opacity: 0;
+      margin-left: 5px;
+    }
+
+    /* anchor buttons within <h2>'s */
+    h2 .anchor {
+      margin-left: 10px;
+    }
+
+    /* anchor buttons when hovered/focused and anything containing an anchor button when hovered */
+    *:hover > .anchor,
+    .anchor:hover,
+    .anchor:focus {
+      opacity: 1;
+    }
+
+    /* anchor button when hovered */
+    .anchor:hover {
+      cursor: pointer;
+    }
+  }
+
+  /* always show anchor button on devices with no mouse/hover ability */
+  @media (hover: none) {
+    .anchor {
+      opacity: 1;
+    }
+  }
+
+  /* always hide anchor button on print */
+  @media only print {
+    .anchor {
+      display: none;
+    }
+  }
+</style>
+<!-- 
+    Attributes Plugin
+
+    Allows arbitrary HTML attributes to be attached to (almost) any element.
+    Place an HTML comment inside or next to the desired element with the content:
+    $attribute="value"
+-->
+
+<script type="module">
+  // start script
+  function start() {
+    // get list of comments in document
+    const comments = findComments();
+
+    for (const comment of comments)
+      if (comment.parentElement)
+        addAttributes(comment.parentElement, comment.nodeValue.trim());
+  }
+
+  // add html attributes to specified element based on string of
+  // html attributes and values
+  function addAttributes(element, text) {
+    // regex's for finding attribute/value pairs in the format of
+    // attribute="value" or attribute='value
+    const regex2 = /\$([a-zA-Z\-]+)?=\"(.+?)\"/;
+    const regex1 = /\$([a-zA-Z\-]+)?=\'(.+?)\'/;
+
+    // loop through attribute/value pairs
+    let match;
+    while ((match = text.match(regex2) || text.match(regex1))) {
+      // get attribute and value from regex capture groups
+      let attribute = match[1];
+      let value = match[2];
+
+      // remove from string
+      text = text.substring(match.index + match[0].length);
+
+      if (!attribute || !value) break;
+
+      // set attribute of parent element
+      try {
+        element.setAttribute(attribute, value);
+      } catch (error) {
+        console.log(error);
+      }
+
+      // special case for colspan
+      if (attribute === "colspan") removeTableCells(element, value);
+    }
+  }
+
+  // get list of comment elements in document
+  function findComments() {
+    const comments = [];
+
+    // iterate over comment nodes in document
+    function acceptNode(node) {
+      return NodeFilter.FILTER_ACCEPT;
+    }
+    const iterator = document.createNodeIterator(
+      document.body,
+      NodeFilter.SHOW_COMMENT,
+      acceptNode
+    );
+    let node;
+    while ((node = iterator.nextNode())) comments.push(node);
+
+    return comments;
+  }
+
+  // remove certain number of cells after specified cell
+  function removeTableCells(cell, number) {
+    number = parseInt(number);
+    if (!number) return;
+
+    // remove elements
+    for (; number > 1; number--) {
+      if (cell.nextElementSibling) cell.nextElementSibling.remove();
+    }
+  }
+
+  // start script on DOMContentLoaded instead of load to ensure this plugins
+  // runs before other plugins
+  window.addEventListener("DOMContentLoaded", start);
+</script>
+<!--
+  Jump to First Plugin
+
+  Adds a button next to each reference entry, figure, and table that jumps the
+  page to the first occurrence of a link to that item in the manuscript.
+-->
+
+<script type="module">
+  // whether to add buttons next to reference entries
+  const references = "true";
+  // whether to add buttons next to figures
+  const figures = "true";
+  // whether to add buttons next to tables
+  const tables = "true";
+
+  // start script
+  function start() {
+    if (references !== "false")
+      makeButtons(`div[id^="ref-"]`, ".csl-left-margin", "reference");
+    if (figures !== "false")
+      makeButtons(`div[id^="fig:"]`, "figcaption", "figure");
+    if (tables !== "false") makeButtons(`div[id^="tbl:"]`, "caption", "table");
+  }
+
+  // when jump button clicked
+  function onButtonClick() {
+    const first = getFirstOccurrence(this.dataset.id);
+    if (!first) return;
+
+    // update url hash so navigating "back" in history will return user to button
+    window.location.hash = this.dataset.id;
+    // scroll to link
+    const timeout = function () {
+      goToElement(first, window.innerHeight * 0.5);
+    };
+    window.setTimeout(timeout, 0);
+  }
+
+  // get first occurrence of link to item in document
+  function getFirstOccurrence(id) {
+    let query = "a";
+    query += '[href="#' + id + '"]';
+    // exclude buttons, anchor links, toc links, etc
+    query += ":not(.button):not(.icon_button):not(.anchor):not(.toc_link)";
+    return document.querySelector(query);
+  }
+
+  // add button next to each reference entry, figure, or table
+  function makeButtons(query, containerQuery, subject) {
+    const elements = document.querySelectorAll(query);
+    for (const element of elements) {
+      const id = element.id;
+      const buttonContainer = element.querySelector(containerQuery);
+      const first = getFirstOccurrence(id);
+
+      // if can't find link to reference or place to put button, ignore
+      if (!first || !buttonContainer) continue;
+
+      // make jump button
+      let button = document.createElement("button");
+      button.classList.add("icon_button", "jump_arrow");
+      button.title = `Jump to the first occurrence of this ${subject} in the document`;
+      const icon = document.querySelector(".icon_angle_double_up");
+      button.innerHTML = icon.innerHTML;
+      button.dataset.id = id;
+      button.dataset.ignore = "true";
+      button.addEventListener("click", onButtonClick);
+      buttonContainer.prepend(button);
+    }
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- angle double up icon -->
+
+<template class="icon_angle_double_up">
+  <!-- modified from: https://fontawesome.com/icons/angle-double-up -->
+  <svg width="16" height="16" viewBox="0 0 320 512">
+    <path
+      fill="currentColor"
+      d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* jump button */
+    .jump_arrow {
+      position: relative;
+      top: 0.125em;
+      margin-right: 5px;
+    }
+  }
+
+  /* always hide jump button on print */
+  @media only print {
+    .jump_arrow {
+      display: none;
+    }
+  }
+</style>
+<!-- 
+    Lightbox Plugin
+
+    Makes it such that when a user clicks on an image, the image fills the
+    screen and the user can pan/drag/zoom the image and navigate between other
+    images in the document.
+-->
+
+<script type="module">
+  // list of possible zoom/scale factors
+  const zooms =
+    "0.1, 0.25, 0.333333, 0.5, 0.666666, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8";
+  // whether to fit image to view ('fit'), display at 100% and shrink if
+  // necessary ('shrink'), or always display at 100% ('100')
+  const defaultZoom = "fit";
+  // whether to zoom in/out toward center of view ('true') or mouse ('false')
+  const centerZoom = "false";
+
+  // start script
+  function start() {
+    // run through each <img> element
+    const imgs = document.querySelectorAll("figure > img");
+    let count = 1;
+    for (const img of imgs) {
+      img.classList.add("lightbox_document_img");
+      img.dataset.number = count;
+      img.dataset.total = imgs.length;
+      img.addEventListener("click", openLightbox);
+      count++;
+    }
+
+    // attach mouse and key listeners to window
+    window.addEventListener("mousemove", onWindowMouseMove);
+    window.addEventListener("keyup", onKeyUp);
+  }
+
+  // when mouse is moved anywhere in window
+  function onWindowMouseMove(event) {
+    window.mouseX = event.clientX;
+    window.mouseY = event.clientY;
+  }
+
+  // when key pressed
+  function onKeyUp(event) {
+    if (!event || !event.key) return;
+
+    switch (event.key) {
+      // trigger click of prev button
+      case "ArrowLeft":
+        const prevButton = document.getElementById("lightbox_prev_button");
+        if (prevButton) prevButton.click();
+        break;
+      // trigger click of next button
+      case "ArrowRight":
+        const nextButton = document.getElementById("lightbox_next_button");
+        if (nextButton) nextButton.click();
+        break;
+      // close on esc
+      case "Escape":
+        closeLightbox();
+        break;
+    }
+  }
+
+  // open lightbox
+  function openLightbox() {
+    const lightbox = makeLightbox(this);
+    if (!lightbox) return;
+
+    blurBody(lightbox);
+    document.body.appendChild(lightbox);
+  }
+
+  // make lightbox
+  function makeLightbox(img) {
+    // delete lightbox if it exists, start fresh
+    closeLightbox();
+
+    // create screen overlay containing lightbox
+    const overlay = document.createElement("div");
+    overlay.id = "lightbox_overlay";
+
+    // create image info boxes
+    const numberInfo = document.createElement("div");
+    const zoomInfo = document.createElement("div");
+    numberInfo.id = "lightbox_number_info";
+    zoomInfo.id = "lightbox_zoom_info";
+
+    // create container for image
+    const imageContainer = document.createElement("div");
+    imageContainer.id = "lightbox_image_container";
+    const lightboxImg = makeLightboxImg(
+      img,
+      imageContainer,
+      numberInfo,
+      zoomInfo
+    );
+    imageContainer.appendChild(lightboxImg);
+
+    // create bottom container for caption and navigation buttons
+    const bottomContainer = document.createElement("div");
+    bottomContainer.id = "lightbox_bottom_container";
+    const caption = makeCaption(img);
+    const prevButton = makePrevButton(img);
+    const nextButton = makeNextButton(img);
+    bottomContainer.appendChild(prevButton);
+    bottomContainer.appendChild(caption);
+    bottomContainer.appendChild(nextButton);
+
+    // attach top middle and bottom to overlay
+    overlay.appendChild(numberInfo);
+    overlay.appendChild(zoomInfo);
+    overlay.appendChild(imageContainer);
+    overlay.appendChild(bottomContainer);
+
+    return overlay;
+  }
+
+  // make <img> object that is intuitively draggable and zoomable
+  function makeLightboxImg(sourceImg, container, numberInfoBox, zoomInfoBox) {
+    // create copy of source <img>
+    const img = sourceImg.cloneNode(true);
+    img.classList.remove("lightbox_document_img");
+    img.removeAttribute("id");
+    img.removeAttribute("width");
+    img.removeAttribute("height");
+    img.style.position = "unset";
+    img.style.margin = "0";
+    img.style.padding = "0";
+    img.style.width = "";
+    img.style.height = "";
+    img.style.minWidth = "";
+    img.style.minHeight = "";
+    img.style.maxWidth = "";
+    img.style.maxHeight = "";
+    img.id = "lightbox_img";
+
+    // build sorted list of zoomSteps
+    const zoomSteps = zooms.split(/[^0-9.]/).map((step) => parseFloat(step));
+    zoomSteps.sort((a, b) => a - b);
+
+    // <img> object property variables
+    let zoom = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let clickMouseX = undefined;
+    let clickMouseY = undefined;
+    let clickTranslateX = undefined;
+    let clickTranslateY = undefined;
+
+    updateNumberInfo();
+
+    // update image numbers displayed in info box
+    function updateNumberInfo() {
+      numberInfoBox.innerHTML =
+        sourceImg.dataset.number + " of " + sourceImg.dataset.total;
+    }
+
+    // update zoom displayed in info box
+    function updateZoomInfo() {
+      let zoomInfo = zoom * 100;
+      if (!Number.isInteger(zoomInfo)) zoomInfo = zoomInfo.toFixed(2);
+      zoomInfoBox.innerHTML = zoomInfo + "%";
+    }
+
+    // move to closest zoom step above current zoom
+    const zoomIn = function () {
+      for (const zoomStep of zoomSteps) {
+        if (zoomStep > zoom) {
+          zoom = zoomStep;
+          break;
+        }
+      }
+      updateTransform();
+    };
+
+    // move to closest zoom step above current zoom
+    const zoomOut = function () {
+      zoomSteps.reverse();
+      for (const zoomStep of zoomSteps) {
+        if (zoomStep < zoom) {
+          zoom = zoomStep;
+          break;
+        }
+      }
+      zoomSteps.reverse();
+
+      updateTransform();
+    };
+
+    // update display of <img> based on scale/translate properties
+    const updateTransform = function () {
+      // set transform
+      img.style.transform =
+        "translate(" +
+        (translateX || 0) +
+        "px," +
+        (translateY || 0) +
+        "px) scale(" +
+        (zoom || 1) +
+        ")";
+
+      // get new width/height after scale
+      const rect = img.getBoundingClientRect();
+      // limit translate
+      translateX = Math.max(translateX, -rect.width / 2);
+      translateX = Math.min(translateX, rect.width / 2);
+      translateY = Math.max(translateY, -rect.height / 2);
+      translateY = Math.min(translateY, rect.height / 2);
+
+      // set transform
+      img.style.transform =
+        "translate(" +
+        (translateX || 0) +
+        "px," +
+        (translateY || 0) +
+        "px) scale(" +
+        (zoom || 1) +
+        ")";
+
+      updateZoomInfo();
+    };
+
+    // fit <img> to container
+    const fit = function () {
+      // no x/y offset, 100% zoom by default
+      translateX = 0;
+      translateY = 0;
+      zoom = 1;
+
+      // widths of <img> and container
+      const imgWidth = img.naturalWidth;
+      const imgHeight = img.naturalHeight;
+      const containerWidth = parseFloat(
+        window.getComputedStyle(container).width
+      );
+      const containerHeight = parseFloat(
+        window.getComputedStyle(container).height
+      );
+
+      // how much zooming is needed to fit <img> to container
+      const xRatio = imgWidth / containerWidth;
+      const yRatio = imgHeight / containerHeight;
+      const maxRatio = Math.max(xRatio, yRatio);
+      const newZoom = 1 / maxRatio;
+
+      // fit <img> to container according to option
+      if (defaultZoom === "shrink") {
+        if (maxRatio > 1) zoom = newZoom;
+      } else if (defaultZoom === "fit") zoom = newZoom;
+
+      updateTransform();
+    };
+
+    // when mouse wheel is rolled anywhere in container
+    const onContainerWheel = function (event) {
+      if (!event) return;
+
+      // let ctrl + mouse wheel to zoom behave as normal
+      if (event.ctrlKey) return;
+
+      // prevent normal scroll behavior
+      event.preventDefault();
+      event.stopPropagation();
+
+      // point around which to scale img
+      const viewRect = container.getBoundingClientRect();
+      const viewX = (viewRect.left + viewRect.right) / 2;
+      const viewY = (viewRect.top + viewRect.bottom) / 2;
+      const originX = centerZoom === "true" ? viewX : mouseX;
+      const originY = centerZoom === "true" ? viewY : mouseY;
+
+      // get point on image under origin
+      const oldRect = img.getBoundingClientRect();
+      const oldPercentX = (originX - oldRect.left) / oldRect.width;
+      const oldPercentY = (originY - oldRect.top) / oldRect.height;
+
+      // increment/decrement zoom
+      if (event.deltaY < 0) zoomIn();
+      if (event.deltaY > 0) zoomOut();
+
+      // get offset between previous image point and origin
+      const newRect = img.getBoundingClientRect();
+      const offsetX = originX - (newRect.left + newRect.width * oldPercentX);
+      const offsetY = originY - (newRect.top + newRect.height * oldPercentY);
+
+      // translate image to keep image point under origin
+      translateX += offsetX;
+      translateY += offsetY;
+
+      // perform translate
+      updateTransform();
+    };
+
+    // when container is clicked
+    function onContainerClick(event) {
+      // if container itself is target of click, and not other
+      // element above it
+      if (event.target === this) closeLightbox();
+    }
+
+    // when mouse button is pressed on image
+    const onImageMouseDown = function (event) {
+      // store original mouse position relative to image
+      clickMouseX = window.mouseX;
+      clickMouseY = window.mouseY;
+      clickTranslateX = translateX;
+      clickTranslateY = translateY;
+      event.stopPropagation();
+      event.preventDefault();
+    };
+
+    // when mouse button is released anywhere in window
+    const onWindowMouseUp = function (event) {
+      // reset original mouse position
+      clickMouseX = undefined;
+      clickMouseY = undefined;
+      clickTranslateX = undefined;
+      clickTranslateY = undefined;
+
+      // remove global listener if lightbox removed from document
+      if (!document.body.contains(container))
+        window.removeEventListener("mouseup", onWindowMouseUp);
+    };
+
+    // when mouse is moved anywhere in window
+    const onWindowMouseMove = function (event) {
+      if (
+        clickMouseX === undefined ||
+        clickMouseY === undefined ||
+        clickTranslateX === undefined ||
+        clickTranslateY === undefined
+      )
+        return;
+
+      // offset image based on original and current mouse position
+      translateX = clickTranslateX + window.mouseX - clickMouseX;
+      translateY = clickTranslateY + window.mouseY - clickMouseY;
+      updateTransform();
+      event.preventDefault();
+
+      // remove global listener if lightbox removed from document
+      if (!document.body.contains(container))
+        window.removeEventListener("mousemove", onWindowMouseMove);
+    };
+
+    // when window is resized
+    const onWindowResize = function (event) {
+      fit();
+
+      // remove global listener if lightbox removed from document
+      if (!document.body.contains(container))
+        window.removeEventListener("resize", onWindowResize);
+    };
+
+    // attach the necessary event listeners
+    img.addEventListener("dblclick", fit);
+    img.addEventListener("mousedown", onImageMouseDown);
+    container.addEventListener("wheel", onContainerWheel);
+    container.addEventListener("mousedown", onContainerClick);
+    container.addEventListener("touchstart", onContainerClick);
+    window.addEventListener("mouseup", onWindowMouseUp);
+    window.addEventListener("mousemove", onWindowMouseMove);
+    window.addEventListener("resize", onWindowResize);
+
+    // run fit() after lightbox atttached to document and <img> Loaded
+    // so needed container and img dimensions available
+    img.addEventListener("load", fit);
+
+    return img;
+  }
+
+  // make caption
+  function makeCaption(img) {
+    const caption = document.createElement("div");
+    caption.id = "lightbox_caption";
+    const captionSource = img.nextElementSibling;
+    if (captionSource.tagName.toLowerCase() === "figcaption") {
+      const captionCopy = makeCopy(captionSource);
+      caption.innerHTML = captionCopy.innerHTML;
+    }
+
+    caption.addEventListener("touchstart", function (event) {
+      event.stopPropagation();
+    });
+
+    return caption;
+  }
+
+  // make carbon copy of html dom element
+  function makeCopy(source) {
+    const sourceCopy = source.cloneNode(true);
+
+    // delete elements marked with ignore (eg anchor and jump buttons)
+    const deleteFromCopy = sourceCopy.querySelectorAll('[data-ignore="true"]');
+    for (const element of deleteFromCopy) element.remove();
+
+    // delete certain element attributes
+    const attributes = [
+      "id",
+      "data-collapsed",
+      "data-selected",
+      "data-highlighted",
+      "data-glow",
+    ];
+    for (const attribute of attributes) {
+      sourceCopy.removeAttribute(attribute);
+      const elements = sourceCopy.querySelectorAll("[" + attribute + "]");
+      for (const element of elements) element.removeAttribute(attribute);
+    }
+
+    return sourceCopy;
+  }
+
+  // make button to jump to previous image in document
+  function makePrevButton(img) {
+    const prevButton = document.createElement("button");
+    prevButton.id = "lightbox_prev_button";
+    prevButton.title = "Jump to the previous image in the document [←]";
+    prevButton.classList.add("icon_button", "lightbox_button");
+    prevButton.innerHTML = document.querySelector(".icon_caret_left").innerHTML;
+
+    // attach click listeners to button
+    prevButton.addEventListener("click", function () {
+      getPrevImg(img).click();
+    });
+
+    return prevButton;
+  }
+
+  // make button to jump to next image in document
+  function makeNextButton(img) {
+    const nextButton = document.createElement("button");
+    nextButton.id = "lightbox_next_button";
+    nextButton.title = "Jump to the next image in the document [→]";
+    nextButton.classList.add("icon_button", "lightbox_button");
+    nextButton.innerHTML = document.querySelector(
+      ".icon_caret_right"
+    ).innerHTML;
+
+    // attach click listeners to button
+    nextButton.addEventListener("click", function () {
+      getNextImg(img).click();
+    });
+
+    return nextButton;
+  }
+
+  // get previous image in document
+  function getPrevImg(img) {
+    const imgs = document.querySelectorAll(".lightbox_document_img");
+
+    // find index of provided img
+    let index;
+    for (index = 0; index < imgs.length; index++) {
+      if (imgs[index] === img) break;
+    }
+
+    // wrap index to other side if < 1
+    if (index - 1 >= 0) index--;
+    else index = imgs.length - 1;
+    return imgs[index];
+  }
+
+  // get next image in document
+  function getNextImg(img) {
+    const imgs = document.querySelectorAll(".lightbox_document_img");
+
+    // find index of provided img
+    let index;
+    for (index = 0; index < imgs.length; index++) {
+      if (imgs[index] === img) break;
+    }
+
+    // wrap index to other side if > total
+    if (index + 1 <= imgs.length - 1) index++;
+    else index = 0;
+    return imgs[index];
+  }
+
+  // close lightbox
+  function closeLightbox() {
+    focusBody();
+
+    const lightbox = document.getElementById("lightbox_overlay");
+    if (lightbox) lightbox.remove();
+  }
+
+  // make all elements behind lightbox non-focusable
+  function blurBody(overlay) {
+    const all = document.querySelectorAll("*");
+    for (const element of all) element.tabIndex = -1;
+    document.body.classList.add("body_no_scroll");
+  }
+
+  // make all elements focusable again
+  function focusBody() {
+    const all = document.querySelectorAll("*");
+    for (const element of all) element.removeAttribute("tabIndex");
+    document.body.classList.remove("body_no_scroll");
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- caret left icon -->
+
+<template class="icon_caret_left">
+  <!-- modified from: https://fontawesome.com/icons/caret-left -->
+  <svg width="16" height="16" viewBox="0 0 192 512">
+    <path
+      fill="currentColor"
+      d="M192 127.338v257.324c0 17.818-21.543 26.741-34.142 14.142L29.196 270.142c-7.81-7.81-7.81-20.474 0-28.284l128.662-128.662c12.599-12.6 34.142-3.676 34.142 14.142z"
+    ></path>
+  </svg>
+</template>
+
+<!-- caret right icon -->
+
+<template class="icon_caret_right">
+  <!-- modified from: https://fontawesome.com/icons/caret-right -->
+  <svg width="16" height="16" viewBox="0 0 192 512">
+    <path
+      fill="currentColor"
+      d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* regular <img> in document when hovered */
+    img.lightbox_document_img:hover {
+      cursor: pointer;
+    }
+
+    .body_no_scroll {
+      overflow: hidden !important;
+    }
+
+    /* screen overlay */
+    #lightbox_overlay {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 3;
+    }
+
+    /* middle area containing lightbox image */
+    #lightbox_image_container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* bottom area containing caption */
+    #lightbox_bottom_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* image number info text box */
+    #lightbox_number_info {
+      position: absolute;
+      color: #ffffff;
+      font-weight: 600;
+      left: 2px;
+      top: 0;
+      z-index: 4;
+    }
+
+    /* zoom info text box */
+    #lightbox_zoom_info {
+      position: absolute;
+      color: #ffffff;
+      font-weight: 600;
+      right: 2px;
+      top: 0;
+      z-index: 4;
+    }
+
+    /* copy of image caption */
+    #lightbox_caption {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      max-height: 100%;
+      padding: 10px 0;
+      text-align: center;
+      overflow-y: auto;
+      color: #ffffff;
+    }
+
+    /* navigation previous/next button */
+    .lightbox_button {
+      width: 100px;
+      height: 100%;
+      min-width: 100px;
+      min-height: 100%;
+      color: #ffffff;
+    }
+
+    /* navigation previous/next button when hovered */
+    .lightbox_button:hover {
+      background: none !important;
+    }
+
+    /* navigation button icon */
+    .lightbox_button > svg {
+      height: 25px;
+    }
+
+    /* figure auto-number */
+    #lightbox_caption > span:first-of-type {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    /* lightbox image when hovered */
+    #lightbox_img:hover {
+      cursor: grab;
+    }
+
+    /* lightbox image when grabbed */
+    #lightbox_img:active {
+      cursor: grabbing;
+    }
+  }
+
+  /* when on screen < 480px wide */
+  @media only screen and (max-width: 480px) {
+    /* make navigation buttons skinnier on small screens to make more room for caption text */
+    .lightbox_button {
+      width: 50px;
+      min-width: 50px;
+    }
+  }
+
+  /* always hide lightbox on print */
+  @media only print {
+    #lightbox_overlay {
+      display: none;
+    }
+  }
+</style>
+<!-- 
+  Link Highlight Plugin
+
+  Makes it such that when a user hovers or focuses a link, other links that have
+  the same target will be highlighted. It also makes it such that when clicking
+  a link, the target of the link (eg reference, figure, table) is briefly
+  highlighted.
+-->
+
+<script type="module">
+  // whether to also highlight links that go to external urls
+  const externalLinks = "false";
+  // whether user must click off to unhighlight instead of just
+  // un-hovering
+  const clickUnhighlight = "false";
+  // whether to also highlight links that are unique
+  const highlightUnique = "true";
+
+  // start script
+  function start() {
+    const links = getLinks();
+    for (const link of links) {
+      // attach mouse and focus listeners to link
+      link.addEventListener("mouseenter", onLinkFocus);
+      link.addEventListener("focus", onLinkFocus);
+      link.addEventListener("mouseleave", onLinkUnhover);
+    }
+
+    // attach click and hash change listeners to window
+    window.addEventListener("click", onClick);
+    window.addEventListener("touchstart", onClick);
+    window.addEventListener("hashchange", onHashChange);
+
+    // run hash change on window load in case user has navigated
+    // directly to hash
+    onHashChange();
+  }
+
+  // when link is focused (tabbed to) or hovered
+  function onLinkFocus() {
+    highlight(this);
+  }
+
+  // when link is unhovered
+  function onLinkUnhover() {
+    if (clickUnhighlight !== "true") unhighlightAll();
+  }
+
+  // when the mouse is clicked anywhere in window
+  function onClick(event) {
+    unhighlightAll();
+  }
+
+  // when hash (eg manuscript.html#introduction) changes
+  function onHashChange() {
+    const target = getHashTarget();
+    if (target) glowElement(target);
+  }
+
+  // start glow sequence on an element
+  function glowElement(element) {
+    const startGlow = function () {
+      onGlowEnd();
+      element.dataset.glow = "true";
+      element.addEventListener("animationend", onGlowEnd);
+    };
+    const onGlowEnd = function () {
+      element.removeAttribute("data-glow");
+      element.removeEventListener("animationend", onGlowEnd);
+    };
+    startGlow();
+  }
+
+  // highlight link and all others with same target
+  function highlight(link) {
+    // force unhighlight all to start fresh
+    unhighlightAll();
+
+    // get links with same target
+    if (!link) return;
+    const sameLinks = getSameLinks(link);
+
+    // if link unique and option is off, exit and don't highlight
+    if (sameLinks.length <= 1 && highlightUnique !== "true") return;
+
+    // highlight all same links, and "select" (special highlight) this
+    // one
+    for (const sameLink of sameLinks) {
+      if (sameLink === link) sameLink.setAttribute("data-selected", "true");
+      else sameLink.setAttribute("data-highlighted", "true");
+    }
+  }
+
+  // unhighlight all links
+  function unhighlightAll() {
+    const links = getLinks();
+    for (const link of links) {
+      link.setAttribute("data-selected", "false");
+      link.setAttribute("data-highlighted", "false");
+    }
+  }
+
+  // get links with same target
+  function getSameLinks(link) {
+    const results = [];
+    const links = getLinks();
+    for (const otherLink of links) {
+      if (otherLink.getAttribute("href") === link.getAttribute("href"))
+        results.push(otherLink);
+    }
+    return results;
+  }
+
+  // get all links of types we wish to handle
+  function getLinks() {
+    let query = "a";
+    if (externalLinks !== "true") query += '[href^="#"]';
+    // exclude buttons, anchor links, toc links, etc
+    query += ":not(.button):not(.icon_button):not(.anchor):not(.toc_link)";
+    return document.querySelectorAll(query);
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<style>
+  @media only screen {
+    /* anything with data-highlighted attribute true */
+    [data-highlighted="true"] {
+      background: #ffeb3b;
+    }
+
+    /* anything with data-selected attribute true */
+    [data-selected="true"] {
+      background: #ff8a65 !important;
+    }
+
+    /* animation definition for glow */
+    @keyframes highlight_glow {
+      0% {
+        background: none;
+      }
+      10% {
+        background: #bbdefb;
+      }
+      100% {
+        background: none;
+      }
+    }
+
+    /* anything with data-glow attribute true */
+    [data-glow="true"] {
+      animation: highlight_glow 2s;
+    }
+  }
+</style>
+<!--
+  Table of Contents Plugin
+
+  Provides a "table of contents" (toc) panel on the side of the document that
+  allows the user to conveniently navigate between sections of the document.
+-->
+
+<script type="module">
+  // which types of elements to add links for, in "document.querySelector" format
+  const typesQuery = "h1, h2, h3";
+  // whether toc starts open. use 'true' or 'false', or 'auto' to
+  // use 'true' behavior when screen wide enough and 'false' when not
+  const startOpen = "false";
+  // whether toc closes when clicking on toc link. use 'true' or
+  // 'false', or 'auto' to use 'false' behavior when screen wide
+  // enough and 'true' when not
+  const clickClose = "auto";
+  // if list item is more than this many characters, text will be
+  // truncated
+  const charLimit = "50";
+  // whether or not to show bullets next to each toc item
+  const bullets = "false";
+
+  // start script
+  function start() {
+    // make toc panel and populate with entries (links to document
+    // sections)
+    const panel = makePanel();
+    if (!panel) return;
+    makeEntries(panel);
+    // attach panel to document after making entries, so 'toc' heading
+    // in panel isn't included in toc
+    document.body.insertBefore(panel, document.body.firstChild);
+
+    // initial panel state
+    if (startOpen === "true" || (startOpen === "auto" && !isSmallScreen()))
+      openPanel();
+    else closePanel();
+
+    // attach click, scroll, and hash change listeners to window
+    window.addEventListener("click", onClick);
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("hashchange", onScroll);
+    window.addEventListener("keyup", onKeyUp);
+    onScroll();
+
+    // add class to push document body down out of way of toc button
+    document.body.classList.add("toc_body_nudge");
+  }
+
+  // determine if screen wide enough to fit toc panel
+  function isSmallScreen() {
+    // in default theme:
+    // 816px = 8.5in = width of "page" (<body>) element
+    // 260px = min width of toc panel (*2 for both sides of <body>)
+    return window.innerWidth < 816 + 260 * 2;
+  }
+
+  // when mouse is clicked anywhere in window
+  function onClick() {
+    if (isSmallScreen()) closePanel();
+  }
+
+  // when window is scrolled or hash changed
+  function onScroll() {
+    highlightViewed();
+  }
+
+  // when key pressed
+  function onKeyUp(event) {
+    if (!event || !event.key) return;
+
+    // close on esc
+    if (event.key === "Escape") closePanel();
+  }
+
+  // find entry of currently viewed document section in toc and highlight
+  function highlightViewed() {
+    const firstId = getFirstInView(typesQuery);
+
+    // get toc entries (links), unhighlight all, then highlight viewed
+    const list = document.getElementById("toc_list");
+    if (!firstId || !list) return;
+    const links = list.querySelectorAll("a");
+    for (const link of links) link.dataset.viewing = "false";
+    const link = list.querySelector('a[href="#' + firstId + '"]');
+    if (!link) return;
+    link.dataset.viewing = "true";
+  }
+
+  // get first or previous toc listed element in top half of view
+  function getFirstInView(query) {
+    // get all elements matching query and with id
+    const elements = document.querySelectorAll(query);
+    const elementsWithIds = [];
+    for (const element of elements) {
+      if (element.id) elementsWithIds.push(element);
+    }
+
+    // get first or previous element in top half of view
+    for (let i = 0; i < elementsWithIds.length; i++) {
+      const element = elementsWithIds[i];
+      const prevElement = elementsWithIds[Math.max(0, i - 1)];
+      if (element.getBoundingClientRect().top >= 0) {
+        if (element.getBoundingClientRect().top < window.innerHeight / 2)
+          return element.id;
+        else return prevElement.id;
+      }
+    }
+  }
+
+  // make panel
+  function makePanel() {
+    // create panel
+    const panel = document.createElement("div");
+    panel.id = "toc_panel";
+    if (bullets === "true") panel.dataset.bullets = "true";
+
+    // create header
+    const header = document.createElement("div");
+    header.id = "toc_header";
+
+    // create toc button
+    const button = document.createElement("button");
+    button.id = "toc_button";
+    button.innerHTML = document.querySelector(".icon_th_list").innerHTML;
+    button.title = "Table of Contents";
+    button.classList.add("icon_button");
+
+    // create header text
+    const text = document.createElement("h4");
+    text.innerHTML = "Table of Contents";
+
+    // create container for toc list
+    const list = document.createElement("div");
+    list.id = "toc_list";
+
+    // attach click listeners
+    panel.addEventListener("click", onPanelClick);
+    header.addEventListener("click", onHeaderClick);
+    button.addEventListener("click", onButtonClick);
+
+    // attach elements
+    header.appendChild(button);
+    header.appendChild(text);
+    panel.appendChild(header);
+    panel.appendChild(list);
+
+    return panel;
+  }
+
+  // create toc entries (links) to each element of the specified types
+  function makeEntries(panel) {
+    const elements = document.querySelectorAll(typesQuery);
+    for (const element of elements) {
+      // do not add link if element doesn't have assigned id
+      if (!element.id) continue;
+
+      // create link/list item
+      const link = document.createElement("a");
+      link.classList.add("toc_link");
+      switch (element.tagName.toLowerCase()) {
+        case "h1":
+          link.dataset.level = "1";
+          break;
+        case "h2":
+          link.dataset.level = "2";
+          break;
+        case "h3":
+          link.dataset.level = "3";
+          break;
+        case "h4":
+          link.dataset.level = "4";
+          break;
+      }
+      link.title = element.innerText;
+      let text = element.innerText;
+      if (text.length > charLimit) text = text.slice(0, charLimit) + "...";
+      link.innerHTML = text;
+      link.href = "#" + element.id;
+      link.addEventListener("click", onLinkClick);
+
+      // attach link
+      panel.querySelector("#toc_list").appendChild(link);
+    }
+  }
+
+  // when panel is clicked
+  function onPanelClick(event) {
+    // stop click from propagating to window/document and closing panel
+    event.stopPropagation();
+  }
+
+  // when header itself is clicked
+  function onHeaderClick(event) {
+    togglePanel();
+  }
+
+  // when button is clicked
+  function onButtonClick(event) {
+    togglePanel();
+    // stop header underneath button from also being clicked
+    event.stopPropagation();
+  }
+
+  // when link is clicked
+  function onLinkClick(event) {
+    if (clickClose === "true" || (clickClose === "auto" && isSmallScreen()))
+      closePanel();
+    else openPanel();
+  }
+
+  // open panel if closed, close if opened
+  function togglePanel() {
+    const panel = document.getElementById("toc_panel");
+    if (!panel) return;
+
+    if (panel.dataset.open === "true") closePanel();
+    else openPanel();
+  }
+
+  // open panel
+  function openPanel() {
+    const panel = document.getElementById("toc_panel");
+    if (panel) panel.dataset.open = "true";
+  }
+
+  // close panel
+  function closePanel() {
+    const panel = document.getElementById("toc_panel");
+    if (panel) panel.dataset.open = "false";
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- th list icon -->
+
+<template class="icon_th_list">
+  <!-- modified from: https://fontawesome.com/icons/th-list -->
+  <svg width="16" height="16" viewBox="0 0 512 512" tabindex="-1">
+    <path
+      fill="currentColor"
+      d="M96 96c0 26.51-21.49 48-48 48S0 122.51 0 96s21.49-48 48-48 48 21.49 48 48zM48 208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm0 160c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm96-236h352c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H144c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h352c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H144c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h352c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H144c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+      tabindex="-1"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* toc panel */
+    #toc_panel {
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* toc panel when closed */
+    #toc_panel[data-open="false"] {
+      min-width: 60px;
+      width: 60px;
+      height: 60px;
+      border-right: solid 1px #bdbdbd;
+      border-bottom: solid 1px #bdbdbd;
+    }
+
+    /* toc panel when open */
+    #toc_panel[data-open="true"] {
+      min-width: 260px;
+      max-width: 480px;
+      /* keep panel edge consistent distance away from "page" edge */
+      width: calc(((100vw - 8.5in) / 2) - 30px - 40px);
+      bottom: 0;
+      border-right: solid 1px #bdbdbd;
+    }
+
+    /* toc panel header */
+    #toc_header {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 60px;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* toc panel header when hovered */
+    #toc_header:hover {
+      cursor: pointer;
+    }
+
+    /* toc panel header when panel open */
+    #toc_panel[data-open="true"] > #toc_header {
+      border-bottom: solid 1px #bdbdbd;
+    }
+
+    /* toc open/close header button */
+    #toc_button {
+      margin-right: 20px;
+    }
+
+    /* hide toc list and header text when closed */
+    #toc_panel[data-open="false"] > #toc_header > *:not(#toc_button),
+    #toc_panel[data-open="false"] > #toc_list {
+      display: none;
+    }
+
+    /* toc list of entries */
+    #toc_list {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      position: absolute;
+      top: calc(60px + 1px);
+      bottom: 0;
+      overflow: auto;
+    }
+
+    /* toc entry, link to section in document */
+    .toc_link {
+      display: block;
+      padding: 5px;
+      position: relative;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* toc entry when hovered or when "viewed" */
+    .toc_link:hover,
+    .toc_link[data-viewing="true"] {
+      background: #f5f5f5;
+    }
+
+    /* toc entry, level 1 indentation */
+    .toc_link[data-level="1"] {
+      margin-left: 0;
+    }
+
+    /* toc entry, level 2 indentation */
+    .toc_link[data-level="2"] {
+      margin-left: 20px;
+    }
+
+    /* toc entry, level 3 indentation */
+    .toc_link[data-level="3"] {
+      margin-left: 40px;
+    }
+
+    /* toc entry, level 4 indentation */
+    .toc_link[data-level="4"] {
+      margin-left: 60px;
+    }
+
+    /* toc entry bullets */
+    #toc_panel[data-bullets="true"] .toc_link[data-level]:before {
+      position: absolute;
+      left: -15px;
+      top: -1px;
+      font-size: 1.5em;
+    }
+
+    /* toc entry, level 2 bullet */
+    #toc_panel[data-bullets="true"] .toc_link[data-level="2"]:before {
+      content: "\2022";
+    }
+
+    /* toc entry, level 3 bullet */
+    #toc_panel[data-bullets="true"] .toc_link[data-level="3"]:before {
+      content: "\25AB";
+    }
+
+    /* toc entry, level 4 bullet */
+    #toc_panel[data-bullets="true"] .toc_link[data-level="4"]:before {
+      content: "-";
+    }
+  }
+
+  /* when on screen < 8.5in wide */
+  @media only screen and (max-width: 8.5in) {
+    /* push <body> ("page") element down to make room for toc icon */
+    .toc_body_nudge {
+      padding-top: 60px;
+    }
+
+    /* toc icon when panel closed and not hovered */
+    #toc_panel[data-open="false"]:not(:hover) {
+      background: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  /* always hide toc panel on print */
+  @media only print {
+    #toc_panel {
+      display: none;
+    }
+  }
+</style>
+<!-- 
+  Tooltips Plugin
+
+  Makes it such that when the user hovers or focuses a link to a citation or
+  figure, a tooltip appears with a preview of the reference content, along with
+  arrows to navigate between instances of the same reference in the document.
+-->
+
+<script type="module">
+  // whether user must click off to close tooltip instead of just un-hovering
+  const clickClose = "false";
+  // delay (in ms) between opening and closing tooltip
+  const delay = "100";
+
+  // start script
+  function start() {
+    const links = getLinks();
+    for (const link of links) {
+      // attach hover and focus listeners to link
+      link.addEventListener("mouseover", onLinkHover);
+      link.addEventListener("mouseleave", onLinkUnhover);
+      link.addEventListener("focus", onLinkFocus);
+      link.addEventListener("touchend", onLinkTouch);
+    }
+
+    // attach mouse, key, and resize listeners to window
+    window.addEventListener("mousedown", onClick);
+    window.addEventListener("touchstart", onClick);
+    window.addEventListener("keyup", onKeyUp);
+    window.addEventListener("resize", onResize);
+  }
+
+  // when link is hovered
+  function onLinkHover() {
+    // function to open tooltip
+    const delayOpenTooltip = function () {
+      openTooltip(this);
+    }.bind(this);
+
+    // run open function after delay
+    this.openTooltipTimer = window.setTimeout(delayOpenTooltip, delay);
+  }
+
+  // when mouse leaves link
+  function onLinkUnhover() {
+    // cancel opening tooltip
+    window.clearTimeout(this.openTooltipTimer);
+
+    // don't close on unhover if option specifies
+    if (clickClose === "true") return;
+
+    // function to close tooltip
+    const delayCloseTooltip = function () {
+      // if tooltip open and if mouse isn't over tooltip, close
+      const tooltip = document.getElementById("tooltip");
+      if (tooltip && !tooltip.matches(":hover")) closeTooltip();
+    };
+
+    // run close function after delay
+    this.closeTooltipTimer = window.setTimeout(delayCloseTooltip, delay);
+  }
+
+  // when link is focused (tabbed to)
+  function onLinkFocus(event) {
+    openTooltip(this);
+  }
+
+  // when link is touched on touch screen
+  function onLinkTouch(event) {
+    // attempt to force hover state on first tap always, and trigger
+    // regular link click (and navigation) on second tap
+    if (event.target === document.activeElement) event.target.click();
+    else {
+      document.activeElement.blur();
+      event.target.focus();
+    }
+    if (event.cancelable) event.preventDefault();
+    event.stopPropagation();
+    return false;
+  }
+
+  // when mouse is clicked anywhere in window
+  function onClick(event) {
+    closeTooltip();
+  }
+
+  // when key pressed
+  function onKeyUp(event) {
+    if (!event || !event.key) return;
+
+    switch (event.key) {
+      // trigger click of prev button
+      case "ArrowLeft":
+        const prevButton = document.getElementById("tooltip_prev_button");
+        if (prevButton) prevButton.click();
+        break;
+      // trigger click of next button
+      case "ArrowRight":
+        const nextButton = document.getElementById("tooltip_next_button");
+        if (nextButton) nextButton.click();
+        break;
+      // close on esc
+      case "Escape":
+        closeTooltip();
+        break;
+    }
+  }
+
+  // when window is resized or zoomed
+  function onResize() {
+    closeTooltip();
+  }
+
+  // get all links of types we wish to handle
+  function getLinks() {
+    const queries = [];
+    // exclude buttons, anchor links, toc links, etc
+    const exclude =
+      ":not(.button):not(.icon_button):not(.anchor):not(.toc_link)";
+    queries.push('a[href^="#ref-"]' + exclude); // citation links
+    queries.push('a[href^="#fig:"]' + exclude); // figure links
+    const query = queries.join(", ");
+    return document.querySelectorAll(query);
+  }
+
+  // get links with same target, get index of link in set, get total
+  // same links
+  function getSameLinks(link) {
+    const sameLinks = [];
+    const links = getLinks();
+    for (const otherLink of links) {
+      if (otherLink.getAttribute("href") === link.getAttribute("href"))
+        sameLinks.push(otherLink);
+    }
+
+    return {
+      elements: sameLinks,
+      index: sameLinks.indexOf(link),
+      total: sameLinks.length,
+    };
+  }
+
+  // open tooltip
+  function openTooltip(link) {
+    // delete tooltip if it exists, start fresh
+    closeTooltip();
+
+    // make tooltip element
+    const tooltip = makeTooltip(link);
+
+    // if source couldn't be found and tooltip not made, exit
+    if (!tooltip) return;
+
+    // make navbar elements
+    const navBar = makeNavBar(link);
+    if (navBar) tooltip.firstElementChild.appendChild(navBar);
+
+    // attach tooltip to page
+    document.body.appendChild(tooltip);
+
+    // position tooltip
+    const position = function () {
+      positionTooltip(link);
+    };
+    position();
+
+    // if tooltip contains images, position again after they've loaded
+    const imgs = tooltip.querySelectorAll("img");
+    for (const img of imgs) img.addEventListener("load", position);
+  }
+
+  // close (delete) tooltip
+  function closeTooltip() {
+    const tooltip = document.getElementById("tooltip");
+    if (tooltip) tooltip.remove();
+  }
+
+  // make tooltip
+  function makeTooltip(link) {
+    // get target element that link points to
+    const source = getSource(link);
+
+    // if source can't be found, exit
+    if (!source) return;
+
+    // create new tooltip
+    const tooltip = document.createElement("div");
+    tooltip.id = "tooltip";
+    const tooltipContent = document.createElement("div");
+    tooltipContent.id = "tooltip_content";
+    tooltip.appendChild(tooltipContent);
+
+    // make copy of source node and put in tooltip
+    const sourceCopy = makeCopy(source);
+    tooltipContent.appendChild(sourceCopy);
+
+    // attach mouse event listeners
+    tooltip.addEventListener("click", onTooltipClick);
+    tooltip.addEventListener("mousedown", onTooltipClick);
+    tooltip.addEventListener("touchstart", onTooltipClick);
+    tooltip.addEventListener("mouseleave", onTooltipUnhover);
+
+    // (for interaction with lightbox plugin)
+    // transfer click on tooltip copied img to original img
+    const sourceImg = source.querySelector("img");
+    const sourceCopyImg = sourceCopy.querySelector("img");
+    if (sourceImg && sourceCopyImg) {
+      const clickImg = function () {
+        sourceImg.click();
+        closeTooltip();
+      };
+      sourceCopyImg.addEventListener("click", clickImg);
+    }
+
+    return tooltip;
+  }
+
+  // make carbon copy of html dom element
+  function makeCopy(source) {
+    const sourceCopy = source.cloneNode(true);
+
+    // delete elements marked with ignore (eg anchor and jump buttons)
+    const deleteFromCopy = sourceCopy.querySelectorAll('[data-ignore="true"]');
+    for (const element of deleteFromCopy) element.remove();
+
+    // delete certain element attributes
+    const attributes = [
+      "id",
+      "data-collapsed",
+      "data-selected",
+      "data-highlighted",
+      "data-glow",
+      "class",
+    ];
+    for (const attribute of attributes) {
+      sourceCopy.removeAttribute(attribute);
+      const elements = sourceCopy.querySelectorAll("[" + attribute + "]");
+      for (const element of elements) element.removeAttribute(attribute);
+    }
+
+    return sourceCopy;
+  }
+
+  // when tooltip is clicked
+  function onTooltipClick(event) {
+    // when user clicks on tooltip, stop click from transferring
+    // outside of tooltip (eg, click off to close tooltip, or eg click
+    // off to unhighlight same refs)
+    event.stopPropagation();
+  }
+
+  // when tooltip is unhovered
+  function onTooltipUnhover(event) {
+    if (clickClose === "true") return;
+
+    // make sure new mouse/touch/focus no longer over tooltip or any
+    // element within it
+    const tooltip = document.getElementById("tooltip");
+    if (!tooltip) return;
+    if (this.contains(event.relatedTarget)) return;
+
+    closeTooltip();
+  }
+
+  // make nav bar to go betwen prev/next instances of same reference
+  function makeNavBar(link) {
+    // find other links to the same source
+    const sameLinks = getSameLinks(link);
+
+    // don't show nav bar when singular reference
+    if (sameLinks.total <= 1) return;
+
+    // find prev/next links with same target
+    const prevLink = getPrevLink(link, sameLinks);
+    const nextLink = getNextLink(link, sameLinks);
+
+    // create nav bar
+    const navBar = document.createElement("div");
+    navBar.id = "tooltip_nav_bar";
+    const text = sameLinks.index + 1 + " of " + sameLinks.total;
+
+    // create nav bar prev/next buttons
+    const prevButton = document.createElement("button");
+    const nextButton = document.createElement("button");
+    prevButton.id = "tooltip_prev_button";
+    nextButton.id = "tooltip_next_button";
+    prevButton.title =
+      "Jump to the previous occurence of this item in the document [←]";
+    nextButton.title =
+      "Jump to the next occurence of this item in the document [→]";
+    prevButton.classList.add("icon_button");
+    nextButton.classList.add("icon_button");
+    prevButton.innerHTML = document.querySelector(".icon_caret_left").innerHTML;
+    nextButton.innerHTML =
+      document.querySelector(".icon_caret_right").innerHTML;
+    navBar.appendChild(prevButton);
+    navBar.appendChild(document.createTextNode(text));
+    navBar.appendChild(nextButton);
+
+    // attach click listeners to buttons
+    prevButton.addEventListener("click", function () {
+      onPrevNextClick(link, prevLink);
+    });
+    nextButton.addEventListener("click", function () {
+      onPrevNextClick(link, nextLink);
+    });
+
+    return navBar;
+  }
+
+  // get previous link with same target
+  function getPrevLink(link, sameLinks) {
+    if (!sameLinks) sameLinks = getSameLinks(link);
+    // wrap index to other side if < 1
+    let index;
+    if (sameLinks.index - 1 >= 0) index = sameLinks.index - 1;
+    else index = sameLinks.total - 1;
+    return sameLinks.elements[index];
+  }
+
+  // get next link with same target
+  function getNextLink(link, sameLinks) {
+    if (!sameLinks) sameLinks = getSameLinks(link);
+    // wrap index to other side if > total
+    let index;
+    if (sameLinks.index + 1 <= sameLinks.total - 1) index = sameLinks.index + 1;
+    else index = 0;
+    return sameLinks.elements[index];
+  }
+
+  // get element that is target of link or url hash
+  function getSource(link) {
+    const hash = link ? link.hash : window.location.hash;
+    const id = hash.slice(1);
+    let target = document.querySelector('[id="' + id + '"]');
+    if (!target) return;
+
+    // if ref or figure, modify target to get expected element
+    if (id.indexOf("ref-") === 0) target = target.querySelector(":nth-child(2)");
+    else if (id.indexOf("fig:") === 0) target = target.querySelector("figure");
+
+    return target;
+  }
+
+  // when prev/next arrow button is clicked
+  function onPrevNextClick(link, prevNextLink) {
+    if (link && prevNextLink)
+      goToElement(prevNextLink, window.innerHeight * 0.5);
+  }
+
+  // scroll to and focus element
+  function goToElement(element, offset) {
+    // expand accordion section if collapsed
+    expandElement(element);
+    const y =
+      getRectInView(element).top -
+      getRectInView(document.documentElement).top -
+      (offset || 0);
+    // trigger any function listening for "onscroll" event
+    window.dispatchEvent(new Event("scroll"));
+    window.scrollTo(0, y);
+    document.activeElement.blur();
+    element.focus();
+  }
+
+  // determine position to place tooltip based on link position in
+  // viewport and tooltip size
+  function positionTooltip(link, left, top) {
+    const tooltipElement = document.getElementById("tooltip");
+    if (!tooltipElement) return;
+
+    // get convenient vars for position/dimensions of
+    // link/tooltip/page/view
+    link = getRectInPage(link);
+    const tooltip = getRectInPage(tooltipElement);
+    const view = getRectInPage();
+
+    // horizontal positioning
+    if (left)
+      // use explicit value
+      left = left;
+    else if (link.left + tooltip.width < view.right)
+      // fit tooltip to right of link
+      left = link.left;
+    else if (link.right - tooltip.width > view.left)
+      // fit tooltip to left of link
+      left = link.right - tooltip.width;
+    // center tooltip in view
+    else left = (view.right - view.left) / 2 - tooltip.width / 2;
+
+    // vertical positioning
+    if (top)
+      // use explicit value
+      top = top;
+    else if (link.top - tooltip.height > view.top)
+      // fit tooltip above link
+      top = link.top - tooltip.height;
+    else if (link.bottom + tooltip.height < view.bottom)
+      // fit tooltip below link
+      top = link.bottom;
+    else {
+      // center tooltip in view
+      top = view.top + view.height / 2 - tooltip.height / 2;
+      // nudge off of link to left/right if possible
+      if (link.right + tooltip.width < view.right) left = link.right;
+      else if (link.left - tooltip.width > view.left)
+        left = link.left - tooltip.width;
+    }
+
+    tooltipElement.style.left = left + "px";
+    tooltipElement.style.top = top + "px";
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- caret left icon -->
+
+<template class="icon_caret_left">
+  <!-- modified from: https://fontawesome.com/icons/caret-left -->
+  <svg width="16" height="16" viewBox="0 0 192 512">
+    <path
+      fill="currentColor"
+      d="M192 127.338v257.324c0 17.818-21.543 26.741-34.142 14.142L29.196 270.142c-7.81-7.81-7.81-20.474 0-28.284l128.662-128.662c12.599-12.6 34.142-3.676 34.142 14.142z"
+    ></path>
+  </svg>
+</template>
+
+<!-- caret right icon -->
+
+<template class="icon_caret_right">
+  <!-- modified from: https://fontawesome.com/icons/caret-right -->
+  <svg width="16" height="16" viewBox="0 0 192 512">
+    <path
+      fill="currentColor"
+      d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  @media only screen {
+    /* tooltip container */
+    #tooltip {
+      position: absolute;
+      width: 50%;
+      min-width: 240px;
+      max-width: 75%;
+      z-index: 1;
+    }
+
+    /* tooltip content */
+    #tooltip_content {
+      margin-bottom: 5px;
+      padding: 20px;
+      border-radius: 5px;
+      border: solid 1px #bdbdbd;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+      overflow-wrap: break-word;
+    }
+
+    /* tooltip copy of paragraphs and figures */
+    #tooltip_content > p,
+    #tooltip_content > figure {
+      margin: 0;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    /* tooltip copy of <img> */
+    #tooltip_content > figure > img,
+    #tooltip_content > figure > svg {
+      max-height: 260px;
+    }
+
+    /* navigation bar */
+    #tooltip_nav_bar {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* navigation bar previous/next buton */
+    #tooltip_nav_bar > .icon_button {
+      position: relative;
+      top: 3px;
+    }
+
+    /* navigation bar previous button */
+    #tooltip_nav_bar > .icon_button:first-of-type {
+      margin-right: 5px;
+    }
+
+    /* navigation bar next button */
+    #tooltip_nav_bar > .icon_button:last-of-type {
+      margin-left: 5px;
+    }
+  }
+
+  /* always hide tooltip on print */
+  @media only print {
+    #tooltip {
+      display: none;
+    }
+  }
+</style>
+<!--
+  Analytics Plugin (third-party) 
+  
+  Copy and paste code from Google Analytics or similar service here.
+-->
+<!-- 
+  Annotations Plugin
+
+  Allows public annotation of the  manuscript. See https://web.hypothes.is/.
+-->
+
+<script type="module">
+  // configuration
+  window.hypothesisConfig = function () {
+    return {
+      branding: {
+        accentColor: "#2196f3",
+        appBackgroundColor: "#f8f8f8",
+        ctaBackgroundColor: "#f8f8f8",
+        ctaTextColor: "#000000",
+        selectionFontFamily: "Open Sans, Helvetica, sans serif",
+        annotationFontFamily: "Open Sans, Helvetica, sans serif",
+      },
+    };
+  };
+
+  // hypothesis client script
+  const embed = "https://hypothes.is/embed.js";
+  // hypothesis annotation count query url
+  const query = "https://api.hypothes.is/api/search?limit=0&url=";
+
+  // start script
+  function start() {
+    const button = makeButton();
+    document.body.insertBefore(button, document.body.firstChild);
+    insertCount(button);
+  }
+
+  // make button
+  function makeButton() {
+    // create button
+    const button = document.createElement("button");
+    button.id = "hypothesis_button";
+    button.innerHTML = document.querySelector(".icon_hypothesis").innerHTML;
+    button.title = "Hypothesis annotations";
+    button.classList.add("icon_button");
+
+    function onClick(event) {
+      onButtonClick(event, button);
+    }
+
+    // attach click listeners
+    button.addEventListener("click", onClick);
+
+    return button;
+  }
+
+  // insert annotations count
+  async function insertCount(button) {
+    // get annotation count from Hypothesis based on url
+    let count = "-";
+    try {
+      const canonical = document.querySelector('link[rel="canonical"]');
+      const location = window.location;
+      const url = encodeURIComponent((canonical || location).href);
+      const response = await fetch(query + url);
+      const json = await response.json();
+      count = json.total || "-";
+    } catch (error) {
+      console.log(error);
+    }
+
+    // put count into button
+    const counter = document.createElement("span");
+    counter.id = "hypothesis_count";
+    counter.innerHTML = count;
+    button.title = "View " + count + " Hypothesis annotations";
+    button.append(counter);
+  }
+
+  // when button is clicked
+  function onButtonClick(event, button) {
+    const script = document.createElement("script");
+    script.src = embed;
+    document.body.append(script);
+    button.remove();
+  }
+
+  // start script when document is finished loading
+  window.addEventListener("load", start);
+</script>
+
+<!-- hypothesis icon -->
+
+<template class="icon_hypothesis">
+  <!-- modified from: https://simpleicons.org/icons/hypothesis.svg / https://git.io/Jf1VB -->
+  <svg width="16" height="16" viewBox="0 0 24 24" tabindex="-1">
+    <path
+      fill="currentColor"
+      d="M3.43 0C2.5 0 1.72 .768 1.72 1.72V18.86C1.72 19.8 2.5 20.57 3.43 20.57H9.38L12 24L14.62 20.57H20.57C21.5 20.57 22.29 19.8 22.29 18.86V1.72C22.29 .77 21.5 0 20.57 0H3.43M5.14 3.43H7.72V9.43S8.58 7.72 10.28 7.72C12 7.72 13.74 8.57 13.74 11.24V17.14H11.16V12C11.16 10.61 10.28 10.07 9.43 10.29C8.57 10.5 7.72 11.41 7.72 13.29V17.14H5.14V3.43M18 13.72C18.95 13.72 19.72 14.5 19.72 15.42A1.71 1.71 0 0 1 18 17.13A1.71 1.71 0 0 1 16.29 15.42C16.29 14.5 17.05 13.71 18 13.71Z"
+      tabindex="-1"
+    ></path>
+  </svg>
+</template>
+
+<style>
+  /* hypothesis activation button */
+  #hypothesis_button {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 0;
+    border-left: solid 1px #bdbdbd;
+    border-bottom: solid 1px #bdbdbd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+  }
+
+  /* hypothesis button svg */
+  #hypothesis_button > svg {
+    position: relative;
+    top: -4px;
+  }
+
+  /* hypothesis annotation count */
+  #hypothesis_count {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+  }
+
+  /* side panel */
+  .annotator-frame {
+    width: 280px !important;
+  }
+
+  /* match highlight color to rest of theme */
+  .annotator-highlights-always-on .annotator-hl {
+    background-color: #ffeb3b !important;
+  }
+
+  /* match focused color to rest of theme */
+  .annotator-hl.annotator-hl-focused {
+    background-color: #ff8a65 !important;
+  }
+
+  /* match bucket bar color to rest of theme */
+  .annotator-bucket-bar {
+    background: #f5f5f5 !important;
+  }
+
+  /* always hide button, toolbar, and tooltip on print */
+  @media only print {
+    #hypothesis_button {
+      display: none;
+    }
+
+    .annotator-frame {
+      display: none !important;
+    }
+
+    hypothesis-adder {
+      display: none !important;
+    }
+  }
+</style>
+<!-- 
+  Mathjax Plugin (third-party) 
+
+  Allows the proper rendering of math/equations written in LaTeX.
+  See https://www.mathjax.org/.
+-->
+
+<script type="text/x-mathjax-config">
+  // configuration
+  MathJax.Hub.Config({
+    "CommonHTML": { linebreaks: { automatic: true } },
+    "HTML-CSS": { linebreaks: { automatic: true } },
+    "SVG": { linebreaks: { automatic: true } },
+    "fast-preview": { disabled: true }
+  });
+</script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+  integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A=="
+  crossorigin="anonymous"
+></script>
+
+<style>
+  /* mathjax containers */
+  .math.display > span:not(.MathJax_Preview) {
+    /* turn inline element (no dimensions) into block (allows fixed width and thus scrolling) */
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  /* right click menu */
+  .MathJax_Menu {
+    border-radius: 5px !important;
+    border: solid 1px #bdbdbd !important;
+    box-shadow: none !important;
+  }
+
+  /* equation auto-number */
+  span[id^="eq:"] > span.math.display + span {
+    font-weight: 600;
+  }
+
+  /* equation */
+  span[id^="eq:"] > span.math.display > span {
+    /* nudge to make room for equation auto-number and anchor */
+    margin-right: 60px !important;
+  }
+</style>
+</body>
+</html>
