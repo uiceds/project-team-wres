@@ -1,5 +1,5 @@
 Agric
-albedo
+Albedo
 amb
 Cao
 Champaign
@@ -11,9 +11,9 @@ cnr
 conc
 contant
 conver
-Convolutional
+convolutional
 cov
-covid
+COVID
 CSAT
 CSV
 dataset
@@ -25,7 +25,7 @@ Dyn
 ecohydrological
 eqaution
 ETdata
-evapotranspiration
+Evapotranspiration
 Fc
 Geophys
 Guo
@@ -48,7 +48,7 @@ Kumar
 Liang
 LiCor
 Liu
-Longwave
+longwave
 LSTM
 LSTMs
 Manzoni
