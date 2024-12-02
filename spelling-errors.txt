@@ -23,7 +23,7 @@ Dyn
 ecohydrological
 eqaution
 ETdata
-Evapotranspiration
+evapotranspiration
 Fc
 Geophys
 Guo
@@ -44,7 +44,7 @@ Kumar
 Liang
 LiCor
 Liu
-longwave
+Longwave
 LSTM
 Manzoni
 Meteorol

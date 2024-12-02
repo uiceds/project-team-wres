@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-12-02" />
   <meta name="citation_publication_date" content="2024-12-02" />
   <meta property="article:published_time" content="2024-12-02" />
-  <meta name="dc.modified" content="2024-12-02T03:05:12+00:00" />
-  <meta property="article:modified_time" content="2024-12-02T03:05:12+00:00" />
+  <meta name="dc.modified" content="2024-12-02T03:10:19+00:00" />
+  <meta property="article:modified_time" content="2024-12-02T03:10:19+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/d28502c3ce4d1e9635380cd1870ba1a58e6ed795/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/d28502c3ce4d1e9635380cd1870ba1a58e6ed795/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/d28502c3ce4d1e9635380cd1870ba1a58e6ed795/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/cfae867b4339174dfb5d01e17a4cc35a191773ea/))
+([permalink](https://uiceds.github.io/project-team-wres/v/d28502c3ce4d1e9635380cd1870ba1a58e6ed795/))
 was automatically generated
-from [uiceds/project-team-wres@cfae867](https://github.com/uiceds/project-team-wres/tree/cfae867b4339174dfb5d01e17a4cc35a191773ea)
+from [uiceds/project-team-wres@d28502c](https://github.com/uiceds/project-team-wres/tree/d28502c3ce4d1e9635380cd1870ba1a58e6ed795)
 on December 2, 2024.
 </em></small>
 
@@ -152,13 +152,21 @@ The contributions of this study are threefold. First, it will improve the accura
 # References
 
 [1]   UN-Water. Water and Climate Change. https://www.unwater.org/water-facts/water-and-climate-change (accessed Nov 19, 2024).
+
 [2]   Earth Institute, Columbia University. How Climate Change Impacts Our Water. Columbia Climate School, September 23, 2019. https://news.climate.columbia.edu/2019/09/23/climate-change-impacts-water/ (accessed Nov 19, 2024).
+
 [3]   Katul, G. G.; Oren, R.; Manzoni, S.; Higgins, C.; Parlange, M. B. Evapotranspiration: A Process Driving Mass Transport and Energy Exchange in the Soil-Plant-Atmosphere-Climate System. Rev. Geophys. 2012, 50 (3), RG3002. 
+
 [4]   Novák, V. Evapotranspiration: A Component of the Water Cycle. In Evapotranspiration in the Soil-Plant-Atmosphere System; Progress in Soil Science; Springer: Dordrecht, 2012; pp 1–13.
+
 [5]   Wild, M. The Global Energy Balance as Represented in CMIP6 Climate Models. Clim. Dyn. 2020, 55 (3), 553–577.
+
 [6]   ET Data Portal. Evapotranspiration Data from Satellite Sensors. ETdata.org. https://etdata.org/ (accessed Nov 20, 2024).
+
 [7]   Guo, X.; Yao, Y.; Tang, Q.; Liang, S.; Shao, C.; Fisher, J. B.; Chen, J.; Jia, K.; Zhang, X.; Shang, K.; Yang, J.; Yu, R.; Xie, Z.; Liu, L.; Ning, J.; Zhang, L. Multimodel Ensemble Estimation of Landsat-like Global Terrestrial Latent Heat Flux Using a Generalized Deep CNN-LSTM Integration Algorithm. Agric. For. Meteorol. 2024, 349, 109962.
+
 [8]   Mienye, I. D.; Swart, T. G.; Obaido, G. Recurrent Neural Networks: A Comprehensive Review of Architectures, Variants, and Applications. Information 2024, 15 (9), 517.
+
 [9]   Khan, M. S.; Jeon, S. B.; Jeong, M.-H. Gap-Filling Eddy Covariance Latent Heat Flux: Inter-Comparison of Four Machine Learning Model Predictions and Uncertainties in Forest Ecosystem. Remote Sens. 2021, 13 (24), 4976. DOI: 10.3390/rs13244976.
 
 
