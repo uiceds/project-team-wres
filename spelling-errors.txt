@@ -6,6 +6,7 @@ Champaign
 clarawan
 Clim
 CMIP
+CNNs
 cnr
 conc
 contant
@@ -16,6 +17,7 @@ covid
 CSAT
 CSV
 dataset
+dataset’s
 datasets
 dn
 Dordrecht
@@ -33,6 +35,8 @@ Hsing
 hydrological
 HydroShare
 hyperparameter
+hyperparameters
+interpretable
 irga
 Jeon
 Jeong
@@ -46,6 +50,7 @@ LiCor
 Liu
 Longwave
 LSTM
+LSTMs
 Manzoni
 Meteorol
 Mienye
@@ -66,6 +71,7 @@ NIR
 Novák
 Obaido
 Oren
+overfitting
 ovserved
 Parlange
 PCA
@@ -73,13 +79,14 @@ Photochemical
 photosynthetically
 Piatt
 Precip
+Preprocessing
 PRI
 PRIDown
 PRIIndDown
 PRIIndUp
 PRIUp
 PRJ
-Quadra
+quadra
 reanalysze
 Reflectance
 ReLU
