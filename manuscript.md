@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2024-12-11" />
   <meta name="citation_publication_date" content="2024-12-11" />
   <meta property="article:published_time" content="2024-12-11" />
-  <meta name="dc.modified" content="2024-12-11T20:34:51+00:00" />
-  <meta property="article:modified_time" content="2024-12-11T20:34:51+00:00" />
+  <meta name="dc.modified" content="2024-12-11T20:57:13+00:00" />
+  <meta property="article:modified_time" content="2024-12-11T20:57:13+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,9 +75,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/))
+([permalink](https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/))
 was automatically generated
-from [uiceds/project-team-wres@4d0a801](https://github.com/uiceds/project-team-wres/tree/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2)
+from [uiceds/project-team-wres@de31dae](https://github.com/uiceds/project-team-wres/tree/de31daede9e1bf58a2a30ea067dc0e7c95cade2d)
 on December 11, 2024.
 </em></small>
 
@@ -154,23 +154,19 @@ This study aims to harness the capabilities of deep learning to improve the pred
 The contributions of this study are threefold. First, it will improve the accuracy and completeness of latent heat flux data, supporting better predictions of regional water and energy balances. Second, the findings will inform the calibration of global climate models, enabling more reliable simulations of climate variability and change. Finally, by demonstrating the application of deep learning in hydrology and environmental science, this work highlights its potential to address complex, data-intensive challenges.
 
 # Exploratory analysis
-For this study, we utilized a rich dataset derived from the Goose Creek Eddy Covariance Flux Tower, covering the period from Spring 2016 to Spring 2023. This dataset, consisting of 167 variables recorded at 15-minute intervals, provides comprehensive insights into various environmental parameters such as latent heat flux (LE_Obs), net radiation (Rn), air temperature (T), relative humidity, and air pressure. These variables are pivotal for understanding the energy and water exchanges within the ecohydrological system, making the dataset particularly relevant for studying latent heat flux and evapotranspiration processes.
+For this study, we utilized a rich dataset derived from the Goose Creek Eddy Covariance Flux Tower, covering the period from Spring 2016 to Spring 2023. This dataset, consisting of 167 variables recorded at 15-minute intervals, provides comprehensive insights into various environmental parameters such as latent heat flux (LE_Obs), net radiation (Rn), air temperature (T), relative humidity, and air pressure (Figures 1–2). These variables are pivotal for understanding the energy and water exchanges within the ecohydrological system, making the dataset particularly relevant for studying latent heat flux and evapotranspiration processes.
 
-![Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022](./images/Variables.png)
+![Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022](./images/Variables.png){width=80%}
 
-<p align="center">
-  Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022
-</p>
+![Fig 2: LE_Obs over time for the year 2016](./images/Project2.png){width=80%}
 
-![Fig 2: Data Gap in 2020](./images/LatentHeatGap.png){width=80%}
-
-![Fig 3: LE_Obs over time for the year 2016](./images/Project2.png){width=80%}
+![Fig 3: Data Gap in 2020](./images/LatentHeatGap.png){width=80%}
 
 The dataset not only captures key energy balance components but also reflects the temporal dynamics of environmental variables. For example, latent heat flux demonstrates pronounced seasonal trends and is influenced by factors such as net radiation and temperature. However, the dataset contains data gaps, such as those in 2020 due to equipment overhauls and the COVID-19 pandemic. These gaps underscore the importance of robust imputation techniques to ensure the dataset's continuity and reliability for downstream analyses.
 
 Our exploratory analysis involved identifying the variables most correlated with latent heat flux to narrow down the dataset to the most influential predictors. Variables such as net radiation (Rn), temperature (T), sensible heat flux, and relative humidity were selected based on their theoretical and empirical relationships with latent heat. Summary statistics and visualizations revealed key patterns, such as the strong positive correlation between latent heat flux and net radiation. These findings guided the selection of features for our predictive modeling.
 
-By understanding the characteristics and interactions of the dataset, we aimed to address the central research question: how to accurately predict latent heat flux during periods with missing data. This step laid the groundwork for designing machine learning models capable of capturing complex temporal dependencies and improving the overall accuracy of predictions.
+By understanding the characteristics and interactions of the dataset, we aimed to address the central research question: how to accurately predict latent heat flux during periods with missing data (Figures 3). This step laid the groundwork for designing machine learning models capable of capturing complex temporal dependencies and improving the overall accuracy of predictions.
 
 # Predictive modeling
 Predictive modeling for this study employed a range of techniques to estimate latent heat flux (LE_Obs) from the Goose Creek dataset. The methods included regression (basic and normalized), PCA regression, single and multi-layer neural networks, convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. Each method was evaluated using metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared to assess their performance.

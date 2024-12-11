@@ -11,9 +11,9 @@ cnr
 conc
 contant
 conver
-convolutional
+Convolutional
 cov
-COVID
+covid
 CSAT
 CSV
 dataset
@@ -25,7 +25,7 @@ Dyn
 ecohydrological
 eqaution
 ETdata
-evapotranspiration
+Evapotranspiration
 Fc
 Geophys
 Guo
@@ -114,7 +114,7 @@ stdev
 Swart
 Targ
 TempC
-Tmpr
+tmpr
 updward
 Urbana
 Ux
