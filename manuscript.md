@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-12-02'
+date-meta: '2024-12-11'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-12-02" />
-  <meta name="citation_publication_date" content="2024-12-02" />
-  <meta property="article:published_time" content="2024-12-02" />
-  <meta name="dc.modified" content="2024-12-02T04:21:43+00:00" />
-  <meta property="article:modified_time" content="2024-12-02T04:21:43+00:00" />
+  <meta name="dc.date" content="2024-12-11" />
+  <meta name="citation_publication_date" content="2024-12-11" />
+  <meta property="article:published_time" content="2024-12-11" />
+  <meta name="dc.modified" content="2024-12-11T20:34:51+00:00" />
+  <meta property="article:modified_time" content="2024-12-11T20:34:51+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/a27dcff07dd5a3631b5dd42333177ea36e176796/))
+([permalink](https://uiceds.github.io/project-team-wres/v/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2/))
 was automatically generated
-from [uiceds/project-team-wres@a27dcff](https://github.com/uiceds/project-team-wres/tree/a27dcff07dd5a3631b5dd42333177ea36e176796)
-on December 2, 2024.
+from [uiceds/project-team-wres@4d0a801](https://github.com/uiceds/project-team-wres/tree/4d0a801b6ee8eaddd18ef0d42cbee317eb284da2)
+on December 11, 2024.
 </em></small>
 
 
@@ -156,7 +156,11 @@ The contributions of this study are threefold. First, it will improve the accura
 # Exploratory analysis
 For this study, we utilized a rich dataset derived from the Goose Creek Eddy Covariance Flux Tower, covering the period from Spring 2016 to Spring 2023. This dataset, consisting of 167 variables recorded at 15-minute intervals, provides comprehensive insights into various environmental parameters such as latent heat flux (LE_Obs), net radiation (Rn), air temperature (T), relative humidity, and air pressure. These variables are pivotal for understanding the energy and water exchanges within the ecohydrological system, making the dataset particularly relevant for studying latent heat flux and evapotranspiration processes.
 
-![Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022](./images/Variables.png){width=80%}
+![Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022](./images/Variables.png)
+
+<p align="center">
+  Fig 1: Variables Latent Heat, Sensible Heat, Air Pressure and Vapor Pressure in 2022
+</p>
 
 ![Fig 2: Data Gap in 2020](./images/LatentHeatGap.png){width=80%}
 
@@ -620,3 +624,4 @@ Finally, we are trying to use LSTM to predict latent heat.
 ## References
 
 Kumar, P., & Sargent, S. (2024). Goose Creek Eddy Covariance Flux Tower Sensor Data - Sep 2020-ongoing. HydroShare. http://www.hydroshare.org/resource/c276c71e8d1246e29d8502f5b2054668
+
