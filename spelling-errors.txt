@@ -11,9 +11,9 @@ cnr
 conc
 contant
 conver
-Convolutional
+convolutional
 cov
-covid
+COVID
 CSAT
 CSV
 dataset
@@ -79,7 +79,7 @@ Photochemical
 photosynthetically
 Piatt
 Precip
-preprocessing
+Preprocessing
 PRI
 PRIDown
 PRIIndDown

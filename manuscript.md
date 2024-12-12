@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-12-11'
+date-meta: '2024-12-12'
 author-meta:
 - Jiaze Cao
 - Yuyao Huang
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="WRES" />
   <meta property="og:title" content="WRES" />
   <meta property="twitter:title" content="WRES" />
-  <meta name="dc.date" content="2024-12-11" />
-  <meta name="citation_publication_date" content="2024-12-11" />
-  <meta property="article:published_time" content="2024-12-11" />
-  <meta name="dc.modified" content="2024-12-11T20:57:13+00:00" />
-  <meta property="article:modified_time" content="2024-12-11T20:57:13+00:00" />
+  <meta name="dc.date" content="2024-12-12" />
+  <meta name="citation_publication_date" content="2024-12-12" />
+  <meta property="article:published_time" content="2024-12-12" />
+  <meta name="dc.modified" content="2024-12-12T23:00:28+00:00" />
+  <meta property="article:modified_time" content="2024-12-12T23:00:28+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +51,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://uiceds.github.io/project-team-wres/" />
   <meta name="citation_pdf_url" content="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://uiceds.github.io/project-team-wres/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/" />
-  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://uiceds.github.io/project-team-wres/v/1f086af69266741fb5c61ddff208a9ffa21e53b4/" />
+  <meta name="manubot_html_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1f086af69266741fb5c61ddff208a9ffa21e53b4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://uiceds.github.io/project-team-wres/v/1f086af69266741fb5c61ddff208a9ffa21e53b4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -75,10 +75,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://uiceds.github.io/project-team-wres/v/de31daede9e1bf58a2a30ea067dc0e7c95cade2d/))
+([permalink](https://uiceds.github.io/project-team-wres/v/1f086af69266741fb5c61ddff208a9ffa21e53b4/))
 was automatically generated
-from [uiceds/project-team-wres@de31dae](https://github.com/uiceds/project-team-wres/tree/de31daede9e1bf58a2a30ea067dc0e7c95cade2d)
-on December 11, 2024.
+from [uiceds/project-team-wres@1f086af](https://github.com/uiceds/project-team-wres/tree/1f086af69266741fb5c61ddff208a9ffa21e53b4)
+on December 12, 2024.
 </em></small>
 
 
@@ -172,7 +172,7 @@ By understanding the characteristics and interactions of the dataset, we aimed t
 Predictive modeling for this study employed a range of techniques to estimate latent heat flux (LE_Obs) from the Goose Creek dataset. The methods included regression (basic and normalized), PCA regression, single and multi-layer neural networks, convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. Each method was evaluated using metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared to assess their performance.
 
 ## Regression analysis
-•	Basic Regression: A linear regression model was trained without preprocessing the input data. The model captured the general seasonal variation of latent heat flux, but significant biases persisted between the observed and simulated values. While the R-squared value exceeded 70%, the MSE and RMSE values remained high, highlighting the model's limitations in accuracy (Figures 4–7).
+  Basic Regression: A linear regression model was trained without preprocessing the input data. The model captured the general seasonal variation of latent heat flux, but significant biases persisted between the observed and simulated values. While the R-squared value exceeded 70%, the MSE and RMSE values remained high, highlighting the model's limitations in accuracy (Figures 4–7).
 
 ![Fig 4: Time series plot based on basic regression (Training Set)](./images/RegressionTimePlot.png){width=80%}
 
@@ -182,7 +182,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 
 ![Fig 7: Scatter plot based on basic regression (Test Set)](./images/RegressionScatterPlot2021.png){width=80%}
 
-•	Normalized Regression: To mitigate biases, the input data was normalized to a 0–1 range before regression. This adjustment improved error metrics significantly, reducing the MSE from 3524 to 530 and the RMSE to 23. This model effectively preserved the observed trends and provided better predictions, as seen in Figures 8–11.
+  Normalized Regression: To mitigate biases, the input data was normalized to a 0–1 range before regression. This adjustment improved error metrics significantly, reducing the MSE from 3524 to 530 and the RMSE to 23. This model effectively preserved the observed trends and provided better predictions, as seen in Figures 8–11.
 
 ![Fig 8: Time series plot based on normalized regression (Training Set)](./images/NormalizedRegressionTimePlot.png){width=80%}
 
@@ -192,7 +192,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 
 ![Fig 11: Scatter plot based on normalized regression (Test Set)](./images/NormalizedRegressionScatterPlot2021.png){width=80%}
 
-•	PCA Regression: To enhance generalization, principal component analysis (PCA) was used to derive three dominant components for regression. While this approach captured broad trends, it struggled to predict extreme values, and performance on the test set was poor due to inconsistencies in PCA across training and test datasets (Figures 12–15). A combined PCA regression improved results marginally but retained significant limitations (Figures 16–19).
+  PCA Regression: To enhance generalization, principal component analysis (PCA) was used to derive three dominant components for regression. While this approach captured broad trends, it struggled to predict extreme values, and performance on the test set was poor due to inconsistencies in PCA across training and test datasets (Figures 12–15). A combined PCA regression improved results marginally but retained significant limitations (Figures 16–19).
 
 ![Fig 12: Time series plot based on PCA regression (Training Set)](./images/PCARegressionTimePlot.png){width=80%}
 
@@ -213,7 +213,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 
 
 ## Neural network models
-•	Single-Layer Neural Network: This network, with a single hidden layer, demonstrated improved predictive performance over regression models. It captured more complex patterns in the data, achieving an R-squared value of 67% and reduced error metrics (Figures 20–23).
+  Single-Layer Neural Network: This network, with a single hidden layer, demonstrated improved predictive performance over regression models. It captured more complex patterns in the data, achieving an R-squared value of 67% and reduced error metrics (Figures 20–23).
 
 ![Fig 20: Time series plot based on single layer neural network (Training Set)](./images/SingleNNRegressionTimePlot.png){width=80%}
 
@@ -223,7 +223,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 
 ![Fig 23: Scatter plot based on single layer neural network (Test Set)](./images/SingleNNRegressionScatterPlot2021.png){width=80%}
 
-•	Multi-Layer Neural Networks: Networks with multiple layers (e.g., double and quadra layers) exhibited better accuracy in the training set, with R-squared values exceeding 80%. However, these models faced overfitting issues, leading to poor performance on the test set, especially for the quadra-layer network.
+  Multi-Layer Neural Networks: Networks with multiple layers (e.g., double and quadra layers) exhibited better accuracy in the training set, with R-squared values exceeding 80%. However, these models faced overfitting issues, leading to poor performance on the test set, especially for the quadra-layer network.
 
 ![Fig 24: Time series plot based on double layer neural network (Training Set)](./images/DoubleNNRegressionTimePlot.png){width=80%}
 
@@ -242,7 +242,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 ![Fig 29: Scatter plot based on quadra layer neural network (Test Set)](./images/QuadraNNRegressionScatterPlot2021.png){width=80%}
 
 ## Advanced models
-•	Convolutional Neural Networks (CNNs): Although CNNs are primarily used for image data, they were adapted for time-series prediction. While they did not outperform the neural networks in accuracy, they exhibited superior generalization on the test set (Figures 26–29).
+  Convolutional Neural Networks (CNNs): Although CNNs are primarily used for image data, they were adapted for time-series prediction. While they did not outperform the neural networks in accuracy, they exhibited superior generalization on the test set (Figures 26–29).
 
 ![Fig 26: Time series plot based on CNN neural network (Training Set)](./images/CNN_RegressionTimePlot.png){width=80%}
 
@@ -252,7 +252,7 @@ Predictive modeling for this study employed a range of techniques to estimate la
 
 ![Fig 29: Scatter plot based on CNN neural network (Test Set)](./images/CNNRegressionScatterPlot2021.png){width=80%}
 
-•	LSTM Networks: LSTM networks were the most effective for capturing sequential dependencies in the data. These models outperformed other methods in both training and test sets, demonstrating their suitability for time-series forecasting. Figures and metrics related to LSTM models (not included here) showed substantial improvements in MSE and R-squared.
+  LSTM Networks: LSTM networks were the most effective for capturing sequential dependencies in the data. These models outperformed other methods in both training and test sets, demonstrating their suitability for time-series forecasting. Figures and metrics related to LSTM models (not included here) showed substantial improvements in MSE and R-squared.
 
 ![Fig 30: Scatter plot based on CNN neural network](./images/LSTM.png){width=80%}
 
